@@ -74,7 +74,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 100%;
-  margin-top: 16px;
+  margin-top: 64px;
 }
 
 @media (min-width: 1008px) {

@@ -7,13 +7,15 @@ import Image from '../util/image/Image';
 import RecentListingCards from '../home/recentlistings/RecentListingCards';
 import Activities from '../home/activities/Activities';
 import HomeAbout from '../home/about/HomeAbout';
+import HomeLogo from '../home/logo/HomeLogo';
 
 const Home = () => {
 	const [search, setSearch] = useState();
 	return (
 		<Page landing>
 			<Container align='center'>
-				<Image src='/logo.png' width={400} />
+				<HomeLogo />
+
 				<HomeSearch value={search} onChange={e => setSearch(e)} />
 				<HomeCategories />
 			</Container>
