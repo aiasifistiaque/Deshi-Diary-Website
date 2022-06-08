@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+.fluid {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.horizontal {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.shadow {
+  -webkit-box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+          box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+}
+
+.curved {
+  border-radius: 4px;
+}
+
+.rounded {
+  border-radius: 8px;
+}
+
+.round {
+  border-radius: 30px;
+}
+
+.alignCenter {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.alignStart {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.alignEnd {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.justifyCenter {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.justifyStart {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.justifyEnd {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  max-height: 140vh;
+  color: black;
+}
+
+.container .img {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.container .img img {
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.container .main {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 2rem 0;
+}
+
+.container .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.input input[type='number']::-webkit-inner-spin-button,
+.input input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input input,
+.input textarea,
+.input select {
+  margin: 0;
+  height: 42px;
+  width: 100%;
+  border: none;
+  outline: none;
+  width: 400px;
+  background-color: #eeecec;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 0.75rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.input input::-webkit-input-placeholder,
+.input textarea::-webkit-input-placeholder,
+.input select::-webkit-input-placeholder {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0;
+}
+
+.input input:-ms-input-placeholder,
+.input textarea:-ms-input-placeholder,
+.input select:-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0;
+}
+
+.input input::-ms-input-placeholder,
+.input textarea::-ms-input-placeholder,
+.input select::-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0;
+}
+
+.input input::placeholder,
+.input textarea::placeholder,
+.input select::placeholder {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0;
+}
+
+.input input:focus,
+.input textarea:focus,
+.input select:focus {
+  border: 1px solid #391f42;
+}
+
+
+.input textarea {
+  padding: 1em;
+}
+
+.input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 1.5em;
+}
+
+.input label {
+  font-size: 14px;
+  margin: 0.25rem 0 0.25rem 0;
+  font-weight: 600;
+  text-transform: capitalize;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.input textarea {
+  min-height: 200px;
+}
+/*# sourceMappingURL=Input.module.css.map */

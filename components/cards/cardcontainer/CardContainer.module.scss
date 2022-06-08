@@ -1,0 +1,79 @@
+@import '../../../styles/imports';
+
+$border: 1px solid rgba(#aeaeae, 0.5);
+
+.container {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 16px;
+	margin: 32px 0;
+
+	@include tab {
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
+}
+
+.listingcard {
+	min-width: 350px;
+	border: $border;
+	border-radius: 2px;
+	max-width: 100%;
+	box-sizing: border-box;
+	@include desktop {
+		max-width: 350px;
+	}
+}
+
+.cardTitle {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.cardImage {
+	display: flex;
+	width: 100%;
+
+	img {
+		width: 100%;
+		max-height: 180px;
+		height: auto;
+		object-fit: cover;
+	}
+}
+
+.rating {
+	display: flex;
+	gap: 2px;
+	img {
+		width: 16px;
+		height: auto;
+		object-fit: contain;
+	}
+}
+
+.cardSection {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 8px 16px;
+}
+
+.horizontal {
+	flex-direction: row;
+}
+
+.bottomButton {
+	display: flex;
+	width: 100%;
+	border-top: $border;
+	justify-content: center;
+	cursor: pointer;
+	padding: 8px 0;
+	margin-top: 24px;
+	p {
+		font-weight: 600;
+	}
+}

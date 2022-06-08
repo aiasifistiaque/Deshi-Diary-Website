@@ -1,0 +1,57 @@
+//
+
+%comment-container {
+	display: flex;
+	min-height: 30vh;
+	box-shadow: $shadow-primary;
+	margin: 1rem auto;
+	border-radius: $container-radius;
+	background-color: white;
+	align-items: center;
+	flex-direction: column;
+	padding: 3rem 0;
+	width: 100%;
+	@include desktop {
+		width: 80%;
+	}
+}
+
+%dash-container {
+	display: flex;
+	flex-direction: column;
+	align-self: flex-start;
+	padding: 2rem;
+	margin: 0.5rem 0 1rem 0;
+	background-color: white;
+	width: 100%;
+	min-width: 250px;
+	flex: 1;
+	text-align: left;
+
+	@include desktop {
+		box-shadow: $shadow-primary;
+		margin: 2rem 4rem 2rem 0.5rem;
+		border-radius: $container-radius;
+		padding: 2rem 4rem;
+	}
+}
+
+// .mb-2 {
+// 	margin-bottom: 8px;
+// }
+
+// .mt-3 {
+// 	margin-top: 16px;
+// }
+
+// .mt-4 {
+// 	margin-top: 24px;
+// }
+
+// .mt-5 {
+// 	margin-top: 32px;
+// }
+
+// .ml-2 {
+// 	margin-left: 8px;
+// }

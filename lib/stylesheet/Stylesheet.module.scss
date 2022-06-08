@@ -1,0 +1,58 @@
+@import '../../styles/imports';
+
+.fluid {
+	padding-right: 16px;
+	padding-left: 16px;
+}
+
+.horizontal {
+	flex-direction: row;
+}
+
+.shadow {
+	box-shadow: $shadow;
+}
+
+.curved {
+	border-radius: 4px;
+}
+
+.rounded {
+	border-radius: 8px;
+}
+
+.round {
+	border-radius: 30px;
+}
+
+.alignCenter {
+	align-items: center;
+}
+
+.alignStart {
+	align-items: flex-start;
+}
+
+.alignEnd {
+	align-items: flex-end;
+}
+
+.justifyCenter {
+	justify-content: center;
+}
+
+.justifyStart {
+	justify-content: flex-start;
+}
+
+.justifyEnd {
+	justify-content: flex-end;
+}
+
+.fit {
+	width: fit-content;
+}
+
+.fill {
+	width: 100%;
+}

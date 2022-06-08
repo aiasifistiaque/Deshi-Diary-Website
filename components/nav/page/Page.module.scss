@@ -1,0 +1,12 @@
+@import '../../../styles/imports';
+
+.container {
+	display: flex;
+	padding: 16px;
+	flex-direction: column;
+	flex: 1;
+	min-height: 100vh;
+	@include desktop {
+		padding: 64px 144px;
+	}
+}

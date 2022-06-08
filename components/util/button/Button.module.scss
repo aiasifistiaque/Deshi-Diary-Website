@@ -1,0 +1,152 @@
+@import '../../../styles/imports';
+
+%buttonUtil {
+	display: inline-flex;
+	cursor: pointer;
+	@include btn-text-unselect;
+	margin: 0.25rem;
+	transition: 0.2s;
+
+	p {
+		font-size: 0.9rem;
+	}
+}
+
+%common {
+	img {
+		width: 22px;
+		height: 22px;
+		margin-right: 4px;
+		object-fit: contain;
+	}
+}
+
+%solidButton {
+	@extend %buttonUtil;
+	@extend %common;
+	background-color: $color-primary;
+	height: 42px;
+	align-items: center;
+	justify-content: center;
+	color: whitesmoke;
+	padding: 0 16px;
+	border-radius: 4px;
+	//min-width: 250px;
+	border: 1px solid $color-primary;
+	font-family: 'Montserrat', sans-serif;
+
+	// @include tab {
+	// 	min-width: 180px;
+	// }
+	@include desktop {
+		&:hover {
+			background-color: darken($color-primary, 10%);
+		}
+	}
+	&:active {
+		background-color: lighten($color-primary, 10%);
+	}
+}
+
+.button {
+	@extend %solidButton;
+	letter-spacing: 0.2px;
+	font-weight: 700;
+	//font-family: 'Space Grotesk', sans-serif;
+}
+
+.small {
+	height: 36px;
+	p {
+		font-size: 0.8rem;
+	}
+}
+
+.disabled {
+	@extend %solidButton;
+	cursor: not-allowed;
+	letter-spacing: 0.2px;
+	font-weight: 700;
+	//font-family: 'Space Grotesk', sans-serif;
+	background-color: #bcbcbc;
+	border: 1px solid #bcbcbc;
+	color: #424242;
+
+	@include desktop {
+		&:hover {
+			background-color: #bcbcbc;
+		}
+	}
+	&:active {
+		background-color: #bcbcbc;
+	}
+}
+
+.secondary {
+	@extend %solidButton;
+	background-color: #eee;
+	color: dodgerblue;
+	letter-spacing: 0.2px;
+	font-weight: 700;
+	border: 1px solid #eee;
+
+	@include desktop {
+		&:hover {
+			background-color: darken(#eee, 10%);
+			border: 1px solid darken(#eee, 10%);
+		}
+	}
+	&:active {
+		background-color: lighten(#eee, 10%);
+		border: 1px solid lighten(#eee, 10%);
+	}
+}
+
+.colorPrimary {
+	color: $color-primary;
+}
+
+.textButton {
+	//@extend %common;
+	@extend %solidButton;
+
+	background-color: transparent;
+	color: $color-link;
+	//padding: 1rem 0;
+	font-family: 'Montserrat', sans-serif;
+	border: none;
+	&:hover {
+		border: none;
+		background-color: transparent;
+	}
+
+	cursor: pointer;
+	p {
+		font-weight: 600;
+	}
+	&:hover {
+		text-decoration-line: underline;
+	}
+}
+
+.outlined {
+	@extend %solidButton;
+	background-color: transparent;
+	color: $color-primary;
+	border: 1px solid $color-primary;
+	p {
+		font-weight: 600;
+	}
+	@include desktop {
+		&:hover {
+			background-color: rgba($color-primary, 0.09);
+		}
+	}
+	&:active {
+		background-color: rgba($color-primary, 0.3);
+	}
+}
+
+.round {
+	border-radius: 30px;
+}
