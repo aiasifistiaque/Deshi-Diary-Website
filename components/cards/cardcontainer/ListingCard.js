@@ -2,8 +2,12 @@ import React from 'react';
 import styles from './CardContainer.module.css';
 import * as util from '../../../lib/functions';
 
-const ListingCard = ({ children }) => {
-	return <div className={styles.listingcard}>{children}</div>;
+const ListingCard = ({ children, p }) => {
+	return (
+		<div className={styles.listingcard} style={{ padding: p || 0 }}>
+			{children}
+		</div>
+	);
 };
 
 export const CardTitle = ({ children, align }) => {
@@ -18,29 +22,43 @@ export const CardTitle = ({ children, align }) => {
 	);
 };
 
-export const CardText = ({ children, align, style, weight }) => {
+export const CardText = ({ children, align, style, weight, size, color }) => {
 	const alignItems = util.alignItems(align);
 
 	const customClass = `${styles.cardTitle} ${alignItems}`;
 
 	return (
-		<div
-			className={customClass}
-			style={{ fontWeight: weight || 400, ...style }}>
-			<p> {children}</p>
+		<div className={customClass} style={{ ...style }}>
+			<p
+				style={{
+					fontWeight: weight || '400',
+					fontSize: size || '1rem',
+					color: color || '#424242',
+				}}>
+				{children}
+			</p>
 		</div>
 	);
 };
 
-export const CardSection = ({ children, align, justify, horizontal, p }) => {
+export const CardSection = ({
+	children,
+	align,
+	justify,
+	horizontal,
+	p,
+	style,
+}) => {
 	const alignItems = util.alignItems(align);
 	const justifyContent = util.justifyContent(justify);
 
-	const customClass = `${styles.cardSection} ${alignItems}  ${justifyContent} 
+	const customClass = `${styles.cardSection} ${alignItems} ${justifyContent} 
     ${horizontal && styles.horizontal}`;
 
 	return (
-		<div className={customClass} style={{ padding: p || '8px `16px' }}>
+		<div
+			className={customClass}
+			style={{ padding: p || '8px `16px', ...style }}>
 			{children}
 		</div>
 	);
@@ -69,16 +87,16 @@ export const CardImage = ({ children, align, fill }) => {
 	const customClass = `${styles.cardImage} ${alignItems}`;
 
 	return (
-		<div className={customClass} style={{ padding: fill ? '16px 0' : 16 }}>
+		<div
+			className={customClass}
+			style={{ padding: fill ? '16px 0' : '16px 24px' }}>
 			<img src={children} alt='img' />
 		</div>
 	);
 };
 
 export const CardBottomButton = ({ children, align, fill }) => {
-	const alignItems = util.alignItems(align);
-
-	const customClass = `${styles.bottomButton} ${alignItems}`;
+	const customClass = `${styles.bottomButton}`;
 
 	return (
 		<div className={customClass}>

@@ -1,0 +1,49 @@
+@import '../../../styles/imports';
+
+.container {
+	margin: 16px 0;
+	@include desktop {
+		margin: 32px 0;
+	}
+	.details {
+		display: flex;
+		align-items: center;
+		margin: 8px 0;
+
+		.image {
+			img {
+				height: 4rem;
+				width: 4rem;
+				object-fit: contain;
+				border-radius: 999px;
+			}
+			margin-right: 16px;
+		}
+		.text {
+			.stars {
+				display: flex;
+				gap: 2px;
+				margin-bottom: 8px;
+				img {
+					width: 8px;
+					height: auto;
+					object-fit: contain;
+				}
+			}
+			.user {
+				p {
+					font-size: 0.9rem;
+					color: $color-primary;
+					font-weight: 600;
+				}
+				h6 {
+					font-size: 1.05rem;
+					font-weight: 600;
+					line-height: 1.2;
+				}
+			}
+		}
+	}
+	.review {
+	}
+}

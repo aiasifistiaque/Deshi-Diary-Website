@@ -66,68 +66,61 @@
 }
 
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 32px;
-}
-
-.container .btn {
-  padding: 16px 32px;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-top: 2px solid #eef0f3;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  gap: 0px;
+  margin: 16px 0;
 }
 
 @media (min-width: 1008px) {
-  .container .btn {
-    padding: 16px 64px;
+  .container {
+    margin: 32px 0;
   }
 }
 
-.container .btn p {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #b2b1b1;
+.container .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 8px 0;
 }
 
-.container .btn img {
-  width: 24px;
+.container .details .image {
+  margin-right: 16px;
+}
+
+.container .details .image img {
+  height: 4rem;
+  width: 4rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 999px;
+}
+
+.container .details .text .stars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+.container .details .text .stars img {
+  width: 8px;
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
-.container .btn:hover {
-  gap: 4px;
+.container .details .text .user p {
+  font-size: 0.9rem;
+  color: #03989e;
+  font-weight: 600;
 }
 
-.container .btn:hover p {
-  font-size: 0.91rem;
+.container .details .text .user h6 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.2;
 }
-/*# sourceMappingURL=ViewMore.module.css.map */
+/*# sourceMappingURL=Review.module.css.map */

@@ -69,65 +69,85 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: whitesmoke;
+  padding: 32px 16px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 32px;
-}
-
-.container .btn {
-  padding: 16px 32px;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-top: 2px solid #eef0f3;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  gap: 0px;
+  margin-top: 64px;
 }
 
 @media (min-width: 1008px) {
-  .container .btn {
-    padding: 16px 64px;
+  .container {
+    margin-top: 128px;
   }
 }
 
-.container .btn p {
+@media (min-width: 1008px) {
+  .container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 64px 144px;
+  }
+}
+
+.container .address {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.container .links {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (min-width: 1008px) {
+  .container .links {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    gap: 4rem;
+  }
+}
+
+.section {
+  margin: 1rem 0;
+  margin-right: 32px;
+}
+
+.section h6 {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 1008px) {
+  .section h6 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.item {
+  margin-bottom: 0.5rem;
+}
+
+.item a {
   font-size: 0.9rem;
-  font-weight: 700;
-  color: #b2b1b1;
 }
 
-.container .btn img {
-  width: 24px;
-  height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+@media (min-width: 1008px) {
+  .item {
+    margin-bottom: 0.75em;
+  }
 }
-
-.container .btn:hover {
-  gap: 4px;
-}
-
-.container .btn:hover p {
-  font-size: 0.91rem;
-}
-/*# sourceMappingURL=ViewMore.module.css.map */
+/*# sourceMappingURL=Footer.module.css.map */

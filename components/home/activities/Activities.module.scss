@@ -1,0 +1,76 @@
+@import '../../../styles/imports';
+
+.cards {
+	display: flex;
+	flex-direction: column;
+	margin: 0 0 0 0;
+}
+
+%big-image {
+	img {
+		width: 100%;
+		height: 300px;
+		object-fit: cover;
+		object-position: center;
+		@include desktop {
+			height: 400px;
+		}
+	}
+}
+
+.card {
+	margin: 16px 0;
+	.title {
+		display: flex;
+		align-items: center;
+
+		a {
+			color: $color-primary;
+			padding: 0;
+			font-weight: 600;
+			font-size: 0.9rem;
+		}
+		p {
+			margin: 0;
+			padding: 0;
+			margin: 0 4px;
+			font-weight: 500;
+			font-size: 0.9rem;
+		}
+	}
+	.main {
+		margin: 0.5rem 0;
+		.images {
+			display: flex;
+			width: 100%;
+			gap: 8px;
+
+			.left {
+				width: 100%;
+
+				@extend %big-image;
+			}
+			.smallRight {
+				width: 50%;
+				height: 300px;
+				@include desktop {
+					height: 400px;
+				}
+
+				@extend %big-image;
+
+				img {
+					height: 148px;
+					@include desktop {
+						height: 198px;
+					}
+				}
+			}
+			.right {
+				width: 100%;
+
+				@extend %big-image;
+			}
+		}
+	}
+}

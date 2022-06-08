@@ -74,6 +74,13 @@
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 100%;
+  margin-top: 16px;
+}
+
+@media (min-width: 1008px) {
+  .container {
+    margin-top: 32px;
+  }
 }
 
 .container .cards {

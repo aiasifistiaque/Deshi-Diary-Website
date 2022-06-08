@@ -1,0 +1,52 @@
+@import '../../../styles/imports';
+
+.container {
+	display: flex;
+	background-color: whitesmoke;
+	padding: 32px 16px;
+	flex-direction: column;
+	margin-top: 64px;
+	@include desktop {
+		margin-top: 128px;
+	}
+	@include desktop {
+		flex-direction: row;
+		padding: 64px 144px;
+	}
+	.address {
+		flex: 1;
+	}
+	.links {
+		flex: 2;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		@include desktop {
+			justify-content: flex-end;
+			gap: 4rem;
+		}
+	}
+}
+
+.section {
+	margin: 1rem 0;
+	margin-right: 32px;
+
+	h6 {
+		margin-bottom: 0.5rem;
+		@include desktop {
+			font-size: 1.1rem;
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+.item {
+	margin-bottom: 0.5rem;
+	a {
+		font-size: 0.9rem;
+	}
+	@include desktop {
+		margin-bottom: 0.75em;
+	}
+}

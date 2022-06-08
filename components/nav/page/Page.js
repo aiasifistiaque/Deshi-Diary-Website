@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import styles from './Page.module.css';
 import Navbar from '../header/Navbar';
+import Footer from '../footer/Footer';
 
 const Page = ({ title, children, landing }) => {
 	return (
@@ -16,6 +17,7 @@ const Page = ({ title, children, landing }) => {
 
 			<Navbar landing={landing} />
 			<main className={styles.container}>{children}</main>
+			<Footer />
 		</div>
 	);
 };
