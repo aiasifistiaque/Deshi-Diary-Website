@@ -1,0 +1,44 @@
+@import '../../../styles/imports';
+
+.container {
+	background-color: #dfe4ee;
+	width: 100%;
+	height: 350px;
+	//background-image: url('../../public/bg.jpg');
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 32px 16px 42px 16px;
+	@include desktop {
+		padding: 144px 64px;
+		width: 40%;
+		height: 100%;
+		justify-content: center;
+	}
+	.image {
+		margin-bottom: 1rem;
+		@include desktop {
+			margin-bottom: 3rem;
+		}
+		img {
+			width: 230px;
+			height: auto;
+			object-fit: contain;
+			@include desktop {
+				width: 420px;
+			}
+		}
+	}
+	.text {
+		h3 {
+			font-size: 1.2rem;
+			line-height: 1.4;
+			text-align: center;
+			@include desktop {
+				font-size: 2rem;
+				text-align: left;
+			}
+		}
+	}
+}

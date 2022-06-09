@@ -4,7 +4,7 @@ import styles from './Page.module.css';
 import Navbar from '../header/Navbar';
 import Footer from '../footer/Footer';
 
-const Page = ({ title, children, landing }) => {
+const Page = ({ title, children, landing, auth }) => {
 	return (
 		<div>
 			<Head>
@@ -15,9 +15,9 @@ const Page = ({ title, children, landing }) => {
 				/>
 			</Head>
 
-			<Navbar landing={landing} />
-			<main className={styles.container}>{children}</main>
-			<Footer />
+			{!auth && <Navbar landing={landing} />}
+			<main className={auth ? styles.auth : styles.container}>{children}</main>
+			{!auth && <Footer />}
 		</div>
 	);
 };

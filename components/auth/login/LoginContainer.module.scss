@@ -1,0 +1,55 @@
+@import '../../../styles/imports';
+
+.container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	//align-items: center;
+	justify-content: space-evenly;
+	padding: 24px;
+	align-items: center;
+
+	@include desktop {
+		padding: 64px;
+		max-width: 550px;
+		margin: 0 auto;
+	}
+	.main {
+		display: flex;
+		justify-content: space-around;
+		flex-direction: column;
+		.title {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			margin: 16px 0;
+			text-align: center;
+			@include desktop {
+				align-items: flex-start;
+				text-align: start;
+			}
+			p {
+				color: rgb(180, 179, 179);
+				font-weight: 500;
+			}
+		}
+		.body {
+			width: 100%;
+			margin: 32px 0;
+		}
+	}
+
+	.footer {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		@include desktop {
+			justify-content: center;
+		}
+		a {
+			color: $color-primary;
+			margin-left: 4px;
+		}
+	}
+}

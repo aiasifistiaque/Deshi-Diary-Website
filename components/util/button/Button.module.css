@@ -74,7 +74,7 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  margin: 0.25rem;
+  margin: 0.25rem 0;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
@@ -120,6 +120,10 @@
 .button {
   letter-spacing: 0.2px;
   font-weight: 700;
+}
+
+.button p {
+  color: whitesmoke;
 }
 
 .small {
@@ -217,5 +221,9 @@
 
 .round {
   border-radius: 30px;
+}
+
+.fill {
+  width: 100%;
 }
 /*# sourceMappingURL=Button.module.css.map */

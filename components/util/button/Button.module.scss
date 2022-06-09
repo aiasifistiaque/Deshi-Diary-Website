@@ -4,7 +4,7 @@
 	display: inline-flex;
 	cursor: pointer;
 	@include btn-text-unselect;
-	margin: 0.25rem;
+	margin: 0.25rem 0;
 	transition: 0.2s;
 
 	p {
@@ -31,13 +31,9 @@
 	color: whitesmoke;
 	padding: 0 16px;
 	border-radius: 4px;
-	//min-width: 250px;
 	border: 1px solid $color-primary;
 	font-family: 'Montserrat', sans-serif;
 
-	// @include tab {
-	// 	min-width: 180px;
-	// }
 	@include desktop {
 		&:hover {
 			background-color: darken($color-primary, 10%);
@@ -53,6 +49,9 @@
 	letter-spacing: 0.2px;
 	font-weight: 700;
 	//font-family: 'Space Grotesk', sans-serif;
+	p {
+		color: whitesmoke;
+	}
 }
 
 .small {
@@ -149,4 +148,8 @@
 
 .round {
 	border-radius: 30px;
+}
+
+.fill {
+	width: 100%;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Auth.module.css';
+import styles from './Input.module.css';
 
 const Input = ({
 	label,
@@ -47,9 +47,12 @@ const Input = ({
 		);
 	return (
 		<div className={styles.input}>
-			<label>
-				{label} {required && <span style={{ color: 'red' }}>*</span>}
-			</label>
+			{label && (
+				<label>
+					{label} {required && <span style={{ color: 'red' }}>*</span>}
+				</label>
+			)}
+
 			<input
 				type={type ? type : password ? 'password' : 'text'}
 				placeholder={placeholder}

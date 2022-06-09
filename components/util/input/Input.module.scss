@@ -39,23 +39,27 @@
 	select {
 		margin: 0;
 		height: 42px;
-		width: 100%;
 		border: none;
 		outline: none;
-		width: 400px;
-		//background-color: #eeecec;
-		background-color: $color-input;
+
+		background-color: $color-light;
 		justify-content: center;
 		padding: 0 0.75rem;
 		border-radius: 4px;
 		border: 1px solid $color-input-border;
+		width: 100%;
+
+		@include desktop {
+			width: 100%;
+		}
 
 		&::placeholder {
 			font-size: 14px;
-			font-weight: 500;
-			font-family: 'Space Grotesk', sans-serif;
-			//padding: 0 0.25rem;
+			font-weight: 400;
+			font-family: 'Montserrat', sans-serif;
 			margin: 0;
+			padding: 0;
+			letter-spacing: 0.5px;
 		}
 
 		&:focus {
@@ -72,9 +76,7 @@
 .input {
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 1.5em;
-	//width: 100%;
-	//max-width: 300px;
+	margin-bottom: 1em;
 
 	label {
 		font-size: 14px;

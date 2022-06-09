@@ -1,0 +1,12 @@
+@import '../../../styles/imports';
+
+.container {
+	display: flex;
+	min-height: 100vh;
+	flex: 1;
+	flex-direction: column;
+
+	@include desktop {
+		flex-direction: row;
+	}
+}

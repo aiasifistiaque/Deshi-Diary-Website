@@ -15,10 +15,10 @@ const Navbar = ({ landing }) => {
 			</div>
 
 			<div className={styles.right}>
-				<Button small round text>
+				<Button small round text href='/login'>
 					Login
 				</Button>
-				<Button small round secondary>
+				<Button small round secondary href='/signup'>
 					Sign Up
 				</Button>
 			</div>
