@@ -4,6 +4,7 @@ import LoginContainer from '../auth/login/LoginContainer';
 import Page from '../nav/page/Page';
 import Button from '../util/button/Button';
 import Input from '../util/input/Input';
+import { Mt } from '../util/margins/Margins';
 
 const Login = () => {
 	const [email, setEmail] = useState();
@@ -26,6 +27,8 @@ const Login = () => {
 						onChange={e => setPassword(e)}
 						password
 					/>
+					<Mt size={24} />
+
 					<Button fill>Login</Button>
 				</LoginContainer>
 			</AuthContainer>

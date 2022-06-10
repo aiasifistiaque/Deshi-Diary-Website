@@ -21,13 +21,17 @@ $border: 1px solid rgba(#aeaeae, 0.5);
 	flex: 1;
 	align-items: flex-start;
 
-	min-width: 350px;
+	min-width: 300px;
 	border: $border;
 	border-radius: 2px;
 	max-width: 100%;
 	box-sizing: border-box;
+	max-width: 400px;
+	margin: 0 auto;
 	@include desktop {
-		max-width: 350px;
+		//min-width: 300px;
+		min-width: 330px;
+		max-width: 330px;
 	}
 }
 

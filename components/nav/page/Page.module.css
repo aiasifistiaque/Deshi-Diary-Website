@@ -78,11 +78,13 @@
       -ms-flex: 1;
           flex: 1;
   min-height: 100vh;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
 @media (min-width: 1008px) {
   .container {
-    padding: 64px 144px;
+    padding: 64px 16px;
   }
 }
 

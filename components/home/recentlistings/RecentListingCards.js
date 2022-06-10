@@ -67,8 +67,8 @@ const RecentListingCards = () => {
 								style={{
 									borderLeft: '1px solid rgba(174,174,174,.5)',
 									borderRight: '1px solid rgba(174,174,174,.5)',
-									padding: '0 2px',
-									minWidth: 150,
+									padding: '0 1px',
+									minWidth: 120,
 								}}>
 								{item?.reviews && item.reviews} Reviews
 							</CardText>

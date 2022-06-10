@@ -4,6 +4,7 @@ import LoginContainer from '../auth/login/LoginContainer';
 import Page from '../nav/page/Page';
 import Button from '../util/button/Button';
 import Input from '../util/input/Input';
+import { Mt } from '../util/margins/Margins';
 
 const Signup = () => {
 	const [name, setName] = useState();
@@ -18,11 +19,7 @@ const Signup = () => {
 					type='signup'
 					title='Sign Up'
 					subtitle='Lorem ipsum dolor sit amet, consectetur adipiscing elit, ipsum dolor sit amet.'>
-					<Input
-						placeholder='Email address'
-						value={name}
-						onChange={e => setName(e)}
-					/>
+					<Input placeholder='Name' value={name} onChange={e => setName(e)} />
 					<Input
 						placeholder='Email address'
 						value={email}
@@ -40,7 +37,10 @@ const Signup = () => {
 						onChange={e => setConfirm(e)}
 						password
 					/>
-					<Button fill>Sign Up</Button>
+					<Mt size={24} />
+					<Button fill rouned>
+						Sign Up
+					</Button>
 				</LoginContainer>
 			</AuthContainer>
 		</Page>
