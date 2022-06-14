@@ -5,7 +5,7 @@ import Input from '../../util/input/Input';
 import RadioButton from '../../util/radio/RadioButton';
 import { SectionInput } from '../../util/section/Section';
 import styles from './RateForm.module.css';
-import StarRate from '../../util/star-rate/starRate.js';
+import StarRate from '../../util/star-rate/StarRate.js';
 
 const RateForm = () => {
 	const [title, setTitle] = useState();
