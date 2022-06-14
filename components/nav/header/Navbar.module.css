@@ -76,12 +76,14 @@
   height: 4rem;
   padding: 0 16px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: white;
 }
 
 @media (min-width: 1008px) {
   .landing,
   .nav {
     padding: 0 32px;
+    background-color: transparent;
   }
 }
 
@@ -89,6 +91,38 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+.middle {
+  display: none;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-right: 44px;
+}
+
+@media (min-width: 1008px) {
+  .middle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.middle img {
+  height: 0;
+  -o-object-fit: contain;
+     object-fit: contain;
+  cursor: pointer;
+}
+
+@media (min-width: 1008px) {
+  .middle img {
+    height: 44px;
+  }
 }
 
 .right {

@@ -7,13 +7,34 @@
 	height: 4rem;
 	padding: 0 16px;
 	border-bottom: 1px solid rgba(black, 0.05);
+	background-color: white;
 	@include desktop {
 		padding: 0 32px;
+		background-color: transparent;
 	}
 }
 
 .left {
 	flex: 1;
+}
+
+.middle {
+	display: none;
+	flex: 1;
+	justify-content: center;
+	padding-right: 44px;
+	@include desktop {
+		display: flex;
+	}
+
+	img {
+		height: 0;
+		object-fit: contain;
+		cursor: pointer;
+		@include desktop {
+			height: 44px;
+		}
+	}
 }
 
 .right {

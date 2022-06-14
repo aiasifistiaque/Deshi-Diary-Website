@@ -125,11 +125,11 @@
   height: 42px;
   border: none;
   outline: none;
-  background-color: #eef0f3;
+  background-color: #f5f5f5;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 0 0.75rem;
+  padding: 0 0.5rem;
   border-radius: 4px;
   border: 1px solid transparent;
   width: 100%;
@@ -194,7 +194,7 @@
 .input input:focus,
 .input textarea:focus,
 .input select:focus {
-  border: 1px solid #03989e;
+  border: 1px solid rgba(66, 66, 66, 0.5);
 }
 
 
@@ -214,14 +214,15 @@
 }
 
 .input label {
-  font-size: 14px;
-  margin: 0.25rem 0 0.25rem 0;
-  font-weight: 600;
+  font-size: 13px;
+  margin: 0.25rem 0 0.4rem 0;
+  font-weight: 700;
   text-transform: capitalize;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  color: #424242;
 }
 
 .input textarea {

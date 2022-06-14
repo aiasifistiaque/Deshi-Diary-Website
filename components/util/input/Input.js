@@ -16,6 +16,8 @@ const Input = ({
 	data,
 	objectSelect,
 	other,
+	textArea,
+	optional,
 }) => {
 	if (select)
 		return (
@@ -49,7 +51,14 @@ const Input = ({
 		<div className={styles.input}>
 			{label && (
 				<label>
-					{label} {required && <span style={{ color: 'red' }}>*</span>}
+					{label} {required && <span style={{ color: 'red' }}>*</span>}{' '}
+					{optional && (
+						<span
+							style={{
+								color: '#b1b1b1',
+								fontWeight: 600,
+							}}>{`(Optional)`}</span>
+					)}
 				</label>
 			)}
 
@@ -62,6 +71,7 @@ const Input = ({
 				required={required ? true : false}
 				disabled={disabled ? true : false}
 				min={min}
+				style={{ paddingBottom: textArea ? 200 : 0 }}
 			/>
 		</div>
 	);

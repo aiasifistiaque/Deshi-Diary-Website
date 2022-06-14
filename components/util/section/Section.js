@@ -1,12 +1,18 @@
 import React from 'react';
 import styles from './Section.module.css';
 
-const Section = ({ children, title }) => {
+const Section = ({ children, title, subheading, subtitle, top }) => {
 	return (
-		<div className={styles.container}>
+		<div className={top ? styles.top : styles.container}>
 			{title && (
 				<div className={styles.title}>
 					<h3>{title}</h3>
+				</div>
+			)}
+			{subheading && (
+				<div className={styles.title}>
+					<h5>{subheading}</h5>
+					{subtitle && <p>{subtitle}</p>}
 				</div>
 			)}
 			{children}
@@ -57,4 +63,7 @@ export const SectionList = ({ children, icon }) => {
 	);
 };
 
+export const SectionInput = ({ children }) => {
+	return <div className={styles.sectionInputs}>{children}</div>;
+};
 export default Section;

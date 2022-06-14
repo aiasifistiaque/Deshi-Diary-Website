@@ -83,7 +83,7 @@ const RecentListingCards = () => {
 						<CardSection>
 							<CardText align='start'>{item?.address && item.address}</CardText>
 						</CardSection>
-						<CardBottomButton>Read More</CardBottomButton>
+						<CardBottomButton href='/b/1'>Read More</CardBottomButton>
 					</ListingCard>
 				))}
 			</CardContainer>

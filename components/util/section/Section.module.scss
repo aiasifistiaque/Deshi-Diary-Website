@@ -1,9 +1,32 @@
 @import '../../../styles/imports';
 
+.top {
+	background-color: white;
+	box-shadow: none;
+	padding: 16px;
+	margin: -16px -16px 0 -16px;
+	@include desktop {
+		margin: 0 0 0 0;
+		box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+		border-radius: 8px;
+		padding: 32px;
+	}
+	.title {
+		margin-bottom: 0.5rem;
+		p {
+			color: #b1b1b1;
+			font-size: 0.8rem;
+			font-weight: 600;
+			max-width: 400px;
+			line-height: 1.4;
+		}
+	}
+}
+
 .container {
 	background-color: white;
 	box-shadow: none;
-	padding: 24px;
+	padding: 16px;
 	margin: 8px -16px 0 -16px;
 	@include desktop {
 		margin: 16px 0 0 0;
@@ -12,7 +35,14 @@
 		padding: 32px;
 	}
 	.title {
-		margin-bottom: 1rem;
+		margin-bottom: 0.5rem;
+		p {
+			color: #b1b1b1;
+			font-size: 0.8rem;
+			font-weight: 600;
+			max-width: 400px;
+			line-height: 1.4;
+		}
 	}
 }
 
@@ -88,5 +118,13 @@
 			font-size: 1rem;
 		}
 		font-weight: 500;
+	}
+}
+
+.sectionInputs {
+	margin: 1rem 0;
+	width: 100%;
+	@include desktop {
+		width: 50%;
 	}
 }

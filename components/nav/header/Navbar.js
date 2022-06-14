@@ -9,10 +9,18 @@ const Navbar = ({ landing }) => {
 	return (
 		<div className={landing ? styles.landing : styles.nav}>
 			<div className={styles.left}>
-				<Button small round secondary icon='add'>
+				<Button small round secondary icon='add' href='/add-listing'>
 					ADD A LISTING
 				</Button>
 			</div>
+
+			{!landing && (
+				<div className={styles.middle}>
+					<Link href='/'>
+						<img src='/logo.png' alt='Deshi Diary' />
+					</Link>
+				</div>
+			)}
 
 			<div className={styles.right}>
 				<Button small round text href='/login'>

@@ -42,9 +42,9 @@
 		border: none;
 		outline: none;
 
-		background-color: $color-light;
+		background-color: #f5f5f5;
 		justify-content: center;
-		padding: 0 0.75rem;
+		padding: 0 0.5rem;
 		border-radius: 4px;
 		border: 1px solid $color-input-border;
 		width: 100%;
@@ -64,7 +64,7 @@
 		}
 
 		&:focus {
-			border: 1px solid $color-primary;
+			border: 1px solid rgba(#424242, 0.5);
 			//outline: none;
 		}
 	}
@@ -80,11 +80,12 @@
 	margin-bottom: 1em;
 
 	label {
-		font-size: 14px;
-		margin: 0.25rem 0 0.25rem 0;
-		font-weight: 600;
+		font-size: 13px;
+		margin: 0.25rem 0 0.4rem 0;
+		font-weight: 700;
 		text-transform: capitalize;
 		@include btn-text-unselect;
+		color: #424242;
 	}
 	@extend %inputPartial;
 	textarea {

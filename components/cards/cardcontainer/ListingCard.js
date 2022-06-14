@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './CardContainer.module.css';
 import * as util from '../../../lib/functions';
+import Link from 'next/link';
 
 const ListingCard = ({ children, p }) => {
 	return (
@@ -95,8 +96,17 @@ export const CardImage = ({ children, align, fill }) => {
 	);
 };
 
-export const CardBottomButton = ({ children, align, fill }) => {
+export const CardBottomButton = ({ children, align, fill, href }) => {
 	const customClass = `${styles.bottomButton}`;
+
+	if (href)
+		return (
+			<Link href={href}>
+				<div className={customClass}>
+					<p>{children}</p>
+				</div>
+			</Link>
+		);
 
 	return (
 		<div className={customClass}>
