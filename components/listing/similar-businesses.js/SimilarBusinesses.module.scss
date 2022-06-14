@@ -1,0 +1,60 @@
+@import '../../../styles/imports';
+
+.container {
+	display: flex;
+	gap: 1rem;
+	width: 100%;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	.item {
+		display: flex;
+		width: 45%;
+		gap: 0.5rem;
+		flex-direction: column;
+		@include desktop {
+			gap: 1rem;
+		}
+
+		@include desktop {
+			flex-direction: row;
+		}
+		.image {
+			img {
+				width: 100%;
+				border-radius: 2px;
+				@include desktop {
+					width: 120px;
+				}
+				height: 100px;
+				object-fit: cover;
+			}
+		}
+		.description {
+			.stars {
+				display: flex;
+				gap: 2px;
+				margin: 4px 0;
+				img {
+					width: 12px;
+					height: auto;
+					object-fit: contain;
+				}
+				p {
+					margin-left: 0.25rem;
+					font-size: 0.7rem;
+					font-weight: 600;
+					color: #b1b1b1;
+				}
+			}
+			p {
+				font-size: 0.8rem;
+				line-height: 1.5;
+				font-weight: 400;
+				@include desktop {
+					font-size: 0.9rem;
+				}
+			}
+		}
+	}
+}

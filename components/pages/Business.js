@@ -4,6 +4,7 @@ import BusinessName from '../listing/business-name/BusinessName';
 import ListingPhotos from '../listing/listing-photos/ListingPhotos';
 import ListingReview from '../listing/listing-reviews/ListingReviews';
 import RatingSummary from '../listing/rating-summary/RatingSummary';
+import SimilarBusinesses from '../listing/similar-businesses.js/SimilarBusinesses';
 import Page from '../nav/page/Page';
 import Container from '../util/container/Container';
 import Section, {
@@ -98,6 +99,7 @@ const data = {
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
 		},
 	],
+	similar: [],
 };
 
 const Business = ({ query }) => {
@@ -167,6 +169,9 @@ const Business = ({ query }) => {
 				{reviews.length > 0 &&
 					reviews.map((review, i) => <ListingReview key={i} review={review} />)}
 				<ViewMore onClick={onClick} />
+			</Section>
+			<Section title='Similar Businesses'>
+				<SimilarBusinesses />
 			</Section>
 		</Page>
 	);
