@@ -6,7 +6,10 @@ import Footer from '../footer/Footer';
 
 const Page = ({ title, children, landing, auth }) => {
 	return (
-		<div>
+		<div
+			style={{
+				backgroundColor: auth ? 'white' : landing ? 'white' : '#f9f9f9',
+			}}>
 			<Head>
 				<title>{title ? title : 'Deshi Diary'}</title>
 				<meta
@@ -16,7 +19,12 @@ const Page = ({ title, children, landing, auth }) => {
 			</Head>
 
 			{!auth && <Navbar landing={landing} />}
-			<main className={auth ? styles.auth : styles.container}>{children}</main>
+			<main
+				className={
+					auth ? styles.auth : landing ? styles.landing : styles.container
+				}>
+				{children}
+			</main>
 			{!auth && <Footer />}
 		</div>
 	);

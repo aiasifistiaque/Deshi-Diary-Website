@@ -6,6 +6,7 @@
 	align-items: center;
 	height: 4rem;
 	padding: 0 16px;
+	border-bottom: 1px solid rgba(black, 0.05);
 	@include desktop {
 		padding: 0 32px;
 	}

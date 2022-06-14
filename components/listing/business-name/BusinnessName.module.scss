@@ -1,0 +1,44 @@
+@import '../../../styles/imports';
+
+.container {
+	margin-bottom: 0rem;
+	.title {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+		.open {
+			color: $color-primary;
+			p {
+				color: inherit;
+				font-size: 0.9rem;
+				font-weight: 600;
+			}
+		}
+		.closed {
+			color: $color-danger;
+			p {
+				color: inherit;
+				font-size: 0.9rem;
+				font-weight: 600;
+			}
+		}
+	}
+	.tags {
+		display: flex;
+		gap: 0.5rem;
+	}
+	.bottom {
+		display: flex;
+		align-items: center;
+
+		.rating {
+			display: flex;
+			gap: 0.25rem;
+			img {
+				width: 18px;
+				height: auto;
+				object-fit: contain;
+			}
+		}
+	}
+}

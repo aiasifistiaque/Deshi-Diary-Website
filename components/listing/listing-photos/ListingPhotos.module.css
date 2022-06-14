@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+.fluid {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.horizontal {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.shadow {
+  -webkit-box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+          box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+}
+
+.curved {
+  border-radius: 4px;
+}
+
+.rounded {
+  border-radius: 8px;
+}
+
+.round {
+  border-radius: 30px;
+}
+
+.alignCenter {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.alignStart {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.alignEnd {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.justifyCenter {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.justifyStart {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.justifyEnd {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.container .images .left img, .container .images .smallRight img, .container .images .right img {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+@media (min-width: 1008px) {
+  .container .images .left img, .container .images .smallRight img, .container .images .right img {
+    height: 400px;
+  }
+}
+
+.container {
+  margin: 0.5rem 0;
+  width: 100%;
+}
+
+.container .images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  gap: 8px;
+}
+
+.container .images .left {
+  width: 100%;
+}
+
+.container .images .smallRight {
+  width: 50%;
+  height: 300px;
+}
+
+@media (min-width: 1008px) {
+  .container .images .smallRight {
+    height: 400px;
+  }
+}
+
+.container .images .smallRight img {
+  height: 148px;
+}
+
+@media (min-width: 1008px) {
+  .container .images .smallRight img {
+    height: 198px;
+  }
+}
+
+.container .images .right {
+  width: 100%;
+}
+/*# sourceMappingURL=ListingPhotos.module.css.map */

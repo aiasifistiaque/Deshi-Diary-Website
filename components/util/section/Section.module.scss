@@ -1,0 +1,92 @@
+@import '../../../styles/imports';
+
+.container {
+	background-color: white;
+	box-shadow: none;
+	padding: 24px;
+	margin: 16px -16px;
+	@include desktop {
+		margin: 16px 0;
+		box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+		border-radius: 8px;
+		padding: 32px;
+	}
+	.title {
+		margin-bottom: 1rem;
+	}
+}
+
+.item {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+	@include desktop {
+		margin-bottom: 1.5rem;
+	}
+	.title {
+		flex: 1;
+		h6 {
+			line-height: 1.5;
+			margin: 0;
+			padding: 0;
+		}
+		margin-bottom: 0.5rem;
+		@include desktop {
+			margin-bottom: 0;
+		}
+	}
+	.value {
+		flex: 3;
+		display: flex;
+		gap: 0.25rem;
+		flex-wrap: wrap;
+	}
+	a {
+		color: dodgerblue;
+		font-weight: 500;
+	}
+	p {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		img {
+			width: 16px;
+			height: auto;
+			object-fit: contain;
+			margin-right: 0.5rem;
+		}
+	}
+	@include desktop {
+		flex-direction: row;
+	}
+}
+
+.lists {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.list {
+	display: flex;
+	align-items: center;
+	width: 50%;
+	@include desktop {
+		width: 30%;
+	}
+	margin-bottom: 1rem;
+	img {
+		width: 18px;
+		height: auto;
+		object-fit: contain;
+		margin-right: 0.5rem;
+	}
+
+	p {
+		font-size: 0.9rem;
+
+		@include desktop {
+			font-size: 1rem;
+		}
+		font-weight: 500;
+	}
+}

@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+.fluid {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.horizontal {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.shadow {
+  -webkit-box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+          box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+}
+
+.curved {
+  border-radius: 4px;
+}
+
+.rounded {
+  border-radius: 8px;
+}
+
+.round {
+  border-radius: 30px;
+}
+
+.alignCenter {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.alignStart {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.alignEnd {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.justifyCenter {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.justifyStart {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.justifyEnd {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.container {
+  margin: 16px 0;
+  width: 100%;
+}
+
+@media (min-width: 1008px) {
+  .container {
+    margin: 16px 0;
+    width: 65%;
+    margin-bottom: 32px;
+  }
+}
+
+.container .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 8px 0;
+}
+
+.container .details .image {
+  margin-right: 16px;
+}
+
+.container .details .image img {
+  height: 4rem;
+  width: 4rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 999px;
+}
+
+.container .details .text .stars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+.container .details .text .stars img {
+  width: 8px;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.container .details .text .user p {
+  font-size: 0.9rem;
+  color: #03989e;
+  font-weight: 600;
+}
+
+.container .details .text .user h6 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.container .review .date p {
+  font-size: 0.65rem;
+  color: #b2b1b1;
+  font-weight: 700;
+}
+
+.container .review p {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.container .review .comments {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 1rem;
+}
+
+.container .review .comments a {
+  color: dodgerblue;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+/*# sourceMappingURL=Review.module.css.map */
