@@ -1,0 +1,30 @@
+@import '../../../styles/imports';
+
+.container {
+	width: 100%;
+	.header {
+		display: flex;
+		margin-bottom: 0rem;
+		justify-content: space-between;
+		flex: 1;
+		flex-direction: column;
+		gap: 1rem;
+
+		@include desktop {
+			flex-direction: row;
+			margin-bottom: 0.5rem;
+		}
+		h5 {
+			text-transform: capitalize;
+		}
+		.select {
+			h6 {
+				padding-bottom: 1.5rem;
+			}
+			display: flex;
+			justify-content: space-between;
+			gap: 1rem;
+			align-items: center;
+		}
+	}
+}

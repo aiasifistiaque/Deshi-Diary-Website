@@ -1,0 +1,46 @@
+@import '../../../styles/imports';
+
+.container {
+	margin: 0.5rem 0;
+	label {
+		font-size: 13px;
+		margin: 0.25rem 0 0.4rem 0;
+		font-weight: 700;
+		text-transform: capitalize;
+		@include btn-text-unselect;
+		color: #424242;
+	}
+	.options {
+		margin: 0.5rem 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+		.option {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+			.select {
+				cursor: pointer;
+				height: 14px;
+				width: 14px;
+				border: 1.5px solid #424242;
+				border-radius: 99px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				.selected {
+					height: 8px;
+					width: 8px;
+					background-color: $color-primary;
+					border-radius: 99px;
+				}
+			}
+
+			p {
+				font-size: 0.9rem;
+				font-weight: 700;
+			}
+		}
+	}
+}

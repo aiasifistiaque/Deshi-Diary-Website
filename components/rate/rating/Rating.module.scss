@@ -1,0 +1,13 @@
+@import '../../../styles/imports';
+
+.container {
+	display: flex;
+	align-items: center;
+	gap: 3px;
+	margin: 0.25rem 0 0.5rem 0;
+	img {
+		width: 14px;
+		height: auto;
+		object-fit: contain;
+	}
+}

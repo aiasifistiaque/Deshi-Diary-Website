@@ -1,0 +1,12 @@
+@import '../../../styles/imports';
+
+.container {
+	label {
+		font-size: 13px;
+		margin: 0.25rem 0 0.4rem 0;
+		font-weight: 700;
+		text-transform: capitalize;
+		@include btn-text-unselect;
+		color: #424242;
+	}
+}

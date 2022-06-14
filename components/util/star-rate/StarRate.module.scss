@@ -1,0 +1,44 @@
+@import '../../../styles/imports';
+
+.rate {
+	margin: 0.5rem 0 1.5rem 0;
+	label {
+		font-size: 13px;
+		margin: 0.25rem 0 0.4rem 0;
+		font-weight: 700;
+		text-transform: capitalize;
+		@include btn-text-unselect;
+		color: #424242;
+	}
+	.stars {
+		display: flex;
+		gap: 0.5rem;
+		margin: 0.5rem 0 1rem 0;
+		align-items: center;
+		.star {
+			img {
+				width: 24px;
+				height: auto;
+				object-fit: contain;
+				cursor: pointer;
+			}
+		}
+		.label {
+			margin-left: 8px;
+			background-color: $color-light;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 4px 8px 4px 16px;
+			border-top-left-radius: 200px;
+			border-bottom-left-radius: 200px;
+
+			p {
+				color: dodgerblue;
+				font-weight: 700;
+				font-size: 0.7rem;
+				line-height: 1.5;
+			}
+		}
+	}
+}

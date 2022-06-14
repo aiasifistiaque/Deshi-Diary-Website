@@ -18,13 +18,16 @@ const Input = ({
 	other,
 	textArea,
 	optional,
+	radio,
 }) => {
 	if (select)
 		return (
 			<div className={styles.input}>
-				<label>
-					{label} {required && <span style={{ color: 'red' }}>*</span>}
-				</label>
+				{label && (
+					<label>
+						{label} {required && <span style={{ color: 'red' }}>*</span>}
+					</label>
+				)}
 				<select
 					value={value}
 					required={required ? true : false}

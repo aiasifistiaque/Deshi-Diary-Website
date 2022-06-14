@@ -1,0 +1,29 @@
+@import '../../../styles/imports';
+
+.container {
+	margin: 0.25rem 0;
+	.items {
+		display: flex;
+		flex-direction: column;
+		margin: 0.5rem 0;
+		gap: 4px;
+		.item {
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+			.box {
+				width: 12px;
+				height: 12px;
+				border: 1px solid rgba(#424242, 0.5);
+				margin-right: 8px;
+				border-radius: 2px;
+			}
+			.text {
+				p {
+					font-size: 0.8rem;
+					font-weight: 500;
+				}
+			}
+		}
+	}
+}

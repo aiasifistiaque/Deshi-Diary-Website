@@ -34,18 +34,6 @@
 					object-fit: contain;
 				}
 			}
-			.user {
-				p {
-					font-size: 0.9rem;
-					color: $color-primary;
-					font-weight: 600;
-				}
-				h6 {
-					font-size: 1.05rem;
-					font-weight: 600;
-					line-height: 1.2;
-				}
-			}
 		}
 	}
 	.review {
@@ -60,15 +48,117 @@
 			font-size: 0.9rem;
 			font-weight: 400;
 		}
-		.comments {
+	}
+}
+
+.user {
+	p {
+		font-size: 0.9rem;
+		color: $color-primary;
+		font-weight: 600;
+	}
+
+	h6 {
+		font-size: 1.05rem;
+		font-weight: 600;
+		line-height: 1.2;
+	}
+}
+
+.usr {
+	p {
+		font-size: 0.65rem;
+		color: #b2b1b1;
+		font-weight: 700;
+	}
+	.date {
+		font-size: 0.65rem;
+		color: #b2b1b1;
+		font-weight: 700;
+	}
+	h6 {
+		font-size: 0.9rem;
+		font-weight: 600;
+		line-height: 1;
+	}
+}
+
+.comments {
+	display: flex;
+	justify-content: flex-end;
+	margin: 1rem;
+	a {
+		color: $color-primary;
+		font-size: 0.9rem;
+		font-weight: 600;
+	}
+}
+
+.replies {
+	display: flex;
+	flex-direction: column;
+	background-color: #f9f9f9;
+	padding: 16px;
+	width: 100%;
+	margin: 1rem 0;
+	border: 0.2px solid rgba(#888, 0.5);
+	border-radius: 10px;
+	margin-bottom: 2rem;
+
+	@include desktop {
+		width: 95%;
+		margin-left: 5%;
+		padding: 24px;
+		margin-bottom: 4rem;
+	}
+	h5 {
+		margin-bottom: 1rem;
+	}
+	.reply {
+		margin-bottom: 16px;
+		width: 100%;
+		@include desktop {
+			width: 70%;
+		}
+		.details {
 			display: flex;
-			justify-content: flex-end;
-			margin: 1rem;
-			a {
-				color: dodgerblue;
-				font-size: 0.9rem;
-				font-weight: 600;
+			align-items: flex-start;
+			.image {
+				img {
+					height: 2rem;
+					width: 2rem;
+					@include desktop {
+						height: 3rem;
+						width: 3rem;
+					}
+
+					object-fit: contain;
+					border-radius: 999px;
+				}
 			}
+
+			.text {
+				p {
+					color: #424242;
+					font-size: 0.9rem;
+					font-weight: 400;
+				}
+			}
+			margin-right: 16px;
+		}
+	}
+	.more {
+		display: flex;
+		justify-content: center;
+		margin-top: 0;
+		@include desktop {
+			margin-top: 1rem;
+		}
+		a {
+			padding: 16px;
+			color: $color-primary;
+			font-size: 0.9rem;
+			font-weight: 700;
 		}
 	}
 }

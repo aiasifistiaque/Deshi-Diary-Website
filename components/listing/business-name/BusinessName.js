@@ -52,7 +52,7 @@ const BusinessName = ({ id, name, open, rating, tags }) => {
 						alt='*'
 					/>{' '}
 				</div>
-				<Button small text>
+				<Button small text href='/rate/1'>
 					Write a review
 				</Button>
 			</div>

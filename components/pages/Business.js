@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import ViewMore from '../home/morebutton/ViewMore';
 import BusinessName from '../listing/business-name/BusinessName';
@@ -104,10 +105,12 @@ const data = {
 
 const Business = ({ query }) => {
 	const [reviews, setReviews] = useState(data.reviews);
+	const router = useRouter();
 	const onClick = () => {
 		let arr = reviews;
 		//arr = [...reviews, ...data.reviews];
-		setReviews(x => [...x, ...data.reviews]);
+		//setReviews(x => [...x, ...data.reviews]);
+		router.push('/reviews/1');
 	};
 	return (
 		<Page>
@@ -167,7 +170,9 @@ const Business = ({ query }) => {
 			</Section>
 			<Section title='What Others are saying'>
 				{reviews.length > 0 &&
-					reviews.map((review, i) => <ListingReview key={i} review={review} />)}
+					reviews.map((review, i) => (
+						<ListingReview fill key={i} review={review} />
+					))}
 				<ViewMore onClick={onClick} />
 			</Section>
 			<Section title='Similar Businesses'>

@@ -1,0 +1,21 @@
+@import '../../../styles/imports';
+
+.submit {
+	margin: 2rem 0;
+	.button {
+		@include desktop {
+			max-width: 200px;
+		}
+		margin-bottom: 0.25rem;
+	}
+	.disclaimer {
+		p {
+			font-size: 0.7rem;
+			line-height: 1.5;
+			text-align: center;
+			@include desktop {
+				text-align: left;
+			}
+		}
+	}
+}

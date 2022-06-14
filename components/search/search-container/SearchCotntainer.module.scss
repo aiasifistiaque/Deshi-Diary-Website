@@ -1,0 +1,13 @@
+@import '../../../styles/imports';
+
+.container {
+	display: flex;
+	gap: 1rem;
+	flex-direction: column;
+	margin: 0 -16px;
+
+	@include desktop {
+		flex-direction: row;
+		margin: 0;
+	}
+}

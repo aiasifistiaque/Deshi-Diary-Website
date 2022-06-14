@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import ViewMore from '../morebutton/ViewMore';
 import styles from './HomeCategories.module.css';
@@ -19,10 +20,12 @@ const HomeCategories = () => {
 			<h6>Categories</h6>
 			<div className={styles.cards}>
 				{data.map((item, i) => (
-					<div className={styles.card} key={i}>
-						<img src={`/icons/${item.icon}.png`} alt={item.name} />
-						<p>{item.name}</p>
-					</div>
+					<Link key={i} href={`/search?category=${item.name}`}>
+						<div className={styles.card}>
+							<img src={`/icons/${item.icon}.png`} alt={item.name} />
+							<p>{item.name}</p>
+						</div>
+					</Link>
 				))}
 			</div>
 			<ViewMore />
