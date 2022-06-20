@@ -1,0 +1,21 @@
+@import '../../../styles/imports';
+
+.container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	text-align: center;
+	margin: 0.5rem;
+	h6 {
+		color: #424242;
+		font-size: 1rem;
+		font-weight: bold;
+		line-height: 1.5;
+	}
+	p {
+		font-size: 0.85rem;
+		color: #888;
+		font-weight: 500;
+		line-height: 1.5;
+	}
+}

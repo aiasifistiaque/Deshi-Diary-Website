@@ -1,0 +1,44 @@
+@import '../../../styles/imports';
+
+$box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+
+.container {
+	margin: 0.5rem 2rem;
+	display: flex;
+	gap: 2rem;
+	justify-content: center;
+	width: 100%;
+	justify-content: space-evenly;
+
+	.item {
+		display: flex;
+		flex-direction: column;
+		//flex: 1;
+		align-items: center;
+		.itemInside {
+			.type {
+				padding-bottom: 0.6rem;
+				h6 {
+					font-size: 0.8rem;
+					color: #888;
+					font-weight: 500;
+					line-height: 1;
+					text-transform: capitalize;
+				}
+			}
+			.value {
+				margin-top: -0.35rem;
+				p {
+					font-size: 1.5rem;
+					font-weight: 300;
+					line-height: 1.5;
+					color: #424242;
+				}
+			}
+		}
+	}
+}
+
+.border {
+	//border-right: 1px solid #e2dede;
+}

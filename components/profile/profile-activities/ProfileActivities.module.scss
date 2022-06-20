@@ -1,0 +1,31 @@
+@import '../../../styles/imports';
+
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	margin: 1rem 0;
+	.item {
+		display: flex;
+		flex-direction: column;
+		//margin: 0 1rem;
+
+		p {
+			font-size: 0.9rem;
+			font-weight: 500;
+		}
+		.date {
+			margin: 0.25rem 0 1rem 0;
+
+			p {
+				color: #bdbdbd;
+				font-size: 0.7rem;
+				font-weight: 700;
+			}
+		}
+	}
+}
+
+.border {
+	border-bottom: 1px solid $color-light;
+}

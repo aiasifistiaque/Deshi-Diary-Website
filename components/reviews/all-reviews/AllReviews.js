@@ -3,52 +3,13 @@ import ListingReview from '../../listing/listing-reviews/ListingReviews';
 import Input from '../../util/input/Input';
 import styles from './AllReviews.module.css';
 
-const data = [
-	{
-		user: {
-			name: 'Asif Hossain',
-			img: '/test/u3.jpg',
-		},
-		date: '14 days ago',
-		title: 'Great Place, Great Food!',
-		comments: [],
-		details:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-	},
-
-	{
-		user: {
-			name: 'Ayesha Aziz',
-			img: '/test/u1.jpg',
-		},
-		title: 'Great Place, Great Food!',
-		comments: [],
-
-		details:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-		date: '2 days ago',
-	},
-	{
-		user: {
-			name: 'Asif Hossain',
-			img: '/test/u2.jpg',
-		},
-		date: '14 days ago',
-		title: 'Great Place, Great Food!',
-		comments: [],
-
-		details:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-	},
-];
-
 const filter = [
 	{ name: 'Most Recent', _id: 'recent' },
 	{ name: 'Most Trending', _id: 'trending' },
 	{ name: 'Oldest', _id: 'oldest' },
 ];
 
-const AllReviews = () => {
+const AllReviews = ({ data }) => {
 	const [sort, setSort] = useState(filter[0]._id);
 
 	return (

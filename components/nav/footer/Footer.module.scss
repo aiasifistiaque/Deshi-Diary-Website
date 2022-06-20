@@ -5,9 +5,9 @@
 	background-color: whitesmoke;
 	padding: 32px 16px;
 	flex-direction: column;
-	margin-top: 64px;
+	margin-top: 24px;
 	@include desktop {
-		margin-top: 128px;
+		margin-top: 32px;
 	}
 	@include desktop {
 		flex-direction: row;

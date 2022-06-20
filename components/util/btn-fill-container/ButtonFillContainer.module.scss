@@ -1,0 +1,8 @@
+@import '../../../styles/imports';
+
+.container {
+	@include desktop {
+		max-width: 200px;
+	}
+	margin-bottom: 0.25rem;
+}

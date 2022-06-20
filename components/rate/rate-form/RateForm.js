@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Radio } from 'semantic-ui-react';
 import Button from '../../util/button/Button';
 import Input from '../../util/input/Input';
 import RadioButton from '../../util/radio/RadioButton';

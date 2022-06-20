@@ -1,0 +1,109 @@
+@import '../../../styles/imports';
+
+$box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+
+@mixin container-essential() {
+	background-color: white;
+	width: 100%;
+	align-self: flex-start;
+	box-shadow: none;
+
+	@include desktop {
+		border-radius: 8px;
+		margin: 0;
+		box-shadow: $box-shadow;
+	}
+}
+
+.container {
+	display: flex;
+	gap: 1rem;
+	flex-direction: column;
+	flex: 1;
+	margin: -16px -16px 0 -16px;
+
+	@include desktop {
+		flex-direction: row;
+		margin: 0;
+	}
+	.left {
+		width: 100%;
+		@include container-essential();
+		@include desktop {
+			width: 40%;
+		}
+		.top {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 3rem 1rem 1rem 1rem;
+			gap: 0.5rem;
+			.img {
+				img {
+					width: 100px;
+					height: 100px;
+					object-fit: contain;
+				}
+			}
+		}
+		.bottom {
+			margin: 1rem 0 0 0;
+			cursor: pointer;
+			display: flex;
+			flex-direction: row;
+			overflow-x: scroll;
+			@include hideScrollbar();
+
+			@include desktop {
+				flex-direction: column;
+				margin: 1rem 0;
+			}
+
+			.option {
+				@include desktop {
+					&:hover {
+						background-color: $color-light;
+					}
+				}
+				padding: 0.5rem 1rem;
+				p {
+					font-size: 0.9rem;
+					text-transform: capitalize;
+					font-weight: 500;
+					white-space: nowrap;
+				}
+			}
+		}
+	}
+	.right {
+		width: 100%;
+		background-color: white;
+		@include container-essential();
+
+		padding: 24px 16px;
+		@include desktop {
+			padding: 32px;
+		}
+		.children {
+			margin: 1rem 0;
+		}
+	}
+}
+
+.notSelected {
+	border-bottom: 2px solid transparent;
+
+	@include desktop {
+		border-left: 2px solid transparent;
+		border-bottom: none;
+	}
+}
+.selected {
+	border-bottom: 2px solid $color-primary;
+	background-color: $color-light;
+
+	@include desktop {
+		border-left: 2px solid $color-primary;
+		border-bottom: none;
+	}
+}

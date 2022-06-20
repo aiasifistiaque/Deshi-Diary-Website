@@ -75,12 +75,12 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 64px;
+  margin-top: 24px;
 }
 
 @media (min-width: 1008px) {
   .container {
-    margin-top: 128px;
+    margin-top: 32px;
   }
 }
 

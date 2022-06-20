@@ -7,12 +7,10 @@
 	flex: 1;
 	min-height: 100vh;
 	max-width: 1080px;
-	//background-color: red;
 	background-color: #f9f9f9;
 	margin: 0 auto;
 	@include desktop {
-		padding: 64px 16px;
-		padding-top: 32px;
+		padding: 32px 16px;
 	}
 }
 
@@ -26,8 +24,7 @@
 	//background-color: red;
 	margin: 0 auto;
 	@include desktop {
-		padding: 64px 16px;
-		padding-top: 32px;
+		padding: 32px 16px;
 	}
 }
 

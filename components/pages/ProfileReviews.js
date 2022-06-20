@@ -1,13 +1,13 @@
 import React from 'react';
 import Page from '../nav/page/Page';
-import BusinessCard from '../rate/business-card/BusinessCard';
+import ProfileActivity from '../profile/profile-activities/ProfileActivity';
+import ProfileContainer from '../profile/profile-page/ProfileContainer';
 import AllReviews from '../reviews/all-reviews/AllReviews';
-import Section from '../util/section/Section';
 
 const data = [
 	{
 		user: {
-			name: 'Asif Hossain',
+			name: 'John Doe',
 			img: '/test/u3.jpg',
 		},
 		date: '14 days ago',
@@ -19,8 +19,8 @@ const data = [
 
 	{
 		user: {
-			name: 'Ayesha Aziz',
-			img: '/test/u1.jpg',
+			name: 'John Doe',
+			img: '/test/u3.jpg',
 		},
 		title: 'Great Place, Great Food!',
 		comments: [],
@@ -31,8 +31,8 @@ const data = [
 	},
 	{
 		user: {
-			name: 'Asif Hossain',
-			img: '/test/u2.jpg',
+			name: 'John Doe',
+			img: '/test/u3.jpg',
 		},
 		date: '14 days ago',
 		title: 'Great Place, Great Food!',
@@ -43,17 +43,14 @@ const data = [
 	},
 ];
 
-const ReviewsPage = ({ query }) => {
+const ProfileReviews = () => {
 	return (
 		<Page>
-			<Section top>
-				<BusinessCard />
-			</Section>
-			<Section>
+			<ProfileContainer select='reviews'>
 				<AllReviews data={data} />
-			</Section>
+			</ProfileContainer>
 		</Page>
 	);
 };
 
-export default ReviewsPage;
+export default ProfileReviews;

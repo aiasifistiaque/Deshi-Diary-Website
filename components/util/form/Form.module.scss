@@ -1,0 +1,8 @@
+@import '../../../styles/imports';
+
+.container {
+	width: 100%;
+	@include desktop {
+		width: 50%;
+	}
+}
