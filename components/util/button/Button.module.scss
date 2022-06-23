@@ -81,6 +81,26 @@
 	}
 }
 
+.loading {
+	@extend %solidButton;
+	cursor: not-allowed;
+	letter-spacing: 0.2px;
+	font-weight: 700;
+	$loading-color: darken($color-primary, 10%);
+	background-color: $loading-color;
+	border: none;
+	color: #424242;
+
+	@include desktop {
+		&:hover {
+			background-color: $loading-color;
+		}
+	}
+	&:active {
+		background-color: $loading-color;
+	}
+}
+
 .secondary {
 	@extend %solidButton;
 	background-color: #eee;

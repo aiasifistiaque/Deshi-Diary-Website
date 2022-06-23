@@ -723,6 +723,7 @@ p {
   padding: 0;
   line-height: 24px;
   color: #424242;
+  font-family: "Montserrat", sans-serif;
 }
 
 @media (min-width: 640px) {
@@ -738,6 +739,7 @@ h1 {
   padding: 0;
   line-height: 3rem;
   color: #424242;
+  font-family: "Montserrat", sans-serif;
 }
 
 @media (min-width: 1008px) {
@@ -754,6 +756,7 @@ h2 {
   padding: 0;
   line-height: 2.625rem;
   color: #424242;
+  font-family: "Montserrat", sans-serif;
 }
 
 @media (min-width: 1008px) {
@@ -770,6 +773,7 @@ h3 {
   padding: 0;
   line-height: 2.25rem;
   color: #424242;
+  font-family: "Montserrat", sans-serif;
 }
 
 @media (min-width: 1008px) {
@@ -786,6 +790,7 @@ h4 {
   padding: 0;
   line-height: 3rem;
   color: #424242;
+  font-family: "Montserrat", sans-serif;
 }
 
 h5 {
@@ -795,6 +800,7 @@ h5 {
   padding: 0;
   line-height: 1.5;
   color: #424242;
+  font-family: "Montserrat", sans-serif;
 }
 
 h6 {
@@ -804,12 +810,14 @@ h6 {
   padding: 0;
   line-height: 1.5rem;
   color: #424242;
+  font-family: "Montserrat", sans-serif;
 }
 
 input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  font-family: "Montserrat", sans-serif;
 }
 
 a {
@@ -817,5 +825,6 @@ a {
   text-decoration: none;
   color: #424242;
   cursor: pointer;
+  font-family: "Montserrat", sans-serif;
 }
 /*# sourceMappingURL=styles.css.map */

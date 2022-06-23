@@ -65,7 +65,7 @@
           justify-content: flex-end;
 }
 
-.button, .disabled, .secondary, .textButton, .outlined {
+.button, .disabled, .loading, .secondary, .textButton, .outlined {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -79,11 +79,11 @@
   transition: 0.2s;
 }
 
-.button p, .disabled p, .secondary p, .textButton p, .outlined p {
+.button p, .disabled p, .loading p, .secondary p, .textButton p, .outlined p {
   font-size: 0.9rem;
 }
 
-.button img, .disabled img, .secondary img, .textButton img, .outlined img {
+.button img, .disabled img, .loading img, .secondary img, .textButton img, .outlined img {
   width: 22px;
   height: 22px;
   margin-right: 4px;
@@ -91,7 +91,7 @@
      object-fit: contain;
 }
 
-.button, .disabled, .secondary, .textButton, .outlined {
+.button, .disabled, .loading, .secondary, .textButton, .outlined {
   background-color: #03989e;
   height: 42px;
   -webkit-box-align: center;
@@ -108,12 +108,12 @@
 }
 
 @media (min-width: 1008px) {
-  .button:hover, .disabled:hover, .secondary:hover, .textButton:hover, .outlined:hover {
+  .button:hover, .disabled:hover, .loading:hover, .secondary:hover, .textButton:hover, .outlined:hover {
     background-color: #02686c;
   }
 }
 
-.button:active, .disabled:active, .secondary:active, .textButton:active, .outlined:active {
+.button:active, .disabled:active, .loading:active, .secondary:active, .textButton:active, .outlined:active {
   background-color: #04c8d0;
 }
 
@@ -151,6 +151,25 @@
 
 .disabled:active {
   background-color: #bcbcbc;
+}
+
+.loading {
+  cursor: not-allowed;
+  letter-spacing: 0.2px;
+  font-weight: 700;
+  background-color: #02686c;
+  border: none;
+  color: #424242;
+}
+
+@media (min-width: 1008px) {
+  .loading:hover {
+    background-color: #02686c;
+  }
+}
+
+.loading:active {
+  background-color: #02686c;
 }
 
 .secondary {

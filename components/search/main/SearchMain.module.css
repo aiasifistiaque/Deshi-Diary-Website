@@ -124,12 +124,30 @@
      object-fit: cover;
 }
 
+.container .item .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
 .container .item .text .address p {
   font-size: 0.8rem;
   margin-bottom: 0.25rem;
 }
 
 .container .item .text .a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   margin-top: 1rem;
 }
 
@@ -152,9 +170,7 @@
 }
 
 .container .item .text .category {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: inline-block;
   border: 0.5px solid rgba(66, 66, 66, 0.2);
   padding: 2px 4px;
   border-radius: 4px;
@@ -165,6 +181,20 @@
   font-size: 0.6rem;
   line-height: 1.4;
   text-transform: capitalize;
+}
+
+.container .item .text .name {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+@media (min-width: 1008px) {
+  .container .item .text .name:hover {
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+  }
 }
 
 .container .item .text .tags {

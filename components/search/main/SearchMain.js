@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import Rating from '../../rate/rating/Rating';
 import styles from './SearchMain.module.css';
@@ -95,7 +96,13 @@ const SearchMain = () => {
 							<div className={styles.category}>
 								<p>{item.category}</p>
 							</div>
-							<h6>{item.name}</h6>
+
+							<div className={styles.name}>
+								<Link href='/b/1'>
+									<h6>{item.name}</h6>
+								</Link>
+							</div>
+
 							<Rating size={14} rating={item.rating} />
 							<div className={styles.address}>
 								<p>{item.address}</p>

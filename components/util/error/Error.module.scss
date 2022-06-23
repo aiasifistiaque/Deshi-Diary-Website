@@ -1,0 +1,19 @@
+@import '../../../styles/imports';
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba($color-danger, 0.1);
+	padding: 0 0.5rem;
+	border: 0.2px solid $color-danger;
+	border-radius: 4px;
+	height: 42px;
+
+	p {
+		color: $color-danger;
+		font-size: 0.8rem;
+		font-weight: 600;
+		word-break: break-all;
+	}
+}

@@ -35,6 +35,9 @@
 			}
 		}
 		.text {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
 			.address {
 				p {
 					font-size: 0.8rem;
@@ -43,6 +46,8 @@
 			}
 
 			.a {
+				display: flex;
+				align-self: flex-end;
 				margin-top: 1rem;
 				@include desktop {
 					margin-top: 0.5rem;
@@ -56,7 +61,7 @@
 				}
 			}
 			.category {
-				display: inline-flex;
+				display: inline-block;
 				border: 0.5px solid rgba(#424242, 0.2);
 				padding: 2px 4px;
 				border-radius: 4px;
@@ -65,6 +70,15 @@
 					font-size: 0.6rem;
 					line-height: 1.4;
 					text-transform: capitalize;
+				}
+			}
+			.name {
+				display: inline-flex;
+				cursor: pointer;
+				&:hover {
+					@include desktop {
+						text-decoration-line: underline;
+					}
 				}
 			}
 			.tags {

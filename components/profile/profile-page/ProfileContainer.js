@@ -11,7 +11,7 @@ const data = {
 	image: '/test/u3.jpg',
 	details: [
 		{ type: 'reviews', value: 12 },
-		{ type: 'badges', value: 3 },
+		{ type: 'badges', value: 10 },
 		{ type: 'points', value: 162 },
 	],
 };
@@ -21,6 +21,7 @@ const options = [
 	{ name: 'manage profile', href: '/profile/manage-profile' },
 	{ name: 'reviews', href: '/profile/reviews' },
 	{ name: 'activities', href: '/profile/activities' },
+	{ name: 'badges', href: '/profile/badges' },
 	{ name: 'settings', href: '/profile/settings' },
 ];
 

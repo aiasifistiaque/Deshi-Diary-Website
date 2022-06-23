@@ -19,6 +19,7 @@ const Button = ({
 	curved,
 	href,
 	fill,
+	loading,
 }) => {
 	const mainStyle = outlined
 		? styles.outlined
@@ -38,12 +39,24 @@ const Button = ({
 				<p>{children}</p>
 			</div>
 		);
+	if (loading)
+		return (
+			<div
+				className={`${mainStyle} ${styles.loading} ${size} ${clr} ${
+					round && styles.round
+				} ${fill && styles.fill}`}>
+				{icon && <img src={`/icons/${icon}.png`} alt={icon} />}
+				<p>loading...</p>
+			</div>
+		);
 	if (submit)
 		return (
 			<input
 				type='submit'
 				value={children}
-				className={styles.button}
+				className={`${mainStyle} ${size} ${clr} ${round && styles.round} ${
+					fill && styles.fill
+				}`}
 				style={{ fontSize: 14 }}
 			/>
 		);
