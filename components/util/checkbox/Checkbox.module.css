@@ -6,15 +6,11 @@
 }
 
 .horizontal {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 
 .shadow {
-  -webkit-box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
-          box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+  box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
 }
 
 .curved {
@@ -30,67 +26,47 @@
 }
 
 .alignCenter {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .alignStart {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
 }
 
 .alignEnd {
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  align-items: flex-end;
 }
 
 .justifyCenter {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 .justifyStart {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
 }
 
 .justifyEnd {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .container {
   margin: 0.25rem 0;
 }
-
 .container .items {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin: 0.5rem 0;
   gap: 4px;
 }
-
 .container .items .item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-
 .container .items .item .box {
   width: 12px;
   height: 12px;
@@ -98,9 +74,24 @@
   margin-right: 8px;
   border-radius: 2px;
 }
-
+.container .items .item .checked {
+  width: 12px;
+  height: 12px;
+  border: 1px solid #03989e;
+  margin-right: 8px;
+  border-radius: 2px;
+  background-color: #03989e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .items .item .checked img {
+  height: auto;
+  width: 8px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 .container .items .item .text p {
   font-size: 0.8rem;
   font-weight: 500;
-}
-/*# sourceMappingURL=Checkbox.module.css.map */
+}/*# sourceMappingURL=Checkbox.module.css.map */

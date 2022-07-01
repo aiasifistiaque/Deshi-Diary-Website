@@ -6,15 +6,11 @@
 }
 
 .horizontal {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 
 .shadow {
-  -webkit-box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
-          box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+  box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
 }
 
 .curved {
@@ -30,64 +26,47 @@
 }
 
 .alignCenter {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .alignStart {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
 }
 
 .alignEnd {
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  align-items: flex-end;
 }
 
 .justifyCenter {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 .justifyStart {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
 }
 
 .justifyEnd {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .submit {
   margin: 2rem 0;
 }
-
 .submit .button {
   margin-bottom: 0.25rem;
 }
-
 @media (min-width: 1008px) {
   .submit .button {
     max-width: 200px;
   }
 }
-
 .submit .disclaimer p {
   font-size: 0.7rem;
   line-height: 1.5;
   text-align: center;
 }
-
 @media (min-width: 1008px) {
   .submit .disclaimer p {
     text-align: left;
   }
-}
-/*# sourceMappingURL=RateForm.module.css.map */
+}/*# sourceMappingURL=RateForm.module.css.map */

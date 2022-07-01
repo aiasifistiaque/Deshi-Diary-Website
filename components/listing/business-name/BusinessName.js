@@ -1,8 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import useAuth from '../../../hooks/useAuth';
 import Button from '../../util/button/Button';
 import styles from './BusinnessName.module.css';
 
 const BusinessName = ({ id, name, open, rating, tags }) => {
+	const { loggedIn, token } = useSelector(state => state.auth);
 	return (
 		<div className={styles.container}>
 			<div className={styles.title}>
@@ -52,9 +55,15 @@ const BusinessName = ({ id, name, open, rating, tags }) => {
 						alt='*'
 					/>{' '}
 				</div>
-				<Button small text href='/rate/1'>
-					Write a review
-				</Button>
+				{token ? (
+					<Button small text href={`/rate/${id}`}>
+						Write a review
+					</Button>
+				) : (
+					<Button small text href={`/login`}>
+						log in to write review
+					</Button>
+				)}
 			</div>
 		</div>
 	);

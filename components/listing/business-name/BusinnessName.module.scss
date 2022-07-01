@@ -27,6 +27,11 @@
 	.tags {
 		display: flex;
 		gap: 0.5rem;
+		flex-wrap: wrap;
+		p {
+			line-height: 1;
+			font-size: 1rem;
+		}
 	}
 	.bottom {
 		display: flex;

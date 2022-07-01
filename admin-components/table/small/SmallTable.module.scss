@@ -1,0 +1,88 @@
+@import '../../../styles/imports';
+
+$table-border: #e5e5e5;
+$table-header-color: #aeaeae;
+$table-top-color: #faf9fb;
+$table-box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.04),
+	0 2px 4px 0 rgba(0, 0, 0, 0.04), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+
+.container {
+	overflow: auto;
+	flex-wrap: nowrap;
+	//flex: 1;
+	display: flex;
+	//border-radius: 10px;
+	background-color: white;
+
+	flex-direction: column;
+	border: 1px solid rgba($color-primary, 0.1);
+	margin-bottom: 0.5rem;
+	margin-top: -24px;
+}
+
+$item-margin: 32px;
+
+%table-items {
+	display: flex;
+	justify-content: space-between;
+	border-right-width: 0;
+	border-left-width: 0;
+	flex-wrap: nowrap;
+	border-bottom: 0.1px solid $table-border;
+	text-transform: capitalize;
+	margin: 0 $item-margin;
+	padding: 4px 0;
+}
+
+.items {
+	@extend %table-items;
+}
+
+.titleItems {
+	@extend %table-items;
+	margin: 0;
+	padding: 4px $item-margin;
+	background-color: $table-top-color;
+}
+
+.linkItems {
+	@extend %table-items;
+	cursor: pointer;
+	&:hover {
+		text-decoration-line: underline;
+	}
+}
+
+%table-item {
+	text-align: left;
+	min-width: 150px;
+	padding: 12px 0;
+	margin-right: 16px;
+
+	p,
+	h6 {
+		font-size: 14px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		font-weight: 400;
+	}
+}
+
+.titleItem {
+	@extend %table-item;
+	h6 {
+		font-size: 0.9rem;
+		color: $table-header-color;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 800;
+	}
+}
+.item {
+	@extend %table-item;
+	a {
+		font-size: 14px;
+		color: dodgerblue;
+		cursor: pointer;
+	}
+}

@@ -102,8 +102,10 @@ export const CardBottomButton = ({ children, align, fill, href }) => {
 	if (href)
 		return (
 			<Link href={href}>
-				<div className={customClass}>
-					<p>{children}</p>
+				<div className={styles.bottomButton}>
+					<div className={styles.btn}>
+						<p>{children}</p>
+					</div>
 				</div>
 			</Link>
 		);

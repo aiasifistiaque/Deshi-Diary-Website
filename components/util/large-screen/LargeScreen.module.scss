@@ -1,0 +1,14 @@
+@import '../../../styles/imports';
+
+.container {
+	display: none;
+	@include desktop {
+		display: block;
+	}
+}
+
+.small {
+	@include desktop {
+		display: none;
+	}
+}

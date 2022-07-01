@@ -1,35 +1,60 @@
 @import '../../../styles/imports';
 
-.container {
+%page {
 	display: flex;
 	padding: 16px;
 	flex-direction: column;
 	flex: 1;
 	min-height: 100vh;
 	max-width: 1080px;
-	background-color: #f9f9f9;
 	margin: 0 auto;
 	@include desktop {
 		padding: 32px 16px;
 	}
 }
 
+.container {
+	@extend %page;
+	background-color: #f9f9f9;
+	//	background-color: #eff2f5;
+}
+
 .landing {
-	display: flex;
-	padding: 16px;
-	flex-direction: column;
-	flex: 1;
-	min-height: 100vh;
-	max-width: 1080px;
-	//background-color: red;
-	margin: 0 auto;
-	@include desktop {
-		padding: 32px 16px;
-	}
+	@extend %page;
 }
 
 .auth {
 	display: flex;
 	flex: 1;
 	min-height: 100vh;
+}
+
+.blur {
+	background-color: rgba(white, 0.25);
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	z-index: 20;
+
+	backdrop-filter: blur(5px);
+	margin: 0;
+	padding: 0;
+	left: 0;
+	top: 0;
+}
+
+.overlay {
+	//display: flex;
+	@extend %page;
+	flex-direction: column;
+
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	background-color: rgba(white, 0.2);
+	backdrop-filter: blur(5x);
+
+	align-items: center;
+	justify-content: center;
+	z-index: 99;
 }

@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+.fluid {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.horizontal {
+  flex-direction: row;
+}
+
+.shadow {
+  box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+}
+
+.curved {
+  border-radius: 4px;
+}
+
+.rounded {
+  border-radius: 8px;
+}
+
+.round {
+  border-radius: 30px;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.alignStart {
+  align-items: flex-start;
+}
+
+.alignEnd {
+  align-items: flex-end;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.justifyStart {
+  justify-content: flex-start;
+}
+
+.justifyEnd {
+  justify-content: flex-end;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  justify-content: center;
+  flex-direction: row;
+  height: 4rem;
+  flex-direction: column;
+}
+.container .navItems {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.container .navItems .logo {
+  cursor: pointer;
+}
+@media (min-width: 1008px) {
+  .container .navItems .logo:hover {
+    background-color: whitesmoke;
+  }
+}
+.container .navItems .logo img {
+  height: 42px;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.container .navItems .search {
+  height: 36px;
+  width: 256px;
+  border-radius: 30px;
+}
+.container .navItems .search input {
+  background-color: whitesmoke;
+  margin: 0;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  padding: 0 1rem;
+  border: 2px solid rgba(66, 66, 66, 0.1);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.container .navItems .search input::-moz-placeholder {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.2px;
+  color: #bdbdbd;
+}
+.container .navItems .search input:-ms-input-placeholder {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.2px;
+  color: #bdbdbd;
+}
+.container .navItems .search input::placeholder {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.2px;
+  color: #bdbdbd;
+}
+.container .navItems .search input:focus {
+  border: 2px solid rgba(3, 152, 158, 0.4);
+}
+
+.focused {
+  height: 36px;
+  width: 256px;
+  border-radius: 30px;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
+}
+.focused input {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background-color: white;
+  margin: 0;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  padding: 0 1rem;
+  border: 2px solid transparent;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.focused input::-moz-placeholder {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.2px;
+  color: #bdbdbd;
+}
+.focused input:-ms-input-placeholder {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.2px;
+  color: #bdbdbd;
+}
+.focused input::placeholder {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.2px;
+  color: #bdbdbd;
+}
+.focused .items {
+  border-top: 2px solid rgba(3, 152, 158, 0.4);
+  box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: inherit;
+  padding-bottom: 1rem;
+}
+.focused .items .title {
+  padding: 1rem 1rem 0 1rem;
+}
+.focused .items .item {
+  cursor: pointer;
+  padding: 1rem 1rem;
+}
+@media (min-width: 1008px) {
+  .focused .items .item:hover {
+    background-color: whitesmoke;
+  }
+}
+.focused .items .item .itemInner {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.focused .items .item .itemInner .image img {
+  height: 20px;
+  width: 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.focused .items .item .itemInner .text h6 {
+  font-size: 0.9rem;
+  text-overflow: ellipsis;
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.focused .items .item .itemInner .text p {
+  font-size: 0.7rem;
+  line-height: 1.5;
+}/*# sourceMappingURL=HeaderSearchBar.module.css.map */

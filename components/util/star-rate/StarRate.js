@@ -7,6 +7,7 @@ const StarRate = ({ rating, setRating, label, pointer }) => {
 	return (
 		<div className={styles.rate}>
 			<label>{label}</label>
+
 			<div className={styles.stars}>
 				<div className={styles.star} onClick={() => setRating(1)}>
 					<img src={rating >= 1 ? starPrimary : starBlank} />

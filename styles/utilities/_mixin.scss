@@ -35,6 +35,26 @@ $xlarge: 1171px;
 	}
 }
 
+@mixin hover {
+	@media (min-width:#{$desktop}) {
+		&:hover {
+			@content;
+		}
+	}
+}
+
+@mixin placeholder {
+	&::placeholder {
+		font-size: 12px;
+		font-weight: 600;
+		font-family: 'Montserrat', sans-serif;
+		margin: 0;
+		padding: 0;
+		letter-spacing: 0.2px;
+		color: #bdbdbd;
+	}
+}
+
 @mixin xlarge {
 	@media (min-width:#{$x-large}) {
 		@content;

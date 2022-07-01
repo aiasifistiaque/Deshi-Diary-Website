@@ -8,10 +8,10 @@ const RatePage = ({ query }) => {
 	return (
 		<Page>
 			<Section top>
-				<BusinessCard />
+				<BusinessCard query={query} />
 			</Section>
 			<Section subheading='Write a review about this place'>
-				<RateForm />
+				<RateForm query={query} />
 			</Section>
 		</Page>
 	);

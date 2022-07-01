@@ -1,0 +1,47 @@
+@import '../../styles/imports';
+
+.container {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	.title {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 8px;
+		align-items: center;
+		h4 {
+			font-size: 1rem;
+			font-weight: 700;
+			line-height: 1.5;
+			@include desktop {
+				font-size: 1.7rem;
+			}
+		}
+	}
+}
+
+.unauthorized {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex: 1;
+	img {
+		width: 100px;
+		height: auto;
+		object-fit: contain;
+		margin-bottom: 1rem;
+		@include desktop {
+			width: 200px;
+		}
+	}
+	h3 {
+		color: $color-danger;
+		margin-bottom: 0rem;
+	}
+	p {
+		font-size: 1rem;
+		font-weight: 500;
+	}
+}

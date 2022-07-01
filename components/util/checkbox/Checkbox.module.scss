@@ -11,12 +11,29 @@
 			display: flex;
 			align-items: center;
 			cursor: pointer;
+			@include btn-text-unselect();
 			.box {
 				width: 12px;
 				height: 12px;
 				border: 1px solid rgba(#424242, 0.5);
 				margin-right: 8px;
 				border-radius: 2px;
+			}
+			.checked {
+				width: 12px;
+				height: 12px;
+				border: 1px solid $color-primary;
+				margin-right: 8px;
+				border-radius: 2px;
+				background-color: $color-primary;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				img {
+					height: auto;
+					width: 8px;
+					object-fit: contain;
+				}
 			}
 			.text {
 				p {

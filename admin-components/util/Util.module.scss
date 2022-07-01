@@ -1,0 +1,15 @@
+@import '../../styles/imports';
+
+.hr {
+	border-bottom: 1px solid rgba(#888, 0.2);
+	width: 100%;
+	margin: 0.5rem 0;
+}
+
+.dateText {
+	p {
+		color: #999;
+		font-size: 0.8rem;
+		font-weight: 700;
+	}
+}

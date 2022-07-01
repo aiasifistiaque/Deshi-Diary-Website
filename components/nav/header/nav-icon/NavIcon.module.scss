@@ -1,0 +1,18 @@
+@import '../../../../styles/imports';
+
+.container {
+	background-color: $color-light;
+	height: 30px;
+	width: 30px;
+	border-radius: 30px;
+	padding: 6px;
+	cursor: pointer;
+	@include hover {
+		background-color: darken($color-light, 5%);
+	}
+	img {
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+	}
+}

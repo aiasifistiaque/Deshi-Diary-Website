@@ -1,0 +1,18 @@
+@import '../../../../styles/imports';
+
+.toggle {
+	height: 32px;
+	width: 32px;
+	padding: 6px;
+	cursor: pointer;
+
+	@include hover {
+		background-color: whitesmoke;
+	}
+
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: contain;
+	}
+}

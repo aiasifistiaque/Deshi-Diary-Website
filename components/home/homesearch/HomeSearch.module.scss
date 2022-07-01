@@ -1,21 +1,19 @@
 @import '../../../styles/imports';
 
 $light-color: #eef0f3;
+//$box-shadow: 4px 10px 20px rgba(66, 66, 66, 0.1);
+$box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
 .container {
 	display: flex;
 	height: 42px;
-	margin: 64px 0;
 	width: 100%;
 	justify-content: space-between;
-	@include tab {
-		width: 75%;
-	}
-
+	z-index: 90;
 	@include desktop {
 		height: 50px;
-		width: 65%;
-		min-width: 600px;
 	}
+
 	.area {
 		flex: 0;
 		border: 1px solid $light-color;
@@ -23,6 +21,7 @@ $light-color: #eef0f3;
 		border-top-left-radius: 4px;
 		background-color: $light-color;
 		padding: 0 16px;
+		cursor: pointer;
 		@include desktop {
 			padding: 0 24px;
 		}
@@ -48,11 +47,8 @@ $light-color: #eef0f3;
 	}
 
 	.btn {
-		display: flex;
+		@include flexCenter(column);
 		flex: 0;
-
-		align-items: center;
-		justify-content: center;
 		background-color: $light-color;
 		padding: 0 16px;
 		border: 1px solid $light-color;
@@ -95,8 +91,11 @@ $light-color: #eef0f3;
 		}
 
 		&:focus {
-			border-top: 1px solid darken($light-color, 10%);
-			border-bottom: 1px solid darken($light-color, 10%);
+			//border-top: 1px solid darken($light-color, 10%);
+			border-bottom: 1px solid $light-color;
+
+			border-top: 1px solid $light-color;
+			//border-bottom: 1px solid transparent;
 
 			//outline: none;
 		}
@@ -105,13 +104,98 @@ $light-color: #eef0f3;
 
 .input {
 	@extend %inputPartial;
-
 	display: flex;
 	flex-direction: column;
 	height: 42px;
 	width: 600px;
-
 	@include desktop {
 		height: 50px;
 	}
+}
+
+.searched {
+	display: flex;
+	margin: 64px 0;
+	width: 100%;
+	flex-direction: column;
+	background-color: whitesmoke;
+	@include hover {
+		box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	}
+
+	@include tab {
+		width: 75%;
+	}
+
+	@include desktop {
+		height: 50px;
+		width: 65%;
+		min-width: 600px;
+	}
+}
+
+.searchBox {
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(white, 1);
+	z-index: 90;
+	box-shadow: $box-shadow;
+	padding: 0.5rem 0 1rem 0;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	//backdrop-filter: blur(10px);
+
+	margin: 0 1px;
+
+	.title {
+		margin: 0.5rem 1rem;
+		h6 {
+			font-size: 0.9rem;
+		}
+	}
+
+	.items {
+		display: flex;
+		flex-direction: column;
+
+		.item {
+			cursor: pointer;
+			@include hover {
+				background-color: rgba(#424242, 0.05);
+			}
+			.itemInner {
+				margin: 0 1rem;
+				border-bottom: 1px solid rgba(#424242, 0.05);
+				padding: 0.5rem 0;
+				display: flex;
+				gap: 1rem;
+				align-items: center;
+				.image {
+					height: 36px;
+					width: 36px;
+					border: 1px solid rgba(#424242, 0.2);
+					border-radius: 99px;
+					@include flexCenter;
+					img {
+						height: 20px;
+						width: 20px;
+						object-fit: contain;
+					}
+				}
+
+				.text {
+					p {
+						color: #424242;
+						font-size: 0.8rem;
+						font-weight: 400;
+					}
+				}
+			}
+		}
+	}
+}
+
+.focused {
+	//box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }

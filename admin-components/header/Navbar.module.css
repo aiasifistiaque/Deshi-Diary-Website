@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+.fluid {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.horizontal {
+  flex-direction: row;
+}
+
+.shadow {
+  box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+}
+
+.curved {
+  border-radius: 4px;
+}
+
+.rounded {
+  border-radius: 8px;
+}
+
+.round {
+  border-radius: 30px;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.alignStart {
+  align-items: flex-start;
+}
+
+.alignEnd {
+  align-items: flex-end;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.justifyStart {
+  justify-content: flex-start;
+}
+
+.justifyEnd {
+  justify-content: flex-end;
+}
+
+.landing,
+.nav {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  padding: 0 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: white;
+}
+@media (min-width: 1008px) {
+  .landing,
+.nav {
+    padding: 0 32px;
+    background-color: transparent;
+  }
+}
+
+.left {
+  flex: 1;
+}
+
+.middle {
+  display: none;
+  flex: 1;
+  justify-content: center;
+  padding-right: 44px;
+}
+@media (min-width: 1008px) {
+  .middle {
+    display: flex;
+  }
+}
+.middle img {
+  height: 0;
+  -o-object-fit: contain;
+     object-fit: contain;
+  cursor: pointer;
+}
+@media (min-width: 1008px) {
+  .middle img {
+    height: 44px;
+  }
+}
+
+.right {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.logout {
+  cursor: pointer;
+  align-self: center;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 16px;
+}
+.logout img {
+  height: 24px;
+  width: 24px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.logout p {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  background-color: #eef0f3;
+  padding: 4px;
+  border-radius: 99px;
+  justify-content: center;
+}
+@media (min-width: 1008px) {
+  .profile {
+    padding-right: 8px;
+  }
+}
+.profile img {
+  height: 24px;
+  width: 24px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.profile .icon {
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 1008px) {
+  .profile .icon {
+    display: flex;
+  }
+}
+.profile .icon img {
+  height: 10px;
+  width: 10px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-left: 4px;
+}/*# sourceMappingURL=Navbar.module.css.map */

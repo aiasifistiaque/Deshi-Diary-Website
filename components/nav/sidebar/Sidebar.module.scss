@@ -1,0 +1,116 @@
+@import '../../../styles/imports';
+$box-shadow: 4px 10px 20px rgba(66, 66, 66, 0.1);
+
+.container {
+	z-index: 99;
+
+	position: absolute;
+	top: 4rem;
+	width: 100%;
+	height: calc(100vh - 4rem);
+	//backdrop-filter: blur(20px);
+	display: flex;
+	flex-direction: column;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	//overflow-y: scroll;
+	@include btn-text-unselect;
+	background-color: rgba(white, 0.8);
+	box-shadow: $box-shadow;
+	backdrop-filter: blur(10px);
+
+	// &::-webkit-scrollbar {
+	// 	width: 6px;
+	// 	height: 10px;
+	// }
+
+	// /* Track */
+	// &::-webkit-scrollbar-track {
+	// 	background: transparent;
+	// }
+
+	// /* Handle */
+	// &::-webkit-scrollbar-thumb {
+	// 	background: transparent;
+	// 	border-radius: 10px;
+	// 	height: 10px;
+	// 	&:hover {
+	// 		background: #888;
+	// 	}
+	// }
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.items {
+		display: flex;
+		flex-direction: column;
+		width: 100vw;
+		align-items: center;
+		justify-content: center;
+		margin-top: 2rem;
+
+		.item {
+			padding: 2rem 4rem;
+
+			@include desktop {
+				padding: 2rem 10rem;
+			}
+			cursor: pointer;
+			z-index: 20;
+			display: flex;
+			justify-content: center;
+
+			a {
+				font-size: 1.2rem;
+				font-weight: 600;
+				letter-spacing: 3px;
+				color: black;
+				text-align: center;
+				@include desktop {
+					font-size: 1.5rem;
+				}
+			}
+			@include hover {
+				background-color: rgba($color-primary, 0.2);
+				a {
+					text-decoration-line: underline;
+				}
+			}
+		}
+	}
+}
+
+.cancel {
+	border-radius: 99px;
+	width: 36px;
+	height: 36px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+	line-height: 0;
+	align-self: flex-end;
+	margin: 1rem 1rem 0 0;
+	position: absolute;
+	top: 0;
+
+	cursor: pointer;
+	img {
+		width: 24px;
+		height: 24px;
+		object-fit: contain;
+	}
+	@include desktop {
+		margin: 2rem 2rem 0 0;
+		width: 48px;
+		height: 48px;
+		img {
+			width: 40px;
+			height: 40px;
+			object-fit: contain;
+		}
+	}
+}

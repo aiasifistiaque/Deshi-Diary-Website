@@ -4,17 +4,22 @@ import Checkbox from '../../util/checkbox/Checkbox';
 import Input from '../../util/input/Input';
 import StarRate from '../../util/star-rate/StarRate';
 import styles from './SearchFilters.module.css';
+import * as lib from '../../../lib/constants';
 
-const locData = [
-	{ name: 'dhaka', _id: 'dhaka' },
-	{ name: 'cumilla', _id: 'cumilla' },
-	{ name: 'sylhet', _id: 'sylhet' },
-];
-
-const SearchFilters = () => {
-	const [locations, setLocations] = useState();
-	const [rating, setRating] = useState();
-	const [show, setShow] = useState(true);
+const SearchFilters = ({
+	locations,
+	setLocations,
+	rating,
+	setRating,
+	show,
+	setShow,
+	features,
+	setFeatures,
+	query,
+	setQuery,
+	categories,
+	setCategory,
+}) => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.heading}>
@@ -27,15 +32,26 @@ const SearchFilters = () => {
 				<>
 					<div className={styles.filters}>
 						<Input
+							label='Search Query'
+							value={query}
+							onChange={e => setQuery(e)}
+						/>
+						<Input
 							label='Location'
 							select
-							data={locData}
+							data={lib.data.divisions}
 							onChange={e => setLocations(e)}
 						/>
 						<Input
-							label='Popularity'
+							label='Select Category'
 							select
-							data={locData}
+							data={categories}
+							onChange={e => setCategory(e)}
+						/>
+						<Input
+							label='Sort By'
+							select
+							data={lib.data.sort}
 							onChange={e => setLocations(e)}
 						/>
 						<StarRate
@@ -44,6 +60,8 @@ const SearchFilters = () => {
 							label='Rating'
 						/>
 						<Checkbox
+							values={features}
+							setValues={e => setFeatures(e)}
 							label='Features'
 							data={['Dine in', 'Takeout', 'Parking', 'Air Conditioned']}
 						/>

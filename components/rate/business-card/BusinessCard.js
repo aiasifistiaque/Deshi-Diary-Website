@@ -1,36 +1,64 @@
 import Link from 'next/link';
 import React from 'react';
+import { useGetListingsByIdQuery } from '../../../store/services/apiService';
 import Rating from '../rating/Rating';
 import styles from './BusinessCard.module.css';
+import * as lib from '../../../lib/constants';
+import { Placeholder } from 'semantic-ui-react';
 
-const data = {
-	name: 'Madchef Uttara',
-	img: '/test/shop.png',
-	address:
-		'Plot 16, Sector 11, Gareeb-e-Nawaz Avenue, Uttara, Dhaka 1230, Bangladesh',
-	website: 'https://thinkcrypt.io',
-	rating: 3,
-	category: 'Restaurant',
-};
+const BusinessCard = ({ query }) => {
+	const { data, isLoading, isFetching, isError, error } =
+		useGetListingsByIdQuery(query);
 
-const BusinessCard = () => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.image}>
-				<img src={data.img} alt='..' />
+				{isFetching ? (
+					<Placeholder style={{ height: 150, width: 150, borderRadius: 99 }}>
+						<Placeholder.Image />
+					</Placeholder>
+				) : (
+					<img
+						src={
+							data?.images?.length > 0
+								? data.images[0].src
+								: lib.placeholders.image
+						}
+						alt='..'
+					/>
+				)}
 			</div>
-			<div className={styles.description}>
-				<div>
-					<div className={styles.tag}>
-						<p>{data.category}</p>
-					</div>
-				</div>
-				<Link href='/b/1'>
-					<h5>{data.name}</h5>
-				</Link>
-				<Rating rating={data.rating} size={14} />
-				<p>{data.address}</p>
-				<a href={data.website}>View Website</a>
+			<div
+				className={styles.description}
+				style={{ display: isFetching ? 'block' : 'flex' }}>
+				{isFetching || !data ? (
+					<Placeholder>
+						<Placeholder.Header>
+							<Placeholder.Line />
+							<Placeholder.Line />
+							<Placeholder.Line />
+						</Placeholder.Header>
+						<Placeholder.Paragraph>
+							<Placeholder.Line />
+							<Placeholder.Line />
+							<Placeholder.Line />
+						</Placeholder.Paragraph>
+					</Placeholder>
+				) : (
+					<>
+						<div>
+							<div className={styles.tag}>
+								<p>{data?.category?.name && data.category.name}</p>
+							</div>
+						</div>
+						<Link href={`/b/${query}`}>
+							<h5>{data?.name && data.name}</h5>
+						</Link>
+						<Rating rating={data?.rating && data.rating} size={14} />
+						<p>{data?.address && data.address}</p>
+						{data?.website && <a href={data?.website}>View Website</a>}
+					</>
+				)}
 			</div>
 		</div>
 	);

@@ -1,0 +1,77 @@
+@import '../../../styles/imports';
+
+$item-border: 1px solid rgba(#888, 0.15);
+
+.table {
+	display: flex;
+	flex-direction: column;
+	border: $item-border;
+	border-bottom: none;
+}
+
+.row {
+	border-bottom: $item-border;
+
+	display: flex;
+	.title {
+		padding: 0.75rem 1.25rem;
+		flex: 1;
+		border-right: $item-border;
+	}
+	.data {
+		padding: 0.75rem 1.25rem;
+		flex: 2;
+		@include desktop {
+			flex: 2.5;
+		}
+		p {
+			font-size: 1rem;
+			font-weight: 400;
+		}
+	}
+}
+
+.editing {
+	display: flex;
+	flex-direction: column;
+	padding: 0.5rem 1.25rem;
+	flex: 2;
+	@include desktop {
+		flex: 2.5;
+	}
+	//width: 100%;
+	//max-width: 300px;
+
+	input[type='number']::-webkit-inner-spin-button,
+	input[type='number']::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	input,
+	textarea,
+	select {
+		margin: 0;
+		height: 42px;
+		width: 100%;
+		border: none;
+		outline: none;
+
+		border: 1px solid rgba($color-primary, 0.2);
+		background-color: #f9f9f9;
+		justify-content: center;
+		padding: 0 0.75rem;
+		border-radius: 4px;
+
+		&:focus {
+			border: 1px solid $color-primary;
+		}
+	}
+
+	textarea {
+		padding: 1em;
+	}
+	textarea {
+		min-height: 200px;
+	}
+}

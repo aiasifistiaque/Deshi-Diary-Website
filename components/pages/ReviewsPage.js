@@ -47,10 +47,10 @@ const ReviewsPage = ({ query }) => {
 	return (
 		<Page>
 			<Section top>
-				<BusinessCard />
+				<BusinessCard query={query} />
 			</Section>
 			<Section>
-				<AllReviews data={data} />
+				<AllReviews data={data} query={query} />
 			</Section>
 		</Page>
 	);

@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+.fluid {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.horizontal {
+  flex-direction: row;
+}
+
+.shadow {
+  box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+}
+
+.curved {
+  border-radius: 4px;
+}
+
+.rounded {
+  border-radius: 8px;
+}
+
+.round {
+  border-radius: 30px;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.alignStart {
+  align-items: flex-start;
+}
+
+.alignEnd {
+  align-items: flex-end;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.justifyStart {
+  justify-content: flex-start;
+}
+
+.justifyEnd {
+  justify-content: flex-end;
+}
+
+.container {
+  overflow: auto;
+  flex-wrap: nowrap;
+  flex: 1;
+  display: flex;
+  border-radius: 4px;
+  background-color: white;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  flex-direction: column;
+  border: 2px solid rgba(66, 66, 66, 0.05);
+  width: 100%;
+}
+
+.contain {
+  border-radius: 10px;
+  background-color: white;
+  margin: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.linkItems, .titleItems, .items {
+  display: inline-flex;
+  justify-content: space-between;
+  border-right-width: 0;
+  border-left-width: 0;
+  flex-wrap: nowrap;
+  text-transform: capitalize;
+  padding: 12px 32px;
+  min-width: 100%;
+  border-top: 2px solid rgba(66, 66, 66, 0.05);
+}
+
+.titleItems {
+  margin: 0;
+  padding: 4px 32px;
+  background-color: white;
+  border-top: none;
+  padding: 12px 32px;
+}
+
+.linkItems {
+  cursor: pointer;
+}
+.linkItems:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.item, .titleItem {
+  display: flex;
+  flex: 1;
+  text-align: left;
+  width: 64px;
+  margin-right: 2rem;
+}
+@media (min-width: 1008px) {
+  .item, .titleItem {
+    min-width: 120px;
+  }
+}
+.item p, .titleItem p,
+.item h6,
+.titleItem h6 {
+  font-size: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: 600;
+  color: #424242;
+}
+.item p, .titleItem p {
+  font-size: 0.9rem;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 20px;
+  width: 20px;
+  text-align: left;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.checkboxItem {
+  display: inline-flex;
+  flex: 1;
+  text-align: left;
+  min-width: 100pxs;
+  transition: 0.1s;
+}
+.checkboxItem .innerItem {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  padding: 0 16px;
+}
+.checkboxItem p {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.checkboxItem .checkbox {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #4d4c7d;
+  margin-right: 8px;
+  border-radius: 2px;
+}
+.checkboxItem .checked {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #4d4c7d;
+  margin-right: 8px;
+  border-radius: 2px;
+  background-color: #03989e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checkboxItem .checked img {
+  width: 20px;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 2px;
+}
+.checkboxItem:hover .checkbox,
+.checkboxItem:hover .checked {
+  background-color: rgba(77, 76, 125, 0.6);
+}
+
+.titleItem h6 {
+  font-size: 0.9rem;
+  color: #9b9eaa;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+}
+
+.item a {
+  font-size: 14px;
+  color: dodgerblue;
+  cursor: pointer;
+}
+
+.paginate {
+  display: inline-flex;
+  border-bottom: 2px solid rgba(66, 66, 66, 0.05);
+  align-items: center;
+  padding: 0 32px;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  min-width: 100%;
+}
+.paginate .title p {
+  color: #03989e;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.paginate .buttons {
+  display: flex;
+}/*# sourceMappingURL=Table.module.css.map */

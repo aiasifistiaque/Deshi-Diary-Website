@@ -6,15 +6,11 @@
 }
 
 .horizontal {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 
 .shadow {
-  -webkit-box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
-          box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+  box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
 }
 
 .curved {
@@ -30,113 +26,70 @@
 }
 
 .alignCenter {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .alignStart {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
 }
 
 .alignEnd {
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  align-items: flex-end;
 }
 
 .justifyCenter {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 .justifyStart {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
 }
 
 .justifyEnd {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
+  flex-direction: column-reverse;
   margin: 1rem 0;
 }
-
 @media (min-width: 1008px) {
   .container {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
   }
 }
 
 .details {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
 }
-
 .details .detail {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .details .detail .title {
-  -webkit-box-flex: 0.5;
-      -ms-flex: 0.5;
-          flex: 0.5;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex: 0.5;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 .details .detail .title h3 {
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 1.5;
 }
-
 @media (min-width: 1008px) {
   .details .detail .title h3 {
     font-size: 2rem;
   }
 }
-
 .details .detail .box {
-  -webkit-box-flex: 11;
-      -ms-flex: 11;
-          flex: 11;
+  flex: 11;
   margin-left: 1rem;
   height: 20px;
   width: 100%;
   background-color: #d9d9d9;
 }
-
 .details .detail .box .coloredBox {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   height: 20px;
   background-color: #03989e;
@@ -144,67 +97,48 @@
 }
 
 .summary {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex: 1;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin-bottom: 1rem;
 }
-
 .summary h2 {
   font-size: 2.5rem;
   line-height: 1;
 }
-
 @media (min-width: 1008px) {
   .summary {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
   }
   .summary h2 {
     font-size: 5rem;
   }
 }
-
 .summary h2 {
   font-weight: 400;
 }
-
 .summary h6 {
   color: #03989e;
 }
 
 .rating {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 0.25rem;
   margin: 0.25rem 0;
 }
-
 @media (min-width: 1008px) {
   .rating {
     margin: 0.5rem 0;
   }
 }
-
 .rating img {
   width: 14px;
   -o-object-fit: contain;
      object-fit: contain;
   height: auto;
 }
-
 @media (min-width: 1008px) {
   .rating img {
     width: 16px;
   }
-}
-/*# sourceMappingURL=RatingSummary.module.css.map */
+}/*# sourceMappingURL=RatingSummary.module.css.map */

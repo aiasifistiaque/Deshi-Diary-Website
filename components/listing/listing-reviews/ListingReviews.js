@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import styles from './Review.module.css';
+import * as lib from '../../../lib/constants';
+import moment from 'moment';
+import Rating from '../../rate/rating/Rating';
 
 const dat = [
 	{
@@ -42,35 +45,29 @@ const ListingReview = ({ review, fill }) => {
 			style={{ ...(fill && { width: '100%' }) }}>
 			<div className={styles.details}>
 				<div className={styles.image}>
-					<img src={review.user.img} alt='*' />
+					<img
+						src={
+							review?.user?.img
+								? review.user.image
+								: lib.placeholders.profileImage
+						}
+						alt='*'
+					/>
 				</div>
 
 				<div className={styles.text}>
-					<div className={styles.stars}>
-						<img src='/icons/star-secondary.png' alt='*' />
-						<img src='/icons/star-secondary.png' alt='*' />
-						<img src='/icons/star-secondary.png' alt='*' />
-						<img src='/icons/star-secondary.png' alt='*' />
-						<img src='/icons/star-secondary.png' alt='*' />
-					</div>
+					<Rating rating={review?.rating ? review.rating : 0} size={8} />
 					<div className={styles.user}>
-						<h6>{`"${review.title}"`}</h6>
+						<h6>{`"${review?.title && review.title}"`}</h6>
 						<p>{review.user?.name && review.user.name}</p>
 					</div>
 				</div>
 			</div>
 			<div className={styles.review}>
 				<div className={styles.date}>
-					<p>{review.date}</p>
+					<p>{moment(review.createdAt).calendar()}</p>
 				</div>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
-					ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor
-					sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-					incididunt ut labore et dolore magna aliqua.
-				</p>
+				<p>{review?.details && review.details}</p>
 			</div>
 			{show ? (
 				<Replies />

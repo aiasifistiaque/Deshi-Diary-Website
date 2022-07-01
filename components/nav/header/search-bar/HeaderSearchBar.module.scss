@@ -1,0 +1,135 @@
+@import '../../../../styles/imports';
+$box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
+
+.container {
+	@include flexCenter(row);
+	justify-content: center;
+	flex-direction: row;
+	height: 4rem;
+	flex-direction: column;
+
+	.navItems {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+
+		.logo {
+			cursor: pointer;
+			@include hover {
+				background-color: whitesmoke;
+			}
+			img {
+				height: 42px;
+				width: 100%;
+				object-fit: contain;
+			}
+		}
+		.search {
+			height: 36px;
+			width: 256px;
+			border-radius: 30px;
+
+			input {
+				background-color: whitesmoke;
+
+				margin: 0;
+				outline: none;
+				width: 100%;
+				//background-color: red;
+				height: 100%;
+				@include placeholder();
+				border-radius: 30px;
+				padding: 0 1rem;
+				//border: 2px solid transparent;
+				border: 2px solid rgba(#424242, 0.1);
+
+				font-size: 0.8rem;
+				font-weight: 600;
+
+				&:focus {
+					border: 2px solid rgba($color-primary, 0.4);
+					//outline: none;
+				}
+			}
+		}
+	}
+}
+
+.focused {
+	height: 36px;
+	width: 256px;
+	border-radius: 30px;
+	background-color: white;
+	box-shadow: $box-shadow;
+
+	input {
+		border-top-right-radius: 10px;
+		border-top-left-radius: 10px;
+		background-color: white;
+		margin: 0;
+		outline: none;
+		width: 100%;
+		//background-color: red;
+		height: 100%;
+		@include placeholder();
+		//border-radius: 30px;
+		padding: 0 1rem;
+		border: 2px solid transparent;
+		font-size: 0.8rem;
+		font-weight: 600;
+
+		&:focus {
+			//border: 2px solid rgba($color-primary, 0.4);
+			//outline: none;
+		}
+	}
+	.items {
+		border-top: 2px solid rgba($color-primary, 0.4);
+		box-shadow: $box-shadow;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+		display: flex;
+		flex-direction: column;
+
+		background-color: white;
+		width: inherit;
+		padding-bottom: 1rem;
+
+		.title {
+			padding: 1rem 1rem 0 1rem;
+		}
+
+		.item {
+			cursor: pointer;
+			padding: 1rem 1rem;
+			@include hover {
+				background-color: whitesmoke;
+			}
+			.itemInner {
+				display: flex;
+				gap: 0.5rem;
+				align-items: center;
+				.image {
+					img {
+						height: 20px;
+						width: 20px;
+						object-fit: contain;
+					}
+				}
+				.text {
+					h6 {
+						font-size: 0.9rem;
+						text-overflow: ellipsis;
+						max-width: 180px;
+						white-space: nowrap;
+						overflow: hidden;
+					}
+					p {
+						font-size: 0.7rem;
+						line-height: 1.5;
+					}
+				}
+			}
+		}
+	}
+}

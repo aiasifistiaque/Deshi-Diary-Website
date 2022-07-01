@@ -1,6 +1,17 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import * as lib from '../../lib/constants';
 
+const tagTypes = [
+	'Self',
+	'Listings',
+	'Listing',
+	'Ratings',
+	'Activities',
+	'Search',
+	'Categories',
+	'Category',
+];
+
 export const userApi = createApi({
 	reducerPath: 'userApi',
 	baseQuery: fetchBaseQuery({
@@ -13,8 +24,14 @@ export const userApi = createApi({
 			return headers;
 		},
 	}),
-	tagTypes: [],
+	tagTypes: tagTypes,
 	endpoints: builder => ({
+		/**Auth Routes authRoutes
+		 *
+		 *
+		 *
+		 */
+
 		getSelf: builder.query({
 			query: () => `/auth/self`,
 			providesTags: ['Self'],
@@ -28,7 +45,6 @@ export const userApi = createApi({
 					body,
 				};
 			},
-			invalidatesTags: [],
 		}),
 		register: builder.mutation({
 			query(body) {
@@ -40,8 +56,111 @@ export const userApi = createApi({
 			},
 			invalidatesTags: [],
 		}),
+		/**End of Auth Routes
+		 *
+		 *
+		 *
+		 */
+
+		/**Listing Routes listingRoutes
+		 *
+		 *
+		 *
+		 */
+		getCategories: builder.query({
+			query: () => `/categories`,
+			providesTags: ['Categories'],
+		}),
+		getCategoryByName: builder.query({
+			query: name => `/categories/${name}`,
+			providesTags: name => [{ type: 'Cagetory', id: name ? name : '' }],
+		}),
+		getListings: builder.query({
+			query: () => `/listings`,
+			providesTags: ['Listings'],
+		}),
+		getListingsById: builder.query({
+			query: id => `/listings/${id}`,
+			providesTags: id => [{ type: 'Listing', id: id ? id : '' }],
+		}),
+		addListing: builder.mutation({
+			query(body) {
+				return {
+					url: `/listings`,
+					method: 'POST',
+					body,
+				};
+			},
+			invalidatesTags: ['Listings', 'Activities'],
+		}),
+		/**End of Listing Routes
+		 *
+		 *
+		 *
+		 */
+		/**Search Routes searchRoutes
+		 *
+		 *
+		 *
+		 */
+
+		getSearch: builder.query({
+			query: ({ str, location }) => `/search/${str}?location=${location}`,
+			providesTags: ({ str, location }) => [
+				{ type: 'Search', id: str ? str : '' },
+			],
+		}),
+
+		getTopSearch: builder.query({
+			query: location => `/search?location=${location}`,
+			providesTags: location => [
+				{ type: 'Search', id: location ? location : 'Dhaka' },
+			],
+		}),
+
+		/**End of Listing Routes
+		 *
+		 *
+		 *
+		 */
+		/**Rating Routes ratingsRoute
+		 *
+		 *
+		 *
+		 */
+		addRating: builder.mutation({
+			query(body) {
+				return {
+					url: `/ratings`,
+					method: 'POST',
+					body,
+				};
+			},
+			invalidatesTags: ['Ratings', 'Listing', 'Activities'],
+		}),
+		getRatings: builder.query({
+			query: id => `/ratings/${id}`,
+			providesTags: id => [{ type: 'Ratings', id: id ? id : '' }],
+		}),
+		getActivities: builder.query({
+			query: id => `/activities`,
+			providesTags: ['Activities'],
+		}),
 	}),
 });
 
-export const { useLoginMutation, useRegisterMutation, useGetSelfQuery } =
-	userApi;
+export const {
+	useLoginMutation,
+	useRegisterMutation,
+	useGetSelfQuery,
+	useGetCategoriesQuery,
+	useGetCategoryByNameQuery,
+	useAddListingMutation,
+	useGetListingsQuery,
+	useGetListingsByIdQuery,
+	useAddRatingMutation,
+	useGetRatingsQuery,
+	useGetActivitiesQuery,
+	useGetSearchQuery,
+	useGetTopSearchQuery,
+} = userApi;

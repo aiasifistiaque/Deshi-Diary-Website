@@ -1,37 +1,36 @@
 import React from 'react';
 import styles from './Review.module.css';
+import * as lib from '../../../lib/constants';
+import Rating from '../../rate/rating/Rating';
 
-const Review = ({ review }) => {
+const Review = ({ review, user }) => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.details}>
 				<div className={styles.image}>
-					<img src={review.user.img} alt='*' />
+					<img
+						src={user?.image ? user.image : lib.placeholders.profileImage}
+						alt='*'
+					/>
 				</div>
 
 				<div className={styles.text}>
-					<div className={styles.stars}>
+					<Rating rating={review.rating} />
+					{/* <div className={styles.stars}>
 						<img src='/icons/star-secondary.png' alt='*' />
 						<img src='/icons/star-secondary.png' alt='*' />
 						<img src='/icons/star-secondary.png' alt='*' />
 						<img src='/icons/star-secondary.png' alt='*' />
 						<img src='/icons/star-secondary.png' alt='*' />
-					</div>
+					</div> */}
 					<div className={styles.user}>
 						<h6>{`"${review.title}"`}</h6>
-						<p>{review.user?.name && review.user.name}</p>
+						<p>{user?.name && user.name}</p>
 					</div>
 				</div>
 			</div>
 			<div className={styles.review}>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
-					ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor
-					sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-					incididunt ut labore et dolore magna aliqua.
-				</p>
+				<p>{review?.details && review.details}</p>
 			</div>
 		</div>
 	);

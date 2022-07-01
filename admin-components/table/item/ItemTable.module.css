@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+.fluid {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.horizontal {
+  flex-direction: row;
+}
+
+.shadow {
+  box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+}
+
+.curved {
+  border-radius: 4px;
+}
+
+.rounded {
+  border-radius: 8px;
+}
+
+.round {
+  border-radius: 30px;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.alignStart {
+  align-items: flex-start;
+}
+
+.alignEnd {
+  align-items: flex-end;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.justifyStart {
+  justify-content: flex-start;
+}
+
+.justifyEnd {
+  justify-content: flex-end;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(136, 136, 136, 0.15);
+  border-bottom: none;
+}
+
+.row {
+  border-bottom: 1px solid rgba(136, 136, 136, 0.15);
+  display: flex;
+}
+.row .title {
+  padding: 0.75rem 1.25rem;
+  flex: 1;
+  border-right: 1px solid rgba(136, 136, 136, 0.15);
+}
+.row .data {
+  padding: 0.75rem 1.25rem;
+  flex: 2;
+}
+@media (min-width: 1008px) {
+  .row .data {
+    flex: 2.5;
+  }
+}
+.row .data p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.editing {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1.25rem;
+  flex: 2;
+}
+@media (min-width: 1008px) {
+  .editing {
+    flex: 2.5;
+  }
+}
+.editing input[type=number]::-webkit-inner-spin-button,
+.editing input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.editing input,
+.editing textarea,
+.editing select {
+  margin: 0;
+  height: 42px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border: 1px solid rgba(3, 152, 158, 0.2);
+  background-color: #f9f9f9;
+  justify-content: center;
+  padding: 0 0.75rem;
+  border-radius: 4px;
+}
+.editing input:focus,
+.editing textarea:focus,
+.editing select:focus {
+  border: 1px solid #03989e;
+}
+.editing textarea {
+  padding: 1em;
+}
+.editing textarea {
+  min-height: 200px;
+}/*# sourceMappingURL=ItemTable.module.css.map */

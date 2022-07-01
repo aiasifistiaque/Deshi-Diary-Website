@@ -19,7 +19,33 @@ const Input = ({
 	textArea,
 	optional,
 	radio,
+	onKeyDown,
+	noSubmit,
 }) => {
+	if (textArea)
+		<div className={styles.input}>
+			{label && (
+				<label>
+					{label} {required && <span style={{ color: 'red' }}>*</span>}{' '}
+					{optional && (
+						<span
+							style={{
+								color: '#b1b1b1',
+								fontWeight: 600,
+							}}>{`(Optional)`}</span>
+					)}
+				</label>
+			)}
+
+			<input
+				type={type ? type : password ? 'password' : 'text'}
+				placeholder={placeholder}
+				value={value}
+				onChange={e => onChange(e.target.value)}
+				onKeyPress={onKeyPress}
+				required={required ? true : false}
+			/>
+		</div>;
 	if (select)
 		return (
 			<div className={styles.input}>
