@@ -6,6 +6,7 @@ import { expand } from '../../../store/slices/toggledSlice';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import useAuth from '../../../hooks/useAuth';
+import { logout } from '../../../store/slices/authSlice';
 
 const variants = {
 	open: { opacity: 1 },
@@ -105,7 +106,9 @@ const Items = () => {
 			)}
 
 			<Item>{`FAQ's`}</Item>
-			{!loading && isLoggedIn && <Item>Logout</Item>}
+			{!loading && isLoggedIn && (
+				<Item onClick={() => dispatch(logout())}> Logout</Item>
+			)}
 		</div>
 	);
 };
