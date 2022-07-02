@@ -5,7 +5,7 @@ import styles from './SimilarBusinesses.module.css';
 const data = [
 	{
 		title: 'Leisure',
-		img: '/test/food4.jpg',
+		img: lib.placeholders.image,
 		rating: 2.9,
 		name: 'Flavors',
 		reviews: 108,
@@ -14,7 +14,7 @@ const data = [
 	},
 	{
 		title: 'Restaurents',
-		img: '/test/food3.jpg',
+		img: lib.placeholders.image,
 		rating: 3.4,
 		name: 'Panda Dumplings',
 		reviews: 108,
@@ -23,7 +23,7 @@ const data = [
 	},
 	{
 		title: 'Hotel',
-		img: '/test/food2.jpg',
+		img: lib.placeholders.image,
 		rating: 4.5,
 		name: 'Burger King',
 		reviews: 108,
@@ -33,7 +33,7 @@ const data = [
 	},
 	{
 		title: 'Leisure',
-		img: '/test/food1.jpg',
+		img: lib.placeholders.image,
 		rating: 2.9,
 		name: 'Madchef Uttara',
 		reviews: 108,

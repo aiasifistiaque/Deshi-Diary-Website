@@ -118,6 +118,19 @@ export const userApi = createApi({
 			],
 		}),
 
+		getFilteredSearch: builder.query({
+			query: ({
+				search,
+				sort = '-createdAt',
+				page = 1,
+				perpage = 10,
+				location = 'All',
+				category = 'All',
+				rating,
+			} = {}) =>
+				`/filter?search=${search}&location=${location}&category=${category}&sort=${sort}&page=${page}&rating=${rating}`,
+		}),
+
 		/**End of Listing Routes
 		 *
 		 *
@@ -163,4 +176,6 @@ export const {
 	useGetActivitiesQuery,
 	useGetSearchQuery,
 	useGetTopSearchQuery,
+	useGetFilteredSearchQuery,
+	useLazyGetFilteredSearchQuery,
 } = userApi;

@@ -7,8 +7,7 @@ import styles from './SearchFilters.module.css';
 import * as lib from '../../../lib/constants';
 
 const SearchFilters = ({
-	locations,
-	setLocations,
+	setLocation,
 	rating,
 	setRating,
 	show,
@@ -19,6 +18,10 @@ const SearchFilters = ({
 	setQuery,
 	categories,
 	setCategory,
+	sort,
+	setSort,
+	category,
+	onApplyFilters,
 }) => {
 	return (
 		<div className={styles.container}>
@@ -40,19 +43,21 @@ const SearchFilters = ({
 							label='Location'
 							select
 							data={lib.data.divisions}
-							onChange={e => setLocations(e)}
+							onChange={e => setLocation(e)}
 						/>
 						<Input
 							label='Select Category'
 							select
 							data={categories}
 							onChange={e => setCategory(e)}
+							preSelect={category && category}
 						/>
 						<Input
 							label='Sort By'
 							select
 							data={lib.data.sort}
-							onChange={e => setLocations(e)}
+							onChange={e => setSort(e)}
+							preSelect={sort}
 						/>
 						<StarRate
 							rating={rating}
@@ -66,7 +71,7 @@ const SearchFilters = ({
 							data={['Dine in', 'Takeout', 'Parking', 'Air Conditioned']}
 						/>
 					</div>
-					<Button fill small>
+					<Button fill small onClick={onApplyFilters}>
 						Apply Filters
 					</Button>
 					<Button fill small secondary>

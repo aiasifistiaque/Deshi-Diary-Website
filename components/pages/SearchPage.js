@@ -3,39 +3,70 @@ import React, { useEffect, useState } from 'react';
 import {
 	useGetCategoriesQuery,
 	useGetCategoryByNameQuery,
+	useGetFilteredSearchQuery,
 	useGetListingsQuery,
+	useLazyGetFilteredSearchQuery,
 } from '../../store/services/apiService';
 import Page from '../nav/page/Page';
 import SearchFilters from '../search/filters/SearchFilters';
 import SearchMain from '../search/main/SearchMain';
 import SearchContainer from '../search/search-container/SearchContainer';
+import * as lib from '../../lib/constants';
 
 const SearchPage = () => {
 	const router = useRouter();
-
+	//
 	const categoryData = useGetCategoryByNameQuery(router.query.category);
 	const categories = useGetCategoriesQuery();
 
-	const [locations, setLocations] = useState();
+	const [query, setQuery] = useState(router.query.search);
 	const [rating, setRating] = useState();
 	const [show, setShow] = useState(true);
-	const [query, setQuery] = useState(router.query.search);
 	const [features, setFeatures] = useState([]);
-	const { data, isLoading, isFetching, isError, error } = useGetListingsQuery();
+	const [location, setLocation] = useState();
+
 	const [category, setCategory] = useState();
+	const [sort, setSort] = useState(lib.data.sort[0]);
+
+	const [filters, setFilters] = useState({ search: query });
+
+	const [finalQuery, setFinalQuery] = useState();
+	const [fianlCategory, setFinalCategory] = useState();
+	const [finalSort, setFinalSort] = useState();
+	const [finalLocation, setFinalLocation] = useState();
+	const [finalRating, setFinalRating] = useState();
+
+	const { data, isFetching, isError, isLoading } = useGetFilteredSearchQuery({
+		search: finalQuery,
+		category: fianlCategory,
+		sort: finalSort,
+		location: finalLocation,
+		rating: finalRating,
+	});
+
+	//
 
 	useEffect(() => {
-		if (!categoryData.isFetching && !categoryData.isError) {
-			setCategory(categoryData.data._id);
+		if (!categoryData.isFetching && categoryData.data) {
+			setFinalCategory(categoryData.data._id);
 		}
 	}, [categoryData.isFetching]);
+
+	const onApplyFilters = () => {
+		//trigger();
+		setFinalCategory(category);
+		setFinalLocation(location);
+		setFinalQuery(query);
+		setFinalSort(sort);
+		setFinalRating(rating);
+	};
 
 	return (
 		<Page>
 			<SearchContainer>
 				<SearchFilters
-					locations={locations}
-					setLocations={e => setLocations(e)}
+					onApplyFilters={onApplyFilters}
+					setLocation={e => setLocation(e)}
 					rating={rating}
 					setRating={e => setRating(e)}
 					show={show}
@@ -50,6 +81,8 @@ const SearchPage = () => {
 							? categories.data.doc
 							: []
 					}
+					sort={sort}
+					setSort={e => setSort(e)}
 				/>
 
 				<SearchMain data={data && data.doc} isLoading={isFetching} />

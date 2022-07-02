@@ -21,6 +21,7 @@ const Input = ({
 	radio,
 	onKeyDown,
 	noSubmit,
+	preSelect,
 }) => {
 	if (textArea)
 		<div className={styles.input}>
@@ -61,9 +62,15 @@ const Input = ({
 						onChange(e.target.value);
 					}}
 					style={{ textTransform: 'capitalize' }}>
-					<option value='' selected disabled>
-						select your option
-					</option>
+					{preSelect ? (
+						<option disabled value={preSelect._id}>
+							{preSelect.name}
+						</option>
+					) : (
+						<option value='' selected={true} disabled>
+							select your option
+						</option>
+					)}
 
 					{data.map((option, i) => (
 						<option

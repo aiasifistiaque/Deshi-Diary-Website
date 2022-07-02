@@ -16,9 +16,9 @@ $box-shadow: 4px 10px 20px rgba(66, 66, 66, 0.1);
 	justify-content: flex-start;
 	//overflow-y: scroll;
 	@include btn-text-unselect;
-	background-color: rgba(white, 0.8);
+	background-color: rgba(white, 1);
 	box-shadow: $box-shadow;
-	backdrop-filter: blur(10px);
+	//backdrop-filter: blur(10px);
 
 	// &::-webkit-scrollbar {
 	// 	width: 6px;
