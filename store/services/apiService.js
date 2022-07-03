@@ -10,6 +10,7 @@ const tagTypes = [
 	'Search',
 	'Categories',
 	'Category',
+	'Comments',
 ];
 
 export const userApi = createApi({
@@ -155,6 +156,20 @@ export const userApi = createApi({
 			query: id => `/ratings/${id}`,
 			providesTags: id => [{ type: 'Ratings', id: id ? id : '' }],
 		}),
+		getComments: builder.query({
+			query: id => `/comments/${id}`,
+			providesTags: id => [{ type: 'Comments', id: id ? id : '' }],
+		}),
+		addComment: builder.mutation({
+			query(body) {
+				return {
+					url: `/comments`,
+					method: 'POST',
+					body,
+				};
+			},
+			invalidatesTags: ['Comments'],
+		}),
 		getActivities: builder.query({
 			query: id => `/activities`,
 			providesTags: ['Activities'],
@@ -178,4 +193,6 @@ export const {
 	useGetTopSearchQuery,
 	useGetFilteredSearchQuery,
 	useLazyGetFilteredSearchQuery,
+	useGetCommentsQuery,
+	useAddCommentMutation,
 } = userApi;

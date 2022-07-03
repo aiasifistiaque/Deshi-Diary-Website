@@ -11,8 +11,7 @@ const data = [
 			img: '/test/u3.jpg',
 		},
 		date: '14 days ago',
-		title: 'Great Place, Great Food!',
-		comments: [],
+
 		details:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
 	},
@@ -22,8 +21,6 @@ const data = [
 			name: 'Ayesha Aziz',
 			img: '/test/u1.jpg',
 		},
-		title: 'Great Place, Great Food!',
-		comments: [],
 
 		details:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
@@ -35,8 +32,6 @@ const data = [
 			img: '/test/u2.jpg',
 		},
 		date: '14 days ago',
-		title: 'Great Place, Great Food!',
-		comments: [],
 
 		details:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
@@ -50,7 +45,7 @@ const ReviewsPage = ({ query }) => {
 				<BusinessCard query={query} />
 			</Section>
 			<Section>
-				<AllReviews data={data} query={query} />
+				<AllReviews dat={data} query={query} />
 			</Section>
 		</Page>
 	);

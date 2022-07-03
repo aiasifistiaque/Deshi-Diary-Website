@@ -11,7 +11,7 @@ const filter = [
 	{ name: 'Oldest', _id: 'oldest' },
 ];
 
-const AllReviews = ({ query }) => {
+const AllReviews = ({ query, dat }) => {
 	const { data, isFetching, isError, error } = useGetRatingsQuery(query);
 	const [sort, setSort] = useState(filter[0]._id);
 

@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+.fluid {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.horizontal {
+  flex-direction: row;
+}
+
+.shadow {
+  box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+}
+
+.curved {
+  border-radius: 4px;
+}
+
+.rounded {
+  border-radius: 8px;
+}
+
+.round {
+  border-radius: 30px;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.alignStart {
+  align-items: flex-start;
+}
+
+.alignEnd {
+  align-items: flex-end;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.justifyStart {
+  justify-content: flex-start;
+}
+
+.justifyEnd {
+  justify-content: flex-end;
+}
+
+.container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+@media (min-width: 1008px) {
+  .container {
+    align-items: center;
+  }
+}
+.container .image {
+  height: 40px;
+  width: 40px;
+  border-radius: 99px;
+}
+.container .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.container .details {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+@media (min-width: 1008px) {
+  .container .details {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.container .details input {
+  height: 36px;
+  border: 1px solid rgba(3, 152, 158, 0.4);
+  outline: none;
+  background-color: white;
+  width: 100%;
+  padding: 0 1rem;
+  border-radius: 30px;
+}/*# sourceMappingURL=WriteComment.module.css.map */

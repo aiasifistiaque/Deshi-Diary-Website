@@ -75,21 +75,24 @@ const Business = ({ query }) => {
 					</SectionItem>
 				)}
 			</Section>
-			<Section title='Other Features'>
-				<SectionListContainer>
-					{data?.features &&
-						data.features?.map((feature, i) => (
-							<SectionList key={i} icon='feature'>
-								{feature}
-							</SectionList>
-						))}
-				</SectionListContainer>
-			</Section>
+			{data?.features?.length > 0 && (
+				<Section title='Other Features'>
+					<SectionListContainer>
+						{data?.features &&
+							data.features?.map((feature, i) => (
+								<SectionList key={i} icon='feature'>
+									{feature}
+								</SectionList>
+							))}
+					</SectionListContainer>
+				</Section>
+			)}
+
 			<Section title='Rating Summary'>
 				<RatingSummary data={data ? data : []} />
 			</Section>
 			{!ratings.isFetching && ratings.data && (
-				<Section title='What Others are saying'>
+				<Section title='What people are saying'>
 					{ratings?.data?.doc.length > 0 &&
 						ratings.data?.doc?.map(
 							(review, i) =>
