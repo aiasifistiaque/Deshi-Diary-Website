@@ -13,7 +13,7 @@ export const adminApi = createApi({
 			return headers;
 		},
 	}),
-	tagTypes: ['Categories'],
+	tagTypes: ['Categories', 'Badges'],
 	endpoints: builder => ({
 		// register: builder.mutation({
 		// 	query(body) {
@@ -53,6 +53,21 @@ export const adminApi = createApi({
 			},
 			invalidatesTags: ['Categories'],
 		}),
+		getAllBadgesAsAdmin: builder.query({
+			query: ({ sort = '-createdAt', page = 1, perpage = 10 } = {}) =>
+				`/badges?sort=${sort}&page=${page}`,
+			providesTags: ['Badges'],
+		}),
+		addBadgesAsAdmin: builder.mutation({
+			query(body) {
+				return {
+					url: `/badges`,
+					method: 'POST',
+					body,
+				};
+			},
+			invalidatesTags: ['Badges'],
+		}),
 	}),
 });
 
@@ -62,4 +77,6 @@ export const {
 	useGetAllRatingsAsAdminQuery,
 	useGetAllCategoriesAsAdminQuery,
 	useAddCategoryAsAdminMutation,
+	useGetAllBadgesAsAdminQuery,
+	useAddBadgesAsAdminMutation,
 } = adminApi;

@@ -68,6 +68,9 @@ const Sidebar = ({ selected, store }) => {
 					<Link href={`${url}/reviews`}>
 						<Item selected={selected}>Reviews</Item>
 					</Link>
+					<Link href={`${url}/badges`}>
+						<Item selected={selected}>Badges</Item>
+					</Link>
 					<Link href={`${url}/categories`}>
 						<Item selected={selected}>Categories</Item>
 					</Link>

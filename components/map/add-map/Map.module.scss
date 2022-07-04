@@ -1,0 +1,80 @@
+@import '../../../styles/imports';
+
+.container {
+	width: 100%;
+	margin: -1rem 0 0rem 0;
+	@include desktop {
+		width: 80%;
+	}
+	.map {
+		margin: 1rem 0;
+		width: 100%;
+		height: 400px;
+		background-color: whitesmoke;
+	}
+}
+
+.view {
+	//width: 100%;
+	//margin: 1rem 0 0rem 0;
+	background-color: white;
+
+	margin: 0.5rem -16px;
+	border: 2px solid white;
+
+	@include desktop {
+		width: 100%;
+		border-radius: 8px;
+		box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+		border-radius: 8px;
+		margin: 0.5rem 0;
+	}
+	.map {
+		width: 100%;
+		height: 500px;
+
+		@include desktop {
+			border-top-left-radius: 8px;
+			border-top-right-radius: 8px;
+		}
+	}
+}
+
+.info {
+	height: 100px;
+	width: 100px;
+}
+
+.itemContainer {
+	margin: 2rem;
+}
+
+.items {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 2rem 0;
+}
+
+.item {
+	display: flex;
+	gap: 1rem;
+	width: 100%;
+	margin-bottom: 1.5rem;
+	align-items: center;
+	@include desktop {
+		width: 50%;
+	}
+	img {
+		width: 24px;
+		object-fit: contain;
+	}
+	p {
+		font-weight: 600;
+		font-size: 1.1rem;
+	}
+	a {
+		font-weight: 600;
+		font-size: 1.1rem;
+		color: dodgerblue;
+	}
+}

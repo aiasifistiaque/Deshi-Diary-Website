@@ -15,6 +15,8 @@ import * as lib from '../../lib/constants';
 import TagsButton from '../addlisting/tags-button/TagsButton';
 import Checkbox from '../util/checkbox/Checkbox';
 import AddImage from '../listing/addimage/AddImage';
+import AddMap from '../map/add-map/AddMap';
+import Label from '../util/label/Label';
 
 const AddListing = () => {
 	const { data, isError, isFetching } = useGetCategoriesQuery();
@@ -35,6 +37,9 @@ const AddListing = () => {
 	const [extraPhone, setExtraPhone] = useState();
 	const [email, setEmail] = useState();
 	const [website, setWebsite] = useState();
+
+	const [lat, setLat] = useState();
+	const [lng, setLng] = useState();
 
 	//tags
 
@@ -67,6 +72,8 @@ const AddListing = () => {
 			paymentOptions,
 			tags,
 			images,
+			lat,
+			lng,
 		});
 	};
 
@@ -113,6 +120,7 @@ const AddListing = () => {
 						/>
 					</SectionInput>
 				</Section>
+
 				<Section
 					subheading='Add Images'
 					subtitle='Accepted photo formats include .jpg .jpeg .gif and .png File size should be less than 15MB'>
@@ -140,6 +148,42 @@ const AddListing = () => {
 					</SectionInput>
 				</Section>
 				<Section subheading='Address'>
+					<SectionInput>
+						<Label>Add Location From Map</Label>
+						<input
+							onKeyPress={e => {
+								e.key === 'Enter' && e.preventDefault();
+							}}
+							value={lat}
+							//onChange={e => setCity(e)}
+							label='Latitude'
+							required
+							style={{ height: 1, border: 'none', color: 'white' }}
+						/>
+						<input
+							onKeyPress={e => {
+								e.key === 'Enter' && e.preventDefault();
+							}}
+							value={lat}
+							//onChange={e => setCity(e)}
+							label=''
+							required
+							style={{ height: 1, border: 'none', color: 'white' }}
+						/>
+					</SectionInput>
+					<AddMap
+						lat={lat}
+						setLat={e => setLat(e)}
+						lng={lng}
+						setLng={e => setLng(e)}
+					/>
+
+					{lat && (
+						<Label>
+							Lat:{lat}, Lng:{lng}
+						</Label>
+					)}
+
 					<SectionInput>
 						<Input
 							onKeyPress={e => {
@@ -190,6 +234,7 @@ const AddListing = () => {
 						/>
 					</SectionInput>
 				</Section>
+
 				<Section subheading='Contact Information'>
 					<SectionInput>
 						<Input
@@ -273,7 +318,7 @@ const AddListing = () => {
 				</Section>
 				<Container style={{ marginTop: 32 }} horizontal>
 					<Button text>{'Go Back'}</Button>
-					<Button submit loading={result.isLoadingp}>
+					<Button submit loading={result.isLoading}>
 						{'Save & Continue'}
 					</Button>
 				</Container>

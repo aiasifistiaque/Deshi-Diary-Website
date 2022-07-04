@@ -9,8 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@googlemaps/react-wrapper": "^1.1.35",
+    "@mapbox/search-js-react": "^1.0.0-beta.11",
     "@reduxjs/toolkit": "^1.8.2",
     "axios": "^0.27.2",
+    "fast-equals": "^4.0.1",
+    "google-maps-react": "^2.0.6",
     "moment": "^2.29.3",
     "next": "12.1.6",
     "react": "18.1.0",

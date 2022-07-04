@@ -10,6 +10,7 @@ import ListingPhotos from '../listing/listing-photos/ListingPhotos';
 import ListingReview from '../listing/listing-reviews/ListingReviews';
 import RatingSummary from '../listing/rating-summary/RatingSummary';
 import SimilarBusinesses from '../listing/similar-businesses.js/SimilarBusinesses';
+import ViewMap from '../map/add-map/ViewMap';
 import Page from '../nav/page/Page';
 import Container from '../util/container/Container';
 import Section, {
@@ -30,7 +31,9 @@ const Business = ({ query }) => {
 
 		router.push(`/reviews/${query}`);
 	};
+
 	if (isFetching || isError) return null;
+
 	return (
 		<Page>
 			<Container>
@@ -45,6 +48,13 @@ const Business = ({ query }) => {
 			<Container>
 				<ListingPhotos data={data.images} />
 			</Container>
+
+			<ViewMap
+				lat={data.geoLocation?.lat || 23.78}
+				lng={data.geoLocation?.lng || 90.47}
+				data={data}
+			/>
+
 			<Section title={`Info & Details`}>
 				{data?.description && (
 					<SectionItem title='General Info'>{data.description}</SectionItem>

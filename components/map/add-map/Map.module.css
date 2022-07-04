@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+.fluid {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.horizontal {
+  flex-direction: row;
+}
+
+.shadow {
+  box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+}
+
+.curved {
+  border-radius: 4px;
+}
+
+.rounded {
+  border-radius: 8px;
+}
+
+.round {
+  border-radius: 30px;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.alignStart {
+  align-items: flex-start;
+}
+
+.alignEnd {
+  align-items: flex-end;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.justifyStart {
+  justify-content: flex-start;
+}
+
+.justifyEnd {
+  justify-content: flex-end;
+}
+
+.container {
+  width: 100%;
+  margin: -1rem 0 0rem 0;
+}
+@media (min-width: 1008px) {
+  .container {
+    width: 80%;
+  }
+}
+.container .map {
+  margin: 1rem 0;
+  width: 100%;
+  height: 400px;
+  background-color: whitesmoke;
+}
+
+.view {
+  background-color: white;
+  margin: 0.5rem -16px;
+  border: 2px solid white;
+}
+@media (min-width: 1008px) {
+  .view {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+    border-radius: 8px;
+    margin: 0.5rem 0;
+  }
+}
+.view .map {
+  width: 100%;
+  height: 500px;
+}
+@media (min-width: 1008px) {
+  .view .map {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+}
+
+.info {
+  height: 100px;
+  width: 100px;
+}
+
+.itemContainer {
+  margin: 2rem;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.item {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+@media (min-width: 1008px) {
+  .item {
+    width: 50%;
+  }
+}
+.item img {
+  width: 24px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.item p {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.item a {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: dodgerblue;
+}/*# sourceMappingURL=Map.module.css.map */
