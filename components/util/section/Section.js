@@ -63,7 +63,11 @@ export const SectionList = ({ children, icon }) => {
 	);
 };
 
-export const SectionInput = ({ children }) => {
-	return <div className={styles.sectionInputs}>{children}</div>;
+export const SectionInput = ({ children, third }) => {
+	return (
+		<div className={third ? styles.sectionOneThird : styles.sectionInputs}>
+			{children}
+		</div>
+	);
 };
 export default Section;

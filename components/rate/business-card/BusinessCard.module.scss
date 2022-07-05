@@ -1,5 +1,7 @@
 @import '../../../styles/imports';
 
+$box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+
 .container {
 	display: flex;
 	flex-direction: column;
@@ -43,6 +45,72 @@
 			background-color: $color-light;
 			border-radius: 4px;
 			margin-bottom: 0.2rem;
+			p {
+				font-size: 0.7rem;
+				font-weight: 700;
+				line-height: 1.5;
+				margin: 0;
+			}
+		}
+		p {
+			font-size: 0.9rem;
+			font-weight: 500;
+			line-height: 1.5;
+			margin: 2px 0 8px 0;
+		}
+		a {
+			font-size: 0.9rem;
+			color: dodgerblue;
+			font-weight: 800;
+		}
+	}
+}
+
+.home {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1.5rem;
+	margin: 1rem 0;
+	width: 100%;
+
+	.image {
+		height: 100px;
+		width: 100px;
+		img {
+			width: 100px;
+			height: 100px;
+			object-fit: cover;
+			border-radius: 999px;
+		}
+	}
+	.description {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		align-items: flex-start;
+		text-align: left;
+		@include desktop {
+			width: 50%;
+		}
+		h5 {
+			font-size: 1.2rem;
+			@include desktop {
+				font-size: 1.5rem;
+			}
+			line-height: 1.5;
+			cursor: pointer;
+			&:hover {
+				text-decoration-line: underline;
+			}
+		}
+		.tag {
+			display: inline-flex;
+			padding: 0.25rem 0.5rem;
+			background-color: $color-light;
+			border-radius: 4px;
+			margin-bottom: 0.2rem;
+
 			p {
 				font-size: 0.7rem;
 				font-weight: 700;

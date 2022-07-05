@@ -16,13 +16,7 @@ const Review = ({ review, user }) => {
 
 				<div className={styles.text}>
 					<Rating rating={review.rating} />
-					{/* <div className={styles.stars}>
-						<img src='/icons/star-secondary.png' alt='*' />
-						<img src='/icons/star-secondary.png' alt='*' />
-						<img src='/icons/star-secondary.png' alt='*' />
-						<img src='/icons/star-secondary.png' alt='*' />
-						<img src='/icons/star-secondary.png' alt='*' />
-					</div> */}
+
 					<div className={styles.user}>
 						<h6>{`"${review.title}"`}</h6>
 						<p>{user?.name && user.name}</p>

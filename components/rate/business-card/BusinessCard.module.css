@@ -117,4 +117,74 @@
   font-size: 0.9rem;
   color: dodgerblue;
   font-weight: 800;
+}
+
+.home {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1rem 0;
+  width: 100%;
+}
+.home .image {
+  height: 100px;
+  width: 100px;
+}
+.home .image img {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 999px;
+}
+.home .description {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  text-align: left;
+}
+@media (min-width: 1008px) {
+  .home .description {
+    width: 50%;
+  }
+}
+.home .description h5 {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+@media (min-width: 1008px) {
+  .home .description h5 {
+    font-size: 1.5rem;
+  }
+}
+.home .description h5:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+.home .description .tag {
+  display: inline-flex;
+  padding: 0.25rem 0.5rem;
+  background-color: #eef0f3;
+  border-radius: 4px;
+  margin-bottom: 0.2rem;
+}
+.home .description .tag p {
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+}
+.home .description p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 2px 0 8px 0;
+}
+.home .description a {
+  font-size: 0.9rem;
+  color: dodgerblue;
+  font-weight: 800;
 }/*# sourceMappingURL=BusinessCard.module.css.map */

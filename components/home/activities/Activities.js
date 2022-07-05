@@ -1,50 +1,12 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { useGetActivitiesQuery } from '../../../store/services/apiService';
+import BusinessCard from '../../rate/business-card/BusinessCard';
+import { SectionInput } from '../../util/section/Section';
 import ViewMore from '../morebutton/ViewMore';
 import Review from '../review/Review';
 import HomeSection from '../section/HomeSection';
 import styles from './Activities.module.css';
-
-const dat = [
-	{
-		user: 'Sajeeb Ahmed',
-		type: 'photos',
-		place: 'Sayeman Beach Resort',
-		images: ['/test/r1.jpg', '/test/r2.jpg', '/test/r3.jpg'],
-	},
-	{
-		user: 'Ayesha Aziz',
-		type: 'review',
-		place: 'Burger King',
-		review: {
-			user: {
-				name: 'Ayesha Aziz',
-				img: '/test/u1.jpg',
-			},
-			title: 'Great Place, Great Food!',
-			details:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-			date: '2 days ago',
-		},
-	},
-	{
-		user: 'Asif Hossain',
-		type: 'review',
-		place: 'Gadget Tomorrow',
-		images: ['/test/r4.jpg', '/test/r5.jpg'],
-		review: {
-			user: {
-				name: 'Asif Hossain',
-				img: '/test/u3.jpg',
-			},
-			date: '14 days ago',
-			title: 'Great Place, Great Food!',
-			details:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-		},
-	},
-];
 
 const Activities = () => {
 	//const [data, setData] = useState(dat);
@@ -59,7 +21,9 @@ const Activities = () => {
 					<div className={styles.card} key={i}>
 						<div className={styles.title}>
 							<p>
-								<a>{item?.user?.name && item.user.name}</a>
+								<Link href={`/u/${item?.user?._id}`}>
+									<a>{item?.user?.name && item.user.name}</a>
+								</Link>
 								<span style={{ margin: '0 4px' }}>
 									added new {item?.type && item.type} on
 								</span>
@@ -92,8 +56,18 @@ const Activities = () => {
 									</div>
 								)}
 							{item.type == 'review' && (
-								<Review review={item.rating} user={item.user} />
+								<div className={styles.listingActivity}>
+									<div className={styles.left}>
+										<Review review={item.rating} user={item.user} />
+									</div>
+								</div>
 							)}
+							<div className={styles.right}>
+								<BusinessCard
+									home
+									query={item?.listing?._id && item.listing._id}
+								/>
+							</div>
 						</div>
 					</div>
 				))}

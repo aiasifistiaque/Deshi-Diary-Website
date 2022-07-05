@@ -89,7 +89,17 @@
   font-weight: 600;
 }
 .container .details .text .user h6 {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.2;
+}
+.container .review p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+@media (min-width: 1008px) {
+  .container .review p {
+    font-size: 1rem;
+  }
 }/*# sourceMappingURL=Review.module.css.map */

@@ -192,4 +192,14 @@
   .sectionInputs {
     width: 50%;
   }
+}
+
+.sectionOneThird {
+  margin: 1rem 0;
+  width: 100%;
+}
+@media (min-width: 1008px) {
+  .sectionOneThird {
+    width: 70%;
+  }
 }/*# sourceMappingURL=Section.module.css.map */

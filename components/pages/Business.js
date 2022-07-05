@@ -14,6 +14,7 @@ import ViewMap from '../map/add-map/ViewMap';
 import Page from '../nav/page/Page';
 import Container from '../util/container/Container';
 import Section, {
+	SectionInput,
 	SectionItem,
 	SectionList,
 	SectionListContainer,
@@ -43,6 +44,7 @@ const Business = ({ query }) => {
 					open={data?.open && data.open}
 					rating={data?.rating && data.rating}
 					tags={data?.tags && data.tags}
+					data={data}
 				/>
 			</Container>
 			<Container>
@@ -103,11 +105,14 @@ const Business = ({ query }) => {
 			</Section>
 			{!ratings.isFetching && ratings.data && (
 				<Section title='What people are saying'>
-					{ratings?.data?.doc.length > 0 &&
-						ratings.data?.doc?.map(
-							(review, i) =>
-								i < 3 && <ListingReview fill key={i} review={review} />
-						)}
+					<SectionInput third>
+						{ratings?.data?.doc.length > 0 &&
+							ratings.data?.doc?.map(
+								(review, i) =>
+									i < 3 && <ListingReview fill key={i} review={review} />
+							)}
+					</SectionInput>
+
 					<ViewMore onClick={onClick} />
 				</Section>
 			)}

@@ -52,7 +52,6 @@
 .cards {
   display: flex;
   flex-direction: column;
-  margin: 0 0 0 0;
 }
 
 .card .main .images .right img, .card .main .images .smallRight img, .card .main .images .left img {
@@ -70,7 +69,14 @@
 }
 
 .card {
-  margin: 16px 0;
+  border-bottom: 1px solid rgba(66, 66, 66, 0.1);
+  padding: 2rem 0;
+}
+@media (min-width: 1008px) {
+  .card {
+    padding: 2rem 0 3rem 0;
+    margin: 16px 0;
+  }
 }
 .card .title {
   display: flex;
@@ -96,6 +102,7 @@
   display: flex;
   width: 100%;
   gap: 8px;
+  margin-bottom: 1rem;
 }
 .card .main .images .left {
   width: 100%;
@@ -119,4 +126,30 @@
 }
 .card .main .images .right {
   width: 100%;
+}
+
+.listingActivity {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.listingActivity .left {
+  flex: 1.5;
+}
+@media (min-width: 1008px) {
+  .listingActivity .left {
+    width: 75%;
+  }
+}
+
+.right {
+  display: inline-flex;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 2px;
+}
+@media (min-width: 1008px) {
+  .right {
+    width: 50%;
+  }
 }/*# sourceMappingURL=Activities.module.css.map */

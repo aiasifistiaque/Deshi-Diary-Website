@@ -12,36 +12,6 @@ import * as lib from '../../../lib/constants';
 import { useGetListingsQuery } from '../../../store/services/apiService';
 import Rating from '../../rate/rating/Rating';
 
-// const data = [
-// 	{
-// 		title: 'Leisure',
-// 		img: '/test/leisure.jpg',
-// 		rating: 2.9,
-// 		name: 'Fitness+ Gym',
-// 		reviews: 108,
-// 		distance: '2.4km',
-// 		address: 'Apt. 02, House 42, Road 84, Gulshan 2, Dhaka 1208',
-// 	},
-// 	{
-// 		title: 'Restaurents',
-// 		img: '/test/restaurents.jpg',
-// 		rating: 3.4,
-// 		name: 'Panda Dumplings',
-// 		reviews: 108,
-// 		distance: '2.4km',
-// 		address: 'Apt. 02, House 42, Road 84, Gulshan 2, Dhaka 1208',
-// 	},
-// 	{
-// 		title: 'Hotel',
-// 		img: '/test/hotels.jpg',
-// 		rating: 4.5,
-// 		name: 'Hotel Lakeshore',
-// 		reviews: 108,
-// 		distance: '2.4km',
-// 		address: 'Apt. 02, House 42, Road 84, Gulshan 2, Dhaka 1208',
-// 	},
-// ];
-
 const RecentListingCards = () => {
 	const { data, isError, error, isFetching } = useGetListingsQuery();
 	if (isFetching || isError || !data) return null;

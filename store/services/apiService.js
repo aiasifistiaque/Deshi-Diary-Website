@@ -11,6 +11,7 @@ const tagTypes = [
 	'Categories',
 	'Category',
 	'Comments',
+	'User',
 ];
 
 export const userApi = createApi({
@@ -174,6 +175,20 @@ export const userApi = createApi({
 			query: id => `/activities`,
 			providesTags: ['Activities'],
 		}),
+		/**End of Rating Routes
+		 *
+		 *
+		 *
+		 */
+		/**User Routes userRoute
+		 *
+		 *
+		 *
+		 */
+		getUserData: builder.query({
+			query: id => `/users/${id}`,
+			providesTags: id => [{ type: 'User', id: id ? id : '' }],
+		}),
 	}),
 });
 
@@ -195,4 +210,5 @@ export const {
 	useLazyGetFilteredSearchQuery,
 	useGetCommentsQuery,
 	useAddCommentMutation,
+	useGetUserDataQuery,
 } = userApi;

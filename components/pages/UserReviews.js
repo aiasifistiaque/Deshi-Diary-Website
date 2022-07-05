@@ -42,10 +42,10 @@ const data = [
 	},
 ];
 
-const UserReviews = () => {
+const UserReviews = ({ doc }) => {
 	return (
 		<Page>
-			<UserContainer select='reviews'>
+			<UserContainer select='reviews' doc={doc}>
 				<AllReviews data={data} />
 			</UserContainer>
 		</Page>

@@ -24,6 +24,7 @@
 				display: flex;
 				gap: 2px;
 				margin-bottom: 8px;
+
 				img {
 					width: 8px;
 					height: auto;
@@ -37,7 +38,7 @@
 					font-weight: 600;
 				}
 				h6 {
-					font-size: 1.05rem;
+					font-size: 1.2rem;
 					font-weight: 600;
 					line-height: 1.2;
 				}
@@ -45,5 +46,13 @@
 		}
 	}
 	.review {
+		p {
+			font-size: 0.9rem;
+			font-weight: 500;
+			line-height: 1.5;
+			@include desktop {
+				font-size: 1rem;
+			}
+		}
 	}
 }

@@ -1,6 +1,7 @@
 @import '../../../styles/imports';
 
-$border: 1px solid rgba(#aeaeae, 0.5);
+$border: 1px solid rgba(#aeaeae, 0.2);
+$box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
 
 .container {
 	display: flex;
@@ -20,6 +21,8 @@ $border: 1px solid rgba(#aeaeae, 0.5);
 	flex-direction: column;
 	flex: 1;
 	align-items: flex-start;
+
+	box-shadow: $box-shadow;
 
 	min-width: 300px;
 	border: $border;

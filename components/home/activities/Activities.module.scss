@@ -1,9 +1,10 @@
 @import '../../../styles/imports';
+$box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 2px;
 
 .cards {
 	display: flex;
 	flex-direction: column;
-	margin: 0 0 0 0;
+	//margin: 0 0 0 0;
 }
 
 %big-image {
@@ -19,7 +20,16 @@
 }
 
 .card {
-	margin: 16px 0;
+	border-bottom: 1px solid rgba(#424242, 0.1);
+
+	padding: 2rem 0;
+
+	@include desktop {
+		//border-radius: 8px;
+		padding: 2rem 0 3rem 0;
+		margin: 16px 0;
+	}
+
 	.title {
 		display: flex;
 		align-items: center;
@@ -44,6 +54,7 @@
 			display: flex;
 			width: 100%;
 			gap: 8px;
+			margin-bottom: 1rem;
 
 			.left {
 				width: 100%;
@@ -71,5 +82,31 @@
 				@extend %big-image;
 			}
 		}
+	}
+}
+
+.listingActivity {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	.left {
+		flex: 1.5;
+		@include desktop {
+			width: 75%;
+		}
+	}
+}
+
+.right {
+	display: inline-flex;
+	//box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+	padding: 0.5rem 1rem;
+	border-radius: 8px;
+	box-shadow: $box-shadow;
+
+	@include desktop {
+		width: 50%;
 	}
 }

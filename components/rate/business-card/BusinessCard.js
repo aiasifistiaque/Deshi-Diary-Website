@@ -6,12 +6,12 @@ import styles from './BusinessCard.module.css';
 import * as lib from '../../../lib/constants';
 import { Placeholder } from 'semantic-ui-react';
 
-const BusinessCard = ({ query }) => {
+const BusinessCard = ({ query, home }) => {
 	const { data, isLoading, isFetching, isError, error } =
 		useGetListingsByIdQuery(query);
 
 	return (
-		<div className={styles.container}>
+		<div className={home ? styles.home : styles.container}>
 			<div className={styles.image}>
 				{isFetching ? (
 					<Placeholder style={{ height: 150, width: 150, borderRadius: 99 }}>

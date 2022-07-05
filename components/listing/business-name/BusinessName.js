@@ -1,17 +1,18 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import useAuth from '../../../hooks/useAuth';
+import useLocation from '../../../hooks/useLocation';
 import Button from '../../util/button/Button';
 import styles from './BusinnessName.module.css';
 
-const BusinessName = ({ id, name, open, rating, tags }) => {
+const BusinessName = ({ id, name, open, rating, tags, data }) => {
 	const { loggedIn, token } = useSelector(state => state.auth);
+	const location = useLocation();
 	return (
 		<div className={styles.container}>
 			<div className={styles.title}>
 				<h3>{name}</h3>
 				<div className={open ? styles.open : styles.closed}>
-					<p>{open ? 'Open Now' : 'Closed Now'}</p>
+					<p>{JSON.stringify(data?.geoLocation && data.geoLocation)}</p>
 				</div>
 			</div>
 			<div className={styles.tags}>

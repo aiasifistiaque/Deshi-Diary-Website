@@ -68,8 +68,9 @@
   flex-direction: column;
   flex: 1;
   align-items: flex-start;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
   min-width: 300px;
-  border: 1px solid rgba(174, 174, 174, 0.5);
+  border: 1px solid rgba(174, 174, 174, 0.2);
   border-radius: 2px;
   max-width: 100%;
   box-sizing: border-box;
@@ -142,7 +143,7 @@
   background-color: white;
   flex-direction: column;
   width: 100%;
-  border-top: 1px solid rgba(174, 174, 174, 0.5);
+  border-top: 1px solid rgba(174, 174, 174, 0.2);
   justify-content: center;
   align-items: center;
   min-height: 42px;

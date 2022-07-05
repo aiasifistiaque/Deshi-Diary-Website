@@ -10,10 +10,10 @@ const data = [
 	{ name: 'Badge 4', src: '/test/badge4.png' },
 ];
 
-const UserBadges = () => {
+const UserBadges = ({ doc }) => {
 	return (
 		<Page>
-			<UserContainer select='badges' title='Received Badges'>
+			<UserContainer select='badges' title='Received Badges' doc={doc}>
 				<BadgeSection data={data} />
 			</UserContainer>
 		</Page>

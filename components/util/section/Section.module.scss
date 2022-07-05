@@ -128,3 +128,11 @@
 		width: 50%;
 	}
 }
+
+.sectionOneThird {
+	margin: 1rem 0;
+	width: 100%;
+	@include desktop {
+		width: 70%;
+	}
+}
