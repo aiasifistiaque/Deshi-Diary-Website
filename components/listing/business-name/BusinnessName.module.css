@@ -55,7 +55,33 @@
 .container .title {
   display: flex;
   gap: 1rem;
-  align-items: center;
+  margin-bottom: 1rem;
+  flex-direction: column;
+}
+@media (min-width: 1008px) {
+  .container .title {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+.container .title h3 {
+  line-height: 20px;
+}
+.container .title .location p {
+  font-weight: 700;
+  color: #03989e;
+  padding: 0;
+  margin: 0;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  line-height: 0;
+  font-size: 1rem;
+}
+@media (min-width: 1008px) {
+  .container .title .location p {
+    line-height: 16px;
+    font-size: 1.2rem;
+  }
 }
 .container .title .open {
   color: #03989e;
