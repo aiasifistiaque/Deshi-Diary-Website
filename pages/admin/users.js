@@ -28,7 +28,7 @@ const Adminusers = () => {
 					{!isLoading &&
 						data?.doc &&
 						data.doc.map((item, i) => (
-							<Row key={i} i={i}>
+							<Row key={i} i={i} href={`/admin/user/${item._id}`}>
 								<Item>{item?.name && item.name}</Item>
 								<Item>{item?.email && item.email}</Item>
 								<Item>{item?.role && item.role}</Item>

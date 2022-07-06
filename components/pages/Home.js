@@ -7,12 +7,15 @@ import RecentListingCards from '../home/recentlistings/RecentListingCards';
 import Activities from '../home/activities/Activities';
 import HomeAbout from '../home/about/HomeAbout';
 import HomeLogo from '../home/logo/HomeLogo';
+import ViewMore from '../home/morebutton/ViewMore';
+import HomeSection from '../home/section/HomeSection';
 
 const Home = () => {
 	const [search, setSearch] = useState();
 
 	const [visible, setVisible] = useState(true);
 	const [searchFocus, setSearchFocus] = useState(false);
+	const [page, setPage] = useState(1);
 
 	useEffect(() => {
 		search && search.length >= 0 ? setVisible(false) : setVisible(true);
@@ -35,8 +38,15 @@ const Home = () => {
 			<Container>
 				<RecentListingCards />
 			</Container>
+
 			<Container>
-				<Activities />
+				<HomeSection title='Recent Activities'>
+					{Array.from(Array(page), (e, i) => {
+						return <Activities key={i} page={i + 1} />;
+					})}
+
+					<ViewMore onClick={() => setPage(page + 1)} />
+				</HomeSection>
 			</Container>
 			<Container>
 				<HomeAbout />

@@ -30,6 +30,9 @@ export const adminApi = createApi({
 			query: ({ sort = '-createdAt', page = 1, perpage = 10 } = {}) =>
 				`/users?sort=${sort}&page=${page}`,
 		}),
+		getUserByIdAsAdmin: builder.query({
+			query: id => `/users/${id}`,
+		}),
 		getListingsAsAdmin: builder.query({
 			query: ({ sort = '-createdAt', page = 1, perpage = 10 } = {}) =>
 				`/listings?sort=${sort}&page=${page}`,
@@ -58,6 +61,10 @@ export const adminApi = createApi({
 				`/badges?sort=${sort}&page=${page}`,
 			providesTags: ['Badges'],
 		}),
+		getCommentsAsAdmin: builder.query({
+			query: ({ sort = '-createdAt', page = 1, perpage = 10, id } = {}) =>
+				`/comments/${id}?sort=${sort}&page=${page}`,
+		}),
 		addBadgesAsAdmin: builder.mutation({
 			query(body) {
 				return {
@@ -79,4 +86,6 @@ export const {
 	useAddCategoryAsAdminMutation,
 	useGetAllBadgesAsAdminQuery,
 	useAddBadgesAsAdminMutation,
+	useGetUserByIdAsAdminQuery,
+	useGetCommentsAsAdminQuery,
 } = adminApi;

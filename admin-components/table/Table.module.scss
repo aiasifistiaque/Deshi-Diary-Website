@@ -18,6 +18,7 @@ $table-box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.04),
 	flex-direction: column;
 	border: 2px solid $table-border;
 	width: 100%;
+	padding: 0.5rem 2rem;
 }
 
 .contain {
@@ -192,5 +193,15 @@ $item-margin: 32px;
 	}
 	.buttons {
 		display: flex;
+	}
+}
+
+.adminItem {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	margin-bottom: 1rem;
+	p {
+		font-size: 1rem;
 	}
 }

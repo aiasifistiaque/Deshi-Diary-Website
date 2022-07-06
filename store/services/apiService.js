@@ -194,7 +194,7 @@ export const userApi = createApi({
 		 *
 		 */
 		getActivities: builder.query({
-			query: id => `/activities`,
+			query: (page = 1) => `/activities?page=${page}`,
 			providesTags: ['Activities'],
 		}),
 		getNotifications: builder.query({
@@ -214,6 +214,10 @@ export const userApi = createApi({
 		getUserData: builder.query({
 			query: id => `/users/${id}`,
 			providesTags: id => [{ type: 'User', id: id ? id : '' }],
+		}),
+		getAdminComments: builder.query({
+			query: ({ sort = '-createdAt', page = 1, perpage = 10, id } = {}) =>
+				`/comments/${id}?sort=${sort}&page=${page}`,
 		}),
 	}),
 });
@@ -240,4 +244,5 @@ export const {
 	useGetUserRatingsQuery,
 	useGetNotificationsQuery,
 	useGetRatingByIdQuery,
+	useGetAdminCommentsQuery,
 } = userApi;

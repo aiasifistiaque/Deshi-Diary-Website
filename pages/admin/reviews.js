@@ -27,7 +27,7 @@ const Adminreviews = () => {
 					{!isLoading &&
 						data?.doc &&
 						data.doc.map((item, i) => (
-							<Row key={i} i={i}>
+							<Row key={i} i={i} href={`/admin/review/${item._id}`}>
 								<Item>{item?.listing?.name && item.listing.name}</Item>
 								<Item>{item?.rating && item.rating}</Item>
 								<Item>{item?.user?.name && item.user.name}</Item>

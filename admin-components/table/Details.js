@@ -25,12 +25,7 @@ export const DetailsTable = ({
 		);
 
 	return (
-		<div
-			ref={ref}
-			className={full ? styles.full : styles.container}
-			style={{
-				padding: `${24}px ${32}px`,
-			}}>
+		<div ref={ref} className={full ? styles.full : styles.container}>
 			<h5 style={{ marginBottom: '1rem' }}>{title}</h5>
 			{!loading ? <div>{children}</div> : <h6>loading...</h6>}
 		</div>
@@ -54,6 +49,24 @@ export const DetailsRow = ({ children, href }) => {
 export const DetailsItem = ({ children, title, date }) => {
 	return (
 		<div className={styles.item}>
+			<h6>{title}</h6>
+			<p>{date ? moment(children).calendar() : children}</p>
+		</div>
+	);
+};
+
+export const AdminItem = ({ children, title, date, href }) => {
+	if (href)
+		return (
+			<div className={styles.adminItem}>
+				<h6>{title}</h6>
+				<Link href={href}>
+					<p>{date ? moment(children).calendar() : children}</p>
+				</Link>
+			</div>
+		);
+	return (
+		<div className={styles.adminItem}>
 			<h6>{title}</h6>
 			<p>{date ? moment(children).calendar() : children}</p>
 		</div>

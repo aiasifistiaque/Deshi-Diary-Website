@@ -28,7 +28,7 @@ const Adminlistings = () => {
 					{!isLoading &&
 						data?.doc &&
 						data.doc.map((item, i) => (
-							<Row key={i} i={i}>
+							<Row key={i} i={i} href={`/admin/listing/${item?._id}`}>
 								<Item>{item?.name && item.name}</Item>
 								<Item>{item?.category?.name && item.category.name}</Item>
 								<Item>{item?.rating && item.rating}</Item>
