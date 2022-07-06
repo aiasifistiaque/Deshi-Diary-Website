@@ -59,7 +59,7 @@
 }
 .container .details {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin: 8px 0;
 }
 .container .details .image {
@@ -87,19 +87,59 @@
   font-size: 0.9rem;
   color: #03989e;
   font-weight: 600;
+  cursor: pointer;
+}
+@media (min-width: 1008px) {
+  .container .details .text .user p:hover {
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+  }
 }
 .container .details .text .user h6 {
   font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.2;
 }
+.container .continue {
+  display: inline-flex;
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+.container .continue p {
+  color: dodgerblue;
+}
+@media (min-width: 1008px) {
+  .container .continue p:hover {
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+  }
+}
 .container .review p {
   font-size: 0.9rem;
   font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  /* number of lines to show */
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
   line-height: 1.5;
 }
 @media (min-width: 1008px) {
   .container .review p {
     font-size: 1rem;
   }
+}
+.container .review .business {
+  margin-bottom: 0.5rem;
+}
+.container .review .business p {
+  font-size: 1.1rem;
+}
+.container .review .business p a {
+  font-weight: 700;
+}
+.container .review .business p a:hover {
+  color: #424242;
 }/*# sourceMappingURL=Review.module.css.map */

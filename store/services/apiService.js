@@ -12,6 +12,8 @@ const tagTypes = [
 	'Category',
 	'Comments',
 	'User',
+	'UserRatings',
+	'Notifications',
 ];
 
 export const userApi = createApi({
@@ -130,7 +132,7 @@ export const userApi = createApi({
 				category = 'All',
 				rating,
 			} = {}) =>
-				`/filter?search=${search}&location=${location}&category=${category}&sort=${sort}&page=${page}&rating=${rating}`,
+				`/filter?search=${search}&location=${location}&category=${category}&sort=${sort}&page=${page}&rating=${rating}&perpage=${perpage}`,
 		}),
 
 		/**End of Listing Routes
@@ -154,9 +156,19 @@ export const userApi = createApi({
 			invalidatesTags: ['Ratings', 'Listing', 'Activities'],
 		}),
 		getRatings: builder.query({
-			query: id => `/ratings/${id}`,
+			query: ({ sort = '-createdAt', page = 1, perpage = 10, id } = {}) =>
+				`/ratings/${id}?sort=${sort}&page=${page}`,
 			providesTags: id => [{ type: 'Ratings', id: id ? id : '' }],
 		}),
+		getRatingById: builder.query({
+			query: id => `/ratings/review/${id}`,
+		}),
+		getUserRatings: builder.query({
+			query: ({ sort = '-createdAt', page = 1, perpage = 10, id } = {}) =>
+				`/ratings/user/${id}?sort=${sort}&page=${page}`,
+			providesTags: id => [{ type: 'UserRatings', id: id ? id : '' }],
+		}),
+
 		getComments: builder.query({
 			query: id => `/comments/${id}`,
 			providesTags: id => [{ type: 'Comments', id: id ? id : '' }],
@@ -171,11 +183,25 @@ export const userApi = createApi({
 			},
 			invalidatesTags: ['Comments'],
 		}),
+		/**End of Rating Routes
+		 *
+		 *
+		 *
+		 */
+		/**User Notifications notificationsRoute
+		 *
+		 *
+		 *
+		 */
 		getActivities: builder.query({
 			query: id => `/activities`,
 			providesTags: ['Activities'],
 		}),
-		/**End of Rating Routes
+		getNotifications: builder.query({
+			query: () => `/notifications`,
+			providesTags: ['Notificatins'],
+		}),
+		/**End of Notifications Routes
 		 *
 		 *
 		 *
@@ -211,4 +237,7 @@ export const {
 	useGetCommentsQuery,
 	useAddCommentMutation,
 	useGetUserDataQuery,
+	useGetUserRatingsQuery,
+	useGetNotificationsQuery,
+	useGetRatingByIdQuery,
 } = userApi;

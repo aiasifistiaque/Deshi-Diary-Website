@@ -58,7 +58,11 @@ const Activities = () => {
 							{item.type == 'review' && (
 								<div className={styles.listingActivity}>
 									<div className={styles.left}>
-										<Review review={item.rating} user={item.user} />
+										<Review
+											review={item.rating}
+											listing={item.listing}
+											user={item.user}
+										/>
 									</div>
 								</div>
 							)}

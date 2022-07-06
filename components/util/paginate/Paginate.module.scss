@@ -1,0 +1,78 @@
+@import '../../../styles/imports';
+
+$padding: 0.25rem 1rem;
+
+%button {
+	background-color: black;
+	padding: $padding;
+	@include btn-text-unselect;
+	cursor: pointer;
+	transition: 0.2s;
+	P {
+		color: whitesmoke;
+		font-size: 0.75rem;
+	}
+	@include hover {
+		background-color: rgba(black, 0.4);
+	}
+}
+
+.container {
+	display: flex;
+	gap: 1rem;
+	border: 1px solid rgba(#424242, 0.05);
+	margin-top: 1rem;
+	border-radius: 30px;
+	justify-content: space-between;
+	align-items: center;
+	margin-left: auto;
+	@include desktop {
+		width: 40%;
+	}
+	p {
+		font-size: 0.85rem;
+		font-weight: 600;
+		margin: 0;
+		padding: 0;
+	}
+	.buttonLeft {
+		@extend %button;
+		border-top-left-radius: 30px;
+		border-bottom-left-radius: 30px;
+	}
+	.buttonRight {
+		@extend %button;
+		border-top-right-radius: 30px;
+		border-bottom-right-radius: 30px;
+	}
+	.middle {
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		padding: $padding;
+	}
+}
+
+.disabledRight {
+	background-color: #dedede;
+	padding: $padding;
+	@include btn-text-unselect;
+	cursor: not-allowed;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+	P {
+		color: whitesmoke;
+	}
+}
+
+.disabledLeft {
+	background-color: #dedede;
+	padding: $padding;
+	@include btn-text-unselect;
+	cursor: not-allowed;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+	P {
+		color: whitesmoke;
+	}
+}

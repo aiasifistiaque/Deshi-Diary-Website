@@ -22,11 +22,12 @@ const SearchFilters = ({
 	setSort,
 	category,
 	onApplyFilters,
+	total,
 }) => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.heading}>
-				<h6>Result: 12 Listings Found</h6>
+				<h6>Result: {total} Listings Found</h6>
 				<div className={styles.showMore} onClick={() => setShow(!show)}>
 					<img src='/icons/more.png' alt='+' />
 				</div>

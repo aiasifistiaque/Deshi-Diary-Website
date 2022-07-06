@@ -7,7 +7,7 @@
 	}
 	.details {
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		margin: 8px 0;
 
 		.image {
@@ -36,6 +36,13 @@
 					font-size: 0.9rem;
 					color: $color-primary;
 					font-weight: 600;
+					cursor: pointer;
+
+					&:hover {
+						@include desktop {
+							text-decoration-line: underline;
+						}
+					}
 				}
 				h6 {
 					font-size: 1.2rem;
@@ -45,13 +52,44 @@
 			}
 		}
 	}
+	.continue {
+		display: inline-flex;
+		padding: 0.5rem 0;
+		cursor: pointer;
+		p {
+			color: dodgerblue;
+			@include hover {
+				text-decoration-line: underline;
+			}
+		}
+	}
 	.review {
 		p {
 			font-size: 0.9rem;
 			font-weight: 500;
+
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 5; /* number of lines to show */
+			line-clamp: 5;
+			-webkit-box-orient: vertical;
+
 			line-height: 1.5;
 			@include desktop {
 				font-size: 1rem;
+			}
+		}
+		.business {
+			margin-bottom: 0.5rem;
+			p {
+				font-size: 1.1rem;
+				a {
+					font-weight: 700;
+					&:hover {
+						color: #424242;
+					}
+				}
 			}
 		}
 	}

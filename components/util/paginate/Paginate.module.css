@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+.fluid {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.horizontal {
+  flex-direction: row;
+}
+
+.shadow {
+  box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
+}
+
+.curved {
+  border-radius: 4px;
+}
+
+.rounded {
+  border-radius: 8px;
+}
+
+.round {
+  border-radius: 30px;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.alignStart {
+  align-items: flex-start;
+}
+
+.alignEnd {
+  align-items: flex-end;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.justifyStart {
+  justify-content: flex-start;
+}
+
+.justifyEnd {
+  justify-content: flex-end;
+}
+
+.container .buttonRight, .container .buttonLeft {
+  background-color: black;
+  padding: 0.25rem 1rem;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.container .buttonRight P, .container .buttonLeft P {
+  color: whitesmoke;
+  font-size: 0.75rem;
+}
+@media (min-width: 1008px) {
+  .container .buttonRight:hover, .container .buttonLeft:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.container {
+  display: flex;
+  gap: 1rem;
+  border: 1px solid rgba(66, 66, 66, 0.05);
+  margin-top: 1rem;
+  border-radius: 30px;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+}
+@media (min-width: 1008px) {
+  .container {
+    width: 40%;
+  }
+}
+.container p {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+.container .buttonLeft {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.container .buttonRight {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.container .middle {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0.25rem 1rem;
+}
+
+.disabledRight {
+  background-color: #dedede;
+  padding: 0.25rem 1rem;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: not-allowed;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.disabledRight P {
+  color: whitesmoke;
+}
+
+.disabledLeft {
+  background-color: #dedede;
+  padding: 0.25rem 1rem;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: not-allowed;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.disabledLeft P {
+  color: whitesmoke;
+}/*# sourceMappingURL=Paginate.module.css.map */

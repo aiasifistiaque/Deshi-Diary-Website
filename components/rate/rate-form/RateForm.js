@@ -63,7 +63,7 @@ const RateForm = ({ query }) => {
 						onChange={e => setDescription(e)}
 						label='Your Review Details'
 						placeholder='Enter your review details here'
-						optional
+						required
 					/>
 					<Input
 						value={date}

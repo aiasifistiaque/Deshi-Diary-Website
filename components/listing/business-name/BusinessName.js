@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import useLocation from '../../../hooks/useLocation';
 import Button from '../../util/button/Button';
 import styles from './BusinnessName.module.css';
-import { getDistance } from 'geolib';
 import useGetDistance from '../../../hooks/useGetDistance';
 
 const BusinessName = ({ id, name, open, rating, tags, data }) => {

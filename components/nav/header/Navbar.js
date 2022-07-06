@@ -59,7 +59,7 @@ const Navbar = ({ landing, focus, setFocus, auth }) => {
 					/>
 				</SmallScreen>
 				<LargeScreen>
-					<NavIcon icon='notification' />
+					<NavIcon icon='notification' href='/notifications' />
 				</LargeScreen>
 
 				<LargeScreen>

@@ -77,4 +77,11 @@
 }
 .container .header .select h6 {
   padding-bottom: 1.5rem;
+}
+
+.pl {
+  background-color: white;
+  border-bottom: 1px solid rgba(3, 152, 158, 0.1);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
 }/*# sourceMappingURL=AllReviews.module.css.map */

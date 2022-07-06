@@ -1,0 +1,46 @@
+@import '../../../styles/imports';
+
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+
+	.item {
+		padding: 1rem 0 2rem 0;
+		margin-bottom: 1rem;
+		border-bottom: 1px solid #eee;
+		//border-radius: 0.5rem;
+		h6 {
+			margin-bottom: 0.5rem;
+			font-size: 1.05rem;
+		}
+		.details {
+			margin-bottom: 0.5rem;
+
+			p {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-line-clamp: 2; /* number of lines to show */
+				line-clamp: 2;
+				-webkit-box-orient: vertical;
+				font-size: 0.95rem;
+				font-weight: 450;
+				color: #999;
+			}
+		}
+
+		.date {
+			text-align: right;
+			p {
+				color: dodgerblue;
+				font-size: 0.8rem;
+				font-weight: 500;
+			}
+		}
+
+		@include desktop {
+			width: 50%;
+		}
+	}
+}

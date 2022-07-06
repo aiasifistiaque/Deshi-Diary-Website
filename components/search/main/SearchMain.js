@@ -4,9 +4,18 @@ import Rating from '../../rate/rating/Rating';
 import styles from './SearchMain.module.css';
 import * as lib from '../../../lib/constants';
 import { Placeholder } from 'semantic-ui-react';
+import Paginate from '../../util/paginate/Paginate';
 
-const SearchMain = ({ data, isLoading }) => {
-	if (isLoading) return <LoadingPlaceholder />;
+const SearchMain = ({
+	data,
+	isLoading,
+	page,
+	setPage,
+	isFetching,
+	isError,
+	doc,
+}) => {
+	if (isFetching) return <LoadingPlaceholder />;
 	return (
 		<div className={styles.container}>
 			{data &&
@@ -52,6 +61,13 @@ const SearchMain = ({ data, isLoading }) => {
 						</div>
 					</div>
 				))}
+			<Paginate
+				page={page}
+				setPage={e => setPage(e)}
+				isLoading={isFetching}
+				isError={isError}
+				data={doc}
+			/>
 		</div>
 	);
 };

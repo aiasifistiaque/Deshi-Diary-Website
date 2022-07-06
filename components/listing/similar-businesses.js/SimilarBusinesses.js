@@ -1,95 +1,48 @@
 import React from 'react';
 import * as lib from '../../../lib/constants';
+import { useGetFilteredSearchQuery } from '../../../store/services/apiService';
+import Rating from '../../rate/rating/Rating';
 import styles from './SimilarBusinesses.module.css';
+import Link from 'next/link';
 
-const data = [
-	{
-		title: 'Leisure',
-		img: lib.placeholders.image,
-		rating: 2.9,
-		name: 'Flavors',
-		reviews: 108,
-		distance: '2.4km',
-		address: 'Apt. 02, House 42, Road 84, Gulshan 2, Dhaka 1208',
-	},
-	{
-		title: 'Restaurents',
-		img: lib.placeholders.image,
-		rating: 3.4,
-		name: 'Panda Dumplings',
-		reviews: 108,
-		distance: '2.4km',
-		address: 'Apt. 02, House 42, Road 84, Gulshan 2, Dhaka 1208',
-	},
-	{
-		title: 'Hotel',
-		img: lib.placeholders.image,
-		rating: 4.5,
-		name: 'Burger King',
-		reviews: 108,
-		distance: '2.4km',
-		address: 'Apt. 02, House 42, Road 84, Gulshan 2, Dhaka 1208',
-		phone: '+88 0182 8920 929',
-	},
-	{
-		title: 'Leisure',
-		img: lib.placeholders.image,
-		rating: 2.9,
-		name: 'Madchef Uttara',
-		reviews: 108,
-		distance: '2.4km',
-		address: 'Apt. 02, House 42, Road 84, Gulshan 2, Dhaka 1208',
-	},
-];
+const SimilarBusinesses = ({ id }) => {
+	const { data, isFetching, isLoading, isError } = useGetFilteredSearchQuery({
+		cateogry: id,
+		perpage: 4,
+	});
 
-const SimilarBusinesses = () => {
 	return (
 		<div className={styles.container}>
-			{data.map((item, i) => (
-				<div key={i} className={styles.item}>
-					<div className={styles.image}>
-						<img src={item.img} alt='i' />
-					</div>
-					<div className={styles.description}>
-						<h6>{item.name}</h6>
-						<div className={styles.stars}>
-							<img
-								src={`/icons/${
-									item.rating >= 1 ? 'star-secondary' : 'star-blank'
-								}.png`}
-								alt='*'
-							/>
-							<img
-								src={`/icons/${
-									item.rating >= 2 ? 'star-secondary' : 'star-blank'
-								}.png`}
-								alt='*'
-							/>
-							<img
-								src={`/icons/${
-									item.rating >= 3 ? 'star-secondary' : 'star-blank'
-								}.png`}
-								alt='*'
-							/>
-							<img
-								src={`/icons/${
-									item.rating >= 4 ? 'star-secondary' : 'star-blank'
-								}.png`}
-								alt='*'
-							/>
-							<img
-								src={`/icons/${
-									item.rating >= 5 ? 'star-secondary' : 'star-blank'
-								}.png`}
-								alt='*'
-							/>
-							<p>{item.reviews} Reviews</p>
+			{data?.doc?.map &&
+				data.doc.map((item, i) => (
+					<Link key={i} href={`/b/${item._id}`}>
+						<div className={styles.item}>
+							<div className={styles.image}>
+								<img
+									src={
+										item?.images?.length > 0
+											? item.images[0].src
+											: lib.placeholders.image
+									}
+									alt='i'
+								/>
+							</div>
+							<div className={styles.description}>
+								<h6>{item.name}</h6>
+								<div className={styles.stars}>
+									<Rating rating={item.rating} size={12} />
+									<p>{item.reviews} Reviews</p>
+								</div>
+								<p>{item.phone}</p>
+								<p>{item.street && item.street}</p>
+								<p>
+									{item.city ? item.city : item.division}{' '}
+									{item.postCode && item.postCode}
+								</p>
+							</div>
 						</div>
-						<p>{item.phone}</p>
-						<p>{item.address}</p>
-					</div>
-				</div>
-			))}
+					</Link>
+				))}
 		</div>
 	);
 };

@@ -3,15 +3,10 @@ import styles from './Review.module.css';
 import * as lib from '../../../lib/constants';
 import moment from 'moment';
 import Rating from '../../rate/rating/Rating';
-import WriteComment from '../write-comment/WriteComment';
-import {
-	useAddCommentMutation,
-	useGetCommentsQuery,
-} from '../../../store/services/apiService';
 import Link from 'next/link';
 import Replies from './Replies';
 
-const ListingReview = ({ review, fill }) => {
+const UserListingReview = ({ review, fill }) => {
 	const [show, setShow] = useState(false);
 	return (
 		<div
@@ -21,28 +16,36 @@ const ListingReview = ({ review, fill }) => {
 				<div className={styles.image}>
 					<img
 						src={
-							review?.user?.img
-								? review.user.image
-								: lib.placeholders.profileImage
+							review?.listing?.images?.length > 0
+								? review.listing.images[0].src
+								: lib.placeholders.image
 						}
 						alt='*'
 					/>
 				</div>
 
 				<div className={styles.text}>
-					<Rating rating={review?.rating ? review.rating : 0} size={8} />
-					<div className={styles.user}>
-						<h6>{`"${review?.title && review.title}"`}</h6>
-						<Link href={`/u/${review.user._id}`}>
-							<p>{review.user?.name && review.user.name}</p>
+					<div className={styles.profile}>
+						<Link href={`/b/${review.listing._id}`}>
+							<p>{review.listing?.name && review.listing.name}</p>
 						</Link>
+						<Rating rating={review?.rating ? review.rating : 0} size={10} />
+
+						<h6>{`"${review?.title && review.title}"`}</h6>
 					</div>
 				</div>
 			</div>
 			<div className={styles.review}>
+				<p style={{ fontSize: '1.05rem', marginTop: 12 }}>
+					Reviewed by
+					<Link href={`/u/${review.user._id}`}>
+						<a>{review?.user?.name && review.user.name}</a>
+					</Link>
+				</p>
 				<div className={styles.date}>
 					<p>{moment(review.createdAt).calendar()}</p>
 				</div>
+
 				<p>{review?.details && review.details}</p>
 			</div>
 			{show ? (
@@ -61,4 +64,4 @@ const ListingReview = ({ review, fill }) => {
 	);
 };
 
-export default ListingReview;
+export default UserListingReview;

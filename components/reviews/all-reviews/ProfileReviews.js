@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Placeholder } from 'semantic-ui-react';
-import { useGetRatingsQuery } from '../../../store/services/apiService';
-import ListingReview from '../../listing/listing-reviews/ListingReviews';
+import { useGetUserRatingsQuery } from '../../../store/services/apiService';
+import UserListingReview from '../../listing/listing-reviews/UserListingReview';
 import Error from '../../util/error/Error';
 import Input from '../../util/input/Input';
+import Paginate from '../../util/paginate/Paginate';
 import styles from './AllReviews.module.css';
 import ReviewPlaceholder from './ReviewPlaceholder';
 
@@ -13,25 +13,25 @@ const filter = [
 	{ name: 'Trending', _id: '-comments' },
 ];
 
-const AllReviews = ({ query }) => {
-	const [sort, setSort] = useState(filter[0]._id);
-
-	const { data, isFetching, isError, error } = useGetRatingsQuery({
-		id: query,
-		sort: sort,
-	});
+const ProfileReviews = ({ query }) => {
+	const [sort, setSort] = useState();
+	const [page, setPage] = useState(1);
+	const { data, isFetching, isError, error, isLoading } =
+		useGetUserRatingsQuery({
+			id: query,
+			sort,
+			page,
+		});
 
 	return (
 		<div className={styles.container}>
 			<div className={styles.header}>
 				<h5>Reviews</h5>
-
 				<div className={styles.select}>
 					<h6>Filter By:</h6>
 					<Input
+						noDefault={true}
 						select
-						noDefault
-						//preSelect={sort}
 						data={filter}
 						onChange={e => setSort(e)}
 					/>
@@ -44,17 +44,23 @@ const AllReviews = ({ query }) => {
 				<>
 					<ReviewPlaceholder />
 					<ReviewPlaceholder />
-					<ReviewPlaceholder />
 				</>
 			) : (
 				data &&
 				data.doc.length > 0 &&
 				data.doc.map((review, i) => (
-					<ListingReview fill key={i} review={review} />
+					<UserListingReview fill key={i} review={review} />
 				))
 			)}
+			<Paginate
+				page={page}
+				setPage={e => setPage(e)}
+				isLoading={isLoading}
+				isError={isError}
+				data={data}
+			/>
 		</div>
 	);
 };
 
-export default AllReviews;
+export default ProfileReviews;

@@ -22,14 +22,13 @@ import Section, {
 
 const Business = ({ query }) => {
 	const { data, isFetching, isError } = useGetListingsByIdQuery(query);
-	const ratings = useGetRatingsQuery(query);
+	const ratings = useGetRatingsQuery({ id: query });
 
 	//
 	const [reviews, setReviews] = useState([]);
 	const router = useRouter();
 	const onClick = () => {
 		let arr = reviews;
-
 		router.push(`/reviews/${query}`);
 	};
 
@@ -117,7 +116,7 @@ const Business = ({ query }) => {
 				</Section>
 			)}
 			<Section title='Similar Businesses'>
-				<SimilarBusinesses />
+				<SimilarBusinesses id={data?.category?._id && data.category._id} />
 			</Section>
 		</Page>
 	);

@@ -4,8 +4,6 @@ import {
 	useGetCategoriesQuery,
 	useGetCategoryByNameQuery,
 	useGetFilteredSearchQuery,
-	useGetListingsQuery,
-	useLazyGetFilteredSearchQuery,
 } from '../../store/services/apiService';
 import Page from '../nav/page/Page';
 import SearchFilters from '../search/filters/SearchFilters';
@@ -35,6 +33,7 @@ const SearchPage = () => {
 	const [finalSort, setFinalSort] = useState();
 	const [finalLocation, setFinalLocation] = useState();
 	const [finalRating, setFinalRating] = useState();
+	const [page, setPage] = useState(1);
 
 	const { data, isFetching, isError, isLoading } = useGetFilteredSearchQuery({
 		search: finalQuery,
@@ -42,6 +41,7 @@ const SearchPage = () => {
 		sort: finalSort,
 		location: finalLocation,
 		rating: finalRating,
+		page,
 	});
 
 	//
@@ -59,12 +59,14 @@ const SearchPage = () => {
 		setFinalQuery(query);
 		setFinalSort(sort);
 		setFinalRating(rating);
+		setPage(1);
 	};
 
 	return (
 		<Page>
 			<SearchContainer>
 				<SearchFilters
+					total={!isLoading && data ? data.totalDocs : 0}
 					onApplyFilters={onApplyFilters}
 					setLocation={e => setLocation(e)}
 					rating={rating}
@@ -85,7 +87,15 @@ const SearchPage = () => {
 					setSort={e => setSort(e)}
 				/>
 
-				<SearchMain data={data && data.doc} isLoading={isFetching} />
+				<SearchMain
+					data={data && data.doc}
+					isLoading={isLoading}
+					page={page}
+					setPage={e => setPage(e)}
+					isError={isError}
+					isFetching={isFetching}
+					doc={data && data}
+				/>
 			</SearchContainer>
 		</Page>
 	);
