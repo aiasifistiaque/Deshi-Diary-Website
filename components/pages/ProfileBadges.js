@@ -1,4 +1,5 @@
 import React from 'react';
+import { useGetUserBadgesQuery } from '../../store/services/apiService';
 import Page from '../nav/page/Page';
 import BadgeSection from '../profile/profile-badges/BadgeSection';
 import ProfileContainer from '../profile/profile-page/ProfileContainer';
@@ -17,10 +18,12 @@ const data = [
 ];
 
 const ProfileBadges = () => {
+	const { data, isLoading, isFetching, error, isError } =
+		useGetUserBadgesQuery('self');
 	return (
 		<Page>
 			<ProfileContainer select='badges' title='Received Badges'>
-				<BadgeSection data={data} />
+				{data?.doc && <BadgeSection data={data.doc} />}
 			</ProfileContainer>
 		</Page>
 	);

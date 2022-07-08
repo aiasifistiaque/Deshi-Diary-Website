@@ -20,6 +20,7 @@ const Button = ({
 	href,
 	fill,
 	loading,
+	style,
 }) => {
 	const mainStyle = outlined
 		? styles.outlined
@@ -34,7 +35,7 @@ const Button = ({
 
 	if (disabled)
 		return (
-			<div className={styles.disabled}>
+			<div className={styles.disabled} style={style}>
 				{icon && <img src={`/icons/${icon}.png`} alt={icon} />}
 				<p>{children}</p>
 			</div>
@@ -42,6 +43,7 @@ const Button = ({
 	if (loading)
 		return (
 			<div
+				style={style}
 				className={`${mainStyle} ${styles.loading} ${size} ${clr} ${
 					round && styles.round
 				} ${fill && styles.fill}`}>
@@ -65,6 +67,7 @@ const Button = ({
 		return (
 			<Link href={href}>
 				<div
+					style={style}
 					className={`${mainStyle} ${size} ${clr} ${round && styles.round} 
 					${fill && styles.fill}`}>
 					{icon && <img src={`/icons/${icon}.png`} alt={icon} />}
@@ -75,6 +78,7 @@ const Button = ({
 
 	return (
 		<div
+			style={style}
 			className={`${mainStyle} ${size} ${clr} ${round && styles.round} 
 			${fill && styles.fill}`}
 			onClick={onClick}>

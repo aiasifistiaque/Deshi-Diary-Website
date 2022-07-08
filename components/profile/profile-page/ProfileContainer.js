@@ -40,6 +40,7 @@ const ProfileContainer = ({ select, children, title }) => {
 						<NameCard name={data.name} email={data.email} />
 						<PointsCard data={pointsData} />
 					</div>
+
 					<div className={styles.bottom}>
 						{options.map((item, i) => (
 							<Link href={item.href} key={i}>

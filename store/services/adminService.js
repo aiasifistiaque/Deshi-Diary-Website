@@ -13,7 +13,7 @@ export const adminApi = createApi({
 			return headers;
 		},
 	}),
-	tagTypes: ['Categories', 'Badges'],
+	tagTypes: ['Categories', 'Badges', 'Assign'],
 	endpoints: builder => ({
 		// register: builder.mutation({
 		// 	query(body) {
@@ -58,13 +58,14 @@ export const adminApi = createApi({
 		}),
 		getAllBadgesAsAdmin: builder.query({
 			query: ({ sort = '-createdAt', page = 1, perpage = 10 } = {}) =>
-				`/badges?sort=${sort}&page=${page}`,
+				`/badges?sort=${sort}&page=${page}&perpage=${perpage}`,
 			providesTags: ['Badges'],
 		}),
 		getCommentsAsAdmin: builder.query({
 			query: ({ sort = '-createdAt', page = 1, perpage = 10, id } = {}) =>
 				`/comments/${id}?sort=${sort}&page=${page}`,
 		}),
+
 		addBadgesAsAdmin: builder.mutation({
 			query(body) {
 				return {
@@ -74,6 +75,20 @@ export const adminApi = createApi({
 				};
 			},
 			invalidatesTags: ['Badges'],
+		}),
+		getAssignedBadgesAsAdmin: builder.query({
+			query: id => `/assign/${id}`,
+			providesTags: id => [{ type: 'Assign', id: id ? id : '' }],
+		}),
+		assignBadgeAsAdmin: builder.mutation({
+			query(body) {
+				return {
+					url: `/assign`,
+					method: 'POST',
+					body,
+				};
+			},
+			invalidatesTags: ['Assign'],
 		}),
 	}),
 });
@@ -88,4 +103,6 @@ export const {
 	useAddBadgesAsAdminMutation,
 	useGetUserByIdAsAdminQuery,
 	useGetCommentsAsAdminQuery,
+	useGetAssignedBadgesAsAdminQuery,
+	useAssignBadgeAsAdminMutation,
 } = adminApi;

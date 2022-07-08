@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './BadgeSection.module.css';
+import * as lib from '../../../lib/constants';
 
 const BadgeSection = ({ data }) => {
 	return (
@@ -8,10 +9,15 @@ const BadgeSection = ({ data }) => {
 				data.map((item, i) => (
 					<div className={styles.item} key={i}>
 						<div className={styles.image}>
-							<img src={item.src} alt='x' />
+							<img
+								src={
+									item?.badge?.image ? item.badge.image : lib.placeholders.badge
+								}
+								alt='x'
+							/>
 						</div>
 						<div className={styles.text}>
-							<h6>{item.name}</h6>
+							<h6>{item.badge?.name && item.badge.name}</h6>
 						</div>
 					</div>
 				))}

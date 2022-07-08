@@ -14,6 +14,7 @@ const tagTypes = [
 	'User',
 	'UserRatings',
 	'Notifications',
+	'Badges',
 ];
 
 export const userApi = createApi({
@@ -215,6 +216,10 @@ export const userApi = createApi({
 			query: id => `/users/${id}`,
 			providesTags: id => [{ type: 'User', id: id ? id : '' }],
 		}),
+		getUserBadges: builder.query({
+			query: id => `/badges/${id}`,
+			providesTags: id => [{ type: 'Badge', id: id ? id : '' }],
+		}),
 		getAdminComments: builder.query({
 			query: ({ sort = '-createdAt', page = 1, perpage = 10, id } = {}) =>
 				`/comments/${id}?sort=${sort}&page=${page}`,
@@ -245,4 +250,5 @@ export const {
 	useGetNotificationsQuery,
 	useGetRatingByIdQuery,
 	useGetAdminCommentsQuery,
+	useGetUserBadgesQuery,
 } = userApi;

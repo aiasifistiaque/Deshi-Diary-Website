@@ -17,3 +17,21 @@
 		word-break: break-all;
 	}
 }
+
+.success {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(teal, 0.1);
+	padding: 0 0.5rem;
+	border: 0.2px solid teal;
+	border-radius: 4px;
+	height: 42px;
+
+	p {
+		color: teal;
+		font-size: 0.8rem;
+		font-weight: 600;
+		word-break: break-all;
+	}
+}

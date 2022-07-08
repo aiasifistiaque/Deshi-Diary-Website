@@ -49,36 +49,68 @@
   justify-content: flex-end;
 }
 
-.container {
+.badges {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+.badges .badge {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(249, 76, 102, 0.1);
-  padding: 0 0.5rem;
-  border: 0.2px solid #f94c66;
-  border-radius: 4px;
-  height: 42px;
+  flex-direction: column;
 }
-.container p {
-  color: #f94c66;
-  font-size: 0.8rem;
+.badges .badge .image {
+  height: 100px;
+  width: 100px;
+}
+.badges .badge .image img {
+  height: 92px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+}
+.badges .badge .text p {
+  font-size: 0.9rem;
   font-weight: 600;
-  word-break: break-all;
 }
 
-.success {
+.assignBadges {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 400px;
+  overflow-y: scroll;
+}
+.assignBadges .badge {
+  padding: 0.5rem;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 128, 128, 0.1);
-  padding: 0 0.5rem;
-  border: 0.2px solid teal;
-  border-radius: 4px;
-  height: 42px;
+  flex-direction: column;
+  cursor: pointer;
 }
-.success p {
-  color: teal;
-  font-size: 0.8rem;
+@media (min-width: 1008px) {
+  .assignBadges .badge:hover {
+    background-color: whitesmoke;
+  }
+}
+.assignBadges .badge .image {
+  height: 100px;
+  width: 100px;
+}
+.assignBadges .badge .image img {
+  height: 92px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+}
+.assignBadges .badge .text p {
+  font-size: 0.9rem;
   font-weight: 600;
-  word-break: break-all;
-}/*# sourceMappingURL=Error.module.css.map */
+}/*# sourceMappingURL=ListBadges.module.css.map */

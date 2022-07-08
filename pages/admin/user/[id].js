@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 import { useState } from 'react';
+import ListBadges from '../../../admin-components/badges/ListBadges';
 import ListPage from '../../../admin-components/listpage/ListPage';
 import AdminPage from '../../../admin-components/page/AdminPage';
 import {
@@ -30,6 +31,7 @@ const Adminuser = () => {
 					</AdminItem>
 				</DetailsTable>
 			</ListPage>
+			<ListBadges id={id} />
 			{data && <UserReviews id={data._id} />}
 		</AdminPage>
 	);

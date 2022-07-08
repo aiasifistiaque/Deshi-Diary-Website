@@ -1,0 +1,67 @@
+@import '../../styles/imports';
+
+.badges {
+	display: flex;
+	gap: 2rem;
+	padding: 1rem 0;
+	flex-wrap: wrap;
+	//max-width: 800px;
+	overflow-y: scroll;
+
+	.badge {
+		@include flexCenter(column);
+		.image {
+			height: 100px;
+			width: 100px;
+
+			img {
+				height: 92px;
+				object-fit: contain;
+				width: 100%;
+			}
+		}
+		.text {
+			p {
+				font-size: 0.9rem;
+				font-weight: 600;
+			}
+		}
+	}
+}
+
+.assignBadges {
+	display: flex;
+	gap: 2rem;
+	padding: 1rem 0;
+	flex-wrap: wrap;
+	//max-width: 800px;
+	justify-content: space-around;
+	height: 400px;
+	overflow-y: scroll;
+
+	.badge {
+		padding: 0.5rem;
+		border-radius: 4px;
+		@include flexCenter(column);
+		cursor: pointer;
+		@include hover {
+			background-color: whitesmoke;
+		}
+		.image {
+			height: 100px;
+			width: 100px;
+
+			img {
+				height: 92px;
+				object-fit: contain;
+				width: 100%;
+			}
+		}
+		.text {
+			p {
+				font-size: 0.9rem;
+				font-weight: 600;
+			}
+		}
+	}
+}
