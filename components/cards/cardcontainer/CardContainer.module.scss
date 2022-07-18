@@ -21,15 +21,13 @@ $box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
 	flex-direction: column;
 	flex: 1;
 	align-items: flex-start;
-
 	box-shadow: $box-shadow;
 
 	min-width: 300px;
 	border: $border;
 	border-radius: 2px;
-	max-width: 100%;
+	width: 100%;
 	box-sizing: border-box;
-	max-width: 400px;
 	margin: 0 auto;
 	@include desktop {
 		//min-width: 300px;

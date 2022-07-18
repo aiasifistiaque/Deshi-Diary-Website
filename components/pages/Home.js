@@ -9,6 +9,7 @@ import HomeAbout from '../home/about/HomeAbout';
 import HomeLogo from '../home/logo/HomeLogo';
 import ViewMore from '../home/morebutton/ViewMore';
 import HomeSection from '../home/section/HomeSection';
+import ActivitiesCard from '../home/activities-card/ActivitiesCard';
 
 const Home = () => {
 	const [search, setSearch] = useState();
@@ -42,7 +43,7 @@ const Home = () => {
 			<Container>
 				<HomeSection title='Recent Activities'>
 					{Array.from(Array(page), (e, i) => {
-						return <Activities key={i} page={i + 1} />;
+						return <ActivitiesCard key={i} page={i + 1} />;
 					})}
 
 					<ViewMore onClick={() => setPage(page + 1)} />

@@ -12,16 +12,24 @@ import * as lib from '../../../lib/constants';
 import { useGetListingsQuery } from '../../../store/services/apiService';
 import Rating from '../../rate/rating/Rating';
 import useGetDistance from '../../../hooks/useGetDistance';
+import { Placeholder } from 'semantic-ui-react';
 
 const RecentListingCards = () => {
 	const { data, isError, error, isFetching } = useGetListingsQuery();
-	if (isFetching || isError || !data) return null;
 
 	return (
 		<HomeSection title='Featured Listings'>
 			<CardContainer>
-				{data?.doc &&
-					data.doc.map((item, i) => i < 3 && <Card item={item} key={i} />)}
+				{isFetching || isError ? (
+					<CardContainer>
+						<PlaceHolder />
+						<PlaceHolder />
+						<PlaceHolder />
+					</CardContainer>
+				) : (
+					data?.doc &&
+					data.doc.map((item, i) => i < 3 && <Card item={item} key={i} />)
+				)}
 			</CardContainer>
 		</HomeSection>
 	);
@@ -79,6 +87,49 @@ const Card = ({ item }) => {
 				</CardText>
 			</CardSection>
 			<CardBottomButton href={`/b/${item._id}`}>Read More</CardBottomButton>
+		</ListingCard>
+	);
+};
+
+const PlaceHolder = () => {
+	return (
+		<ListingCard>
+			<CardSection p={'16px 16px 0 16px'}>
+				<CardTitle align='center'>
+					<Placeholder>
+						<Placeholder.Header>
+							<Placeholder.Line />
+						</Placeholder.Header>
+					</Placeholder>
+				</CardTitle>
+
+				<CardSection>
+					<Placeholder style={{ height: 150, width: 250 }}>
+						<Placeholder.Image />
+						<Placeholder.Header>
+							<Placeholder.Line length='medium' />
+							<Placeholder.Line length='full' />
+							<Placeholder.Line length='medium' />
+							<Placeholder.Line length='full' />
+						</Placeholder.Header>
+					</Placeholder>
+				</CardSection>
+
+				<CardSection>
+					<Placeholder style={{ height: 100, width: 250 }}>
+						<Placeholder.Header>
+							<Placeholder.Line length='medium' />
+							<Placeholder.Line length='full' />
+							<Placeholder.Line length='medium' />
+							<Placeholder.Line length='full' />
+							<Placeholder.Line length='full' />
+							<Placeholder.Line length='medium' />
+							<Placeholder.Line length='full' />
+						</Placeholder.Header>
+					</Placeholder>
+				</CardSection>
+			</CardSection>
+			<CardBottomButton></CardBottomButton>
 		</ListingCard>
 	);
 };

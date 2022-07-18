@@ -47,46 +47,4 @@
 
 .justifyEnd {
   justify-content: flex-end;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.container .item {
-  padding: 1rem 0 2rem 0;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #eee;
-}
-.container .item h6 {
-  margin-bottom: 0.5rem;
-  font-size: 1.05rem;
-}
-.container .item .details {
-  margin-bottom: 0.5rem;
-}
-.container .item .details p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-  font-size: 0.95rem;
-  font-weight: 450;
-  color: #999;
-}
-.container .item .date {
-  text-align: right;
-}
-.container .item .date p {
-  color: dodgerblue;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-@media (min-width: 1008px) {
-  .container .item {
-    width: 50%;
-  }
-}/*# sourceMappingURL=Norification.module.css.map */
+}/*# sourceMappingURL=ListingCardsTwo.module.css.map */
