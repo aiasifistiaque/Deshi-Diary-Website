@@ -5,6 +5,7 @@ import {
 	useGetRatingsQuery,
 } from '../../store/services/apiService';
 import ViewMore from '../home/morebutton/ViewMore';
+import AllPhotos from '../listing/all-photos/AllPhotos';
 import BusinessName from '../listing/business-name/BusinessName';
 import ListingPhotos from '../listing/listing-photos/ListingPhotos';
 import ListingReview from '../listing/listing-reviews/ListingReviews';
@@ -49,6 +50,7 @@ const Business = ({ query }) => {
 			<Container>
 				<ListingPhotos data={data.images} />
 			</Container>
+			<AllPhotos images={data.images} id={data?._id ? data._id : ''} />
 
 			<ViewMap
 				lat={data.geoLocation?.lat || 23.78}

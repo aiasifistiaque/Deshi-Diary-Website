@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import React from 'react';
-import Page from '../../components/nav/page/Page';
 import Business from '../../components/pages/Business';
 
 const Businesspage = () => {

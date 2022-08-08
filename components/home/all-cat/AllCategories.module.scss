@@ -1,0 +1,37 @@
+@import '../../../styles/imports';
+
+.container {
+	margin: 2rem 0;
+	.cards {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+		@include tab {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+		@include desktop {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+
+		.card {
+			cursor: pointer;
+			padding: 1rem;
+			min-height: 150px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 1rem;
+			border: 2px solid #eee;
+			border-radius: 8px;
+			@include hover {
+				background-color: whitesmoke;
+			}
+			img {
+				width: 32px;
+				height: 32px;
+				object-fit: contain;
+			}
+		}
+	}
+}

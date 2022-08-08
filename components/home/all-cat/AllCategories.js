@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
-import ViewMore from '../morebutton/ViewMore';
-import styles from './HomeCategories.module.css';
+import { useGetCategoriesQuery } from '../../../store/services/apiService';
+import styles from './AllCategories.module.css';
 
 const data = [
 	{ name: 'Hotels', icon: 'hotels' },
@@ -14,15 +14,16 @@ const data = [
 	{ name: 'Coffee & Tea', icon: 'coffee' },
 ];
 
-const HomeCategories = () => {
+const AllCategories = () => {
+	const { data, isFetching, isError } = useGetCategoriesQuery();
+	if (!data) return null;
 	return (
 		<div className={styles.container}>
-			<h6>Categories</h6>
 			<div className={styles.cards}>
-				{data.map((item, i) => (
+				{data.doc.map((item, i) => (
 					<Link key={i} href={`/search?category=${item.name}`}>
 						<div className={styles.card}>
-							<img src={`/icons/${item.icon}.png`} alt={item.name} />
+							<img src={item?.image ? item.image : '/icons/beauty.png'} />
 							<p>{item.name}</p>
 						</div>
 					</Link>
@@ -33,4 +34,4 @@ const HomeCategories = () => {
 	);
 };
 
-export default HomeCategories;
+export default AllCategories;

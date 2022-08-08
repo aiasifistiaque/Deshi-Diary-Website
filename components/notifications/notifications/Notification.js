@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Norification.module.css';
 import moment from 'moment';
 import { Placeholder } from 'semantic-ui-react';
+import Link from 'next/link';
 
 export const Notification = ({ children, item }) => {
 	return (

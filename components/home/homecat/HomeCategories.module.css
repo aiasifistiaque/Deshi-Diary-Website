@@ -71,6 +71,13 @@
   padding: 16px 32px 32px 32px;
   margin-right: -32px;
   margin-left: -32px;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.container .cards::-webkit-scrollbar {
+  display: none;
 }
 @media (min-width: 1008px) {
   .container .cards {
@@ -107,8 +114,8 @@
 }
 @media (min-width: 1008px) {
   .container .cards .card {
-    min-width: 110px;
-    min-height: 150px;
+    min-width: 100px;
+    min-height: 140px;
     padding-top: 32px;
   }
   .container .cards .card img {

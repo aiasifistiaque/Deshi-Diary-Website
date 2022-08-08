@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useGetActivitiesQuery } from '../../../store/services/apiService';
 import styles from './ActivitiesCard.module.css';
 import * as lib from '../../../lib/constants';
@@ -10,26 +10,41 @@ const ActivitiesCard = ({ page, setPage }) => {
 	const { data, isFetching, isLoading, error, isError } =
 		useGetActivitiesQuery(page);
 
-	if (isFetching || isError || !data) return null;
+	const [visual, setVisual] = useState([]);
+
+	useEffect(() => {
+		console.log(page);
+		if (!isFetching && data && data.doc) {
+			if (page == 1) {
+				setVisual(data.doc);
+			} else if (page > 1) {
+				let arr = [...visual, ...data.doc];
+				setVisual(arr);
+			}
+		}
+		console.log(visual);
+	}, [page, isFetching]);
+
+	if (isLoading || isError || !data) return null;
 
 	return (
 		<div className={styles.container}>
 			<div className={styles.cards}>
 				<div className={styles.cardOne}>
-					{data?.doc &&
-						data.doc.map(
+					{visual &&
+						visual.map(
 							(item, i) => i % 3 == 0 && <Cards item={item} key={i} />
 						)}
 				</div>
 				<div className={styles.cardTwo}>
-					{data?.doc &&
-						data.doc.map(
+					{visual &&
+						visual.map(
 							(item, i) => (i + 1) % 3 == 0 && <Cards item={item} key={i} />
 						)}
 				</div>
 				<div className={styles.cardThree}>
-					{data?.doc &&
-						data.doc.map(
+					{visual &&
+						visual.map(
 							(item, i) =>
 								i % 3 != 0 && (i + 1) % 3 != 0 && <Cards item={item} key={i} />
 						)}
@@ -50,7 +65,7 @@ const Cards = ({ item }) => {
 					<span style={{ margin: '0 4px' }}>
 						added new {item?.type && item.type} on
 					</span>
-					<Link href={`/b/${item.listing._id}`}>
+					<Link href={`/b/${item?.listing?._id && item.listing._id}`}>
 						<a>{item?.listing?.name && item.listing.name}</a>
 					</Link>
 				</p>

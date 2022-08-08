@@ -6,7 +6,7 @@ import * as lib from '../../../lib/constants';
 import { Placeholder } from 'semantic-ui-react';
 import Label from '../../../admin-components/table/label/Label';
 
-const AddSingleImage = ({ setImage, image, label }) => {
+const AddSingleImage = ({ setImage, image, label, text }) => {
 	const imageRef = useRef();
 	const [loading, setLoading] = useState(false);
 
@@ -68,13 +68,13 @@ const AddSingleImage = ({ setImage, image, label }) => {
 				required
 				type='file'
 				accept='image/png, image/jpeg'></input>
-			{!image ? (
+			{!image && !loading ? (
 				<div
 					className={`${styles.addImage} ${styles.sub}`}
 					onClick={() => imageRef.current.click()}>
 					<img src='/icons/image.png' alt='..' />
 
-					<a>Click to Add Image</a>
+					<a>{text ? text : 'Click to Add Image'}</a>
 				</div>
 			) : (
 				<div style={{ marginBottom: '1rem' }}>

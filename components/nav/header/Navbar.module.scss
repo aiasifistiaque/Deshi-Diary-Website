@@ -96,7 +96,8 @@
 	img {
 		height: 24px;
 		width: 24px;
-		object-fit: contain;
+		object-fit: cover;
+		border-radius: 99px;
 	}
 	.icon {
 		display: none;

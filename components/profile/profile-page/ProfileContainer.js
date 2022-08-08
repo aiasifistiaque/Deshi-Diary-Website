@@ -6,24 +6,18 @@ import Link from 'next/link';
 import { useGetSelfQuery } from '../../../store/services/apiService';
 import * as lib from '../../../lib/constants';
 import ProfilePlaceholderContainer from './ProfileContainerPlaceHolder';
+import { contributorLevel } from '../../../lib/methods';
 
 const options = [
 	{ name: 'overview', href: '/profile/overview' },
 	{ name: 'manage profile', href: '/profile/manage-profile' },
 	{ name: 'reviews', href: '/profile/reviews' },
-	{ name: 'activities', href: '/profile/activities' },
+	// { name: 'activities', href: '/profile/activities' },
 	{ name: 'badges', href: '/profile/badges' },
-	{ name: 'settings', href: '/profile/settings' },
 ];
 
 const ProfileContainer = ({ select, children, title }) => {
 	const { data, isError, error, isLoading, isFetching } = useGetSelfQuery();
-
-	const pointsData = [
-		{ type: 'reviews', value: data?.reviews || 0 },
-		{ type: 'badges', value: data?.badges || 0 },
-		{ type: 'points', value: data?.points || 0 },
-	];
 
 	return (
 		<div className={styles.container}>
@@ -37,8 +31,18 @@ const ProfileContainer = ({ select, children, title }) => {
 								src={data?.image ? data.image : lib.placeholders.profileImage}
 							/>
 						</div>
-						<NameCard name={data.name} email={data.email} />
-						<PointsCard data={pointsData} />
+						<NameCard
+							name={data.name}
+							email={data.email}
+							level={contributorLevel(data?.points && data.points)}
+						/>
+						<PointsCard
+							data={[
+								{ type: 'reviews', value: data?.reviews || 0 },
+								{ type: 'listings', value: data?.listings || 0 },
+								{ type: 'photos', value: data?.photo || 0 },
+							]}
+						/>
 					</div>
 
 					<div className={styles.bottom}>

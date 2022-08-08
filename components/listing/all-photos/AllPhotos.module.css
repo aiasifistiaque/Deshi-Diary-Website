@@ -51,44 +51,40 @@
 
 .container {
   display: flex;
-  gap: 0.75rem;
-  margin-bottom: 2rem;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+.container .button {
+  cursor: pointer;
+}
+.container .button h6 {
+  color: dodgerblue;
 }
 @media (min-width: 1008px) {
-  .container {
-    align-items: center;
+  .container .button h6:hover {
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
   }
 }
-.container .image {
-  height: 36px;
-  width: 36px;
-  border-radius: 99px;
+
+.items {
+  display: grid;
+  gap: 0.5rem;
 }
-.container .image img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 99px;
+@media (min-width: 1008px) {
+  .items {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
-.container .details {
-  width: 100%;
+
+.item {
+  border: 1px solid whitesmoke;
+  padding: 1rem;
+  background-color: whitesmoke;
   display: flex;
-  gap: 1rem;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-@media (min-width: 1008px) {
-  .container .details {
-    flex-direction: row;
-    align-items: center;
-  }
-}
-.container .details input {
-  height: 36px;
-  border: 1px solid rgba(3, 152, 158, 0.4);
-  outline: none;
-  background-color: white;
+.item img {
   width: 100%;
-  padding: 0 1rem;
-  border-radius: 30px;
-}/*# sourceMappingURL=WriteComment.module.css.map */
+}/*# sourceMappingURL=AllPhotos.module.css.map */

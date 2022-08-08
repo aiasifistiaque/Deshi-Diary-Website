@@ -42,6 +42,17 @@ export const userApi = createApi({
 			providesTags: ['Self'],
 		}),
 
+		updateUser: builder.mutation({
+			query(body) {
+				return {
+					url: `/auth/update`,
+					method: 'POST',
+					body,
+				};
+			},
+			invalidatesTags: ['Self'],
+		}),
+
 		login: builder.mutation({
 			query(body) {
 				return {
@@ -156,9 +167,24 @@ export const userApi = createApi({
 			},
 			invalidatesTags: ['Ratings', 'Listing', 'Activities'],
 		}),
+		addPhoto: builder.mutation({
+			query(body) {
+				return {
+					url: `/ratings/photo`,
+					method: 'POST',
+					body,
+				};
+			},
+			invalidatesTags: ['Ratings', 'Listing', 'Activities'],
+		}),
 		getRatings: builder.query({
 			query: ({ sort = '-createdAt', page = 1, perpage = 10, id } = {}) =>
 				`/ratings/${id}?sort=${sort}&page=${page}`,
+			providesTags: id => [{ type: 'Ratings', id: id ? id : '' }],
+		}),
+		getPhotos: builder.query({
+			query: ({ sort = '-createdAt', page = 1, perpage = 10, id } = {}) =>
+				`/ratings/photo/get/${id}?sort=${sort}&page=${page}`,
 			providesTags: id => [{ type: 'Ratings', id: id ? id : '' }],
 		}),
 		getRatingById: builder.query({
@@ -228,6 +254,9 @@ export const userApi = createApi({
 });
 
 export const {
+	useUpdateUserMutation,
+	useGetPhotosQuery,
+	useAddPhotoMutation,
 	useLoginMutation,
 	useRegisterMutation,
 	useGetSelfQuery,

@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import { useGetUserDataQuery } from '../../../store/services/apiService';
 import ProfilePlaceholderContainer from './ProfileContainerPlaceHolder';
 import * as lib from '../../../lib/constants';
+import { contributorLevel } from '../../../lib/methods';
 
 const UserContainer = ({ select, children, title }) => {
 	const router = useRouter();
@@ -15,7 +16,7 @@ const UserContainer = ({ select, children, title }) => {
 	const { data, isFetching, isError } = useGetUserDataQuery(user);
 
 	const options = [
-		{ name: 'overview', href: `/u/${user}?option=overview` },
+		// { name: 'overview', href: `/u/${user}?option=overview` },
 		{ name: 'reviews', href: `/u/${user}?option=reviews` },
 		{ name: 'badges', href: `/u/${user}?option=badges` },
 	];
@@ -37,8 +38,15 @@ const UserContainer = ({ select, children, title }) => {
 							<NameCard
 								name={data?.name && data.name}
 								email={data?.email && data.email}
+								level={contributorLevel(data?.points && data.points)}
 							/>
-							<PointsCard data={data.details} />
+							<PointsCard
+								data={[
+									{ type: 'reviews', value: data?.reviews || 0 },
+									{ type: 'listings', value: data?.listings || 0 },
+									{ type: 'photos', value: data?.photo || 0 },
+								]}
+							/>
 						</div>
 						<div className={styles.bottom}>
 							{options.map((item, i) => (

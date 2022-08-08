@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import useLocation from '../../../hooks/useLocation';
 import Button from '../../util/button/Button';
 import styles from './BusinnessName.module.css';
 import useGetDistance from '../../../hooks/useGetDistance';
+import AddImage from './AddImage';
 
 const BusinessName = ({ id, name, open, rating, tags, data }) => {
 	const { loggedIn, token } = useSelector(state => state.auth);
-	const { lat, lng } = useLocation();
 	const { distance } = useGetDistance(data?.geoLocation && data.geoLocation);
+	const [modalOpen, setModalOpen] = useState(false);
+
 	return (
 		<div className={styles.container}>
 			<div className={styles.title}>
@@ -63,9 +64,13 @@ const BusinessName = ({ id, name, open, rating, tags, data }) => {
 					/>{' '}
 				</div>
 				{token ? (
-					<Button small text href={`/rate/${id}`}>
-						Write a review
-					</Button>
+					<>
+						<AddImage id={id} />
+
+						<Button small text href={`/rate/${id}`}>
+							Write a review
+						</Button>
+					</>
 				) : (
 					<Button small text href={`/login`}>
 						log in to write review

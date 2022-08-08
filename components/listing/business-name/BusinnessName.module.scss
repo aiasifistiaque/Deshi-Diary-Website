@@ -76,3 +76,20 @@
 		}
 	}
 }
+
+.reviewbutton {
+	display: flex;
+	align-items: center;
+	margin: 0 1rem;
+	.camera {
+		padding: 0.15rem;
+		border: 1px solid dodgerblue;
+		border-radius: 999px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 24px;
+		width: 24px;
+		cursor: pointer;
+	}
+}

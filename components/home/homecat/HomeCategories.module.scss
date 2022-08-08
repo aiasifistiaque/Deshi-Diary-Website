@@ -22,6 +22,15 @@
 		padding: 16px 32px 32px 32px;
 		margin-right: -32px;
 		margin-left: -32px;
+		/* Hide scrollbar for Chrome, Safari and Opera */
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		/* Hide scrollbar for IE, Edge and Firefox */
+
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
 
 		@include desktop {
 			margin-right: 0;
@@ -55,8 +64,8 @@
 				margin-bottom: 8px;
 			}
 			@include desktop {
-				min-width: 110px;
-				min-height: 150px;
+				min-width: 100px;
+				min-height: 140px;
 				padding-top: 32px;
 
 				img {

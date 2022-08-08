@@ -29,9 +29,11 @@ const Navbar = ({ landing, focus, setFocus, auth }) => {
 			}}>
 			<div className={styles.left}>
 				<Toggle />
-				<LargeScreen>
-					<HeaderSearchBar focus={focus} setFocus={e => setFocus(e)} />
-				</LargeScreen>
+				{!landing && (
+					<LargeScreen>
+						<HeaderSearchBar focus={focus} setFocus={e => setFocus(e)} />
+					</LargeScreen>
+				)}
 				{search && (
 					<SmallScreen>
 						<HeaderSearchBar focus={focus} setFocus={e => setFocus(e)} />

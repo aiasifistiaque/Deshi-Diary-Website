@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import Button from '../../util/button/Button';
 import styles from './AddImage.module.css';
 import axios from 'axios';
 import * as lib from '../../../lib/constants';
@@ -49,18 +48,6 @@ const AddImage = ({ setImages, images }) => {
 				images.map((item, i) => (
 					<div className={styles.images} key={i}>
 						<img src={item.src} alt='..' />
-
-						{/* <div className={styles.buttons}>
-							<Button small>Upload</Button>
-							<Button
-								small
-								secondary
-								onClick={() =>
-									setImages(images.filter(x => x.src != item.src))
-								}>
-								Delete
-							</Button>
-						</div> */}
 					</div>
 				))}
 			{loading && (

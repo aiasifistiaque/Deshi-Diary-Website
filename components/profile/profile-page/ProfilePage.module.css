@@ -78,6 +78,9 @@
 }
 @media (min-width: 1008px) {
   .container .left {
+    border: 1px solid rgba(3, 152, 158, 0.15);
+    border-radius: 4px;
+    padding-bottom: 2rem;
     width: 40%;
   }
 }
