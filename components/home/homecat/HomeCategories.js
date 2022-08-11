@@ -6,8 +6,8 @@ import styles from './HomeCategories.module.css';
 const data = [
 	{ name: 'Hotels', icon: 'hotels' },
 	{ name: 'Home Services', icon: 'homeservices' },
-	{ name: 'Restaurents', icon: 'restaurents' },
-	{ name: 'Beauth & Spa', icon: 'beauty' },
+	{ name: 'Restaurants', icon: 'restaurents' },
+	{ name: 'Beauty & Spa', icon: 'beauty' },
 	{ name: 'Professionals', icon: 'professionals' },
 	{ name: 'Pet Care', icon: 'petcare' },
 	{ name: 'Gym', icon: 'gym' },
