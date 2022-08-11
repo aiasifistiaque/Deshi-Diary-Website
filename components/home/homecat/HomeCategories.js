@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import React from 'react';
-import ViewMore from '../morebutton/ViewMore';
 import styles from './HomeCategories.module.css';
 
 const data = [
@@ -31,7 +30,6 @@ const HomeCategories = () => {
 					</Link>
 				))}
 			</div>
-			{/* <ViewMore /> */}
 		</div>
 	);
 };

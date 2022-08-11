@@ -101,6 +101,7 @@
   margin-bottom: 0.5rem;
 }
 .item a {
+  color: #424242;
   font-size: 0.9rem;
 }
 @media (min-width: 1008px) {

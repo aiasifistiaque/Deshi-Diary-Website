@@ -1,31 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styles from './Sidebar.module.css';
 import { useSpring, animated } from 'react-spring';
 import { useDispatch, useSelector } from 'react-redux';
 import { expand } from '../../../store/slices/toggledSlice';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import useAuth from '../../../hooks/useAuth';
 import { logout } from '../../../store/slices/authSlice';
-
-const variants = {
-	open: { opacity: 1 },
-	closed: { display: 'none', opacity: 0 },
-};
 
 const Sidebar = () => {
 	const { toggled } = useSelector(state => state.toggle);
 	const dispatch = useDispatch();
 	const springStyle = useSpring({
 		opacity: toggled ? 1 : 0,
-		// from: {
-		// 	x: '-120%',
-		// },
-		// to: {
-		// 	x: !toggled ? '-100%' : '0%',
-		// },
 		opacity: !toggled ? 0 : 1,
-
 		delay: 0,
 	});
 	return (
@@ -63,7 +50,6 @@ const Items = () => {
 					<Item
 						onClick={() => {
 							dispatch(expand());
-
 							router.push('/login');
 						}}>
 						Login
@@ -71,7 +57,6 @@ const Items = () => {
 					<Item
 						onClick={() => {
 							dispatch(expand());
-
 							router.push('/signup');
 						}}>
 						Singup
@@ -82,7 +67,6 @@ const Items = () => {
 			<Item
 				onClick={() => {
 					dispatch(expand());
-
 					router.push('/');
 				}}>
 				Home
