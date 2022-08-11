@@ -2,23 +2,25 @@
 
 .container {
 	display: flex;
-	margin: 2rem 0;
+	margin: 1rem 1rem;
 	flex-wrap: wrap;
-	gap: 2rem;
+	gap: 1rem;
 	justify-content: space-evenly;
 	@include desktop {
 		justify-content: flex-start;
-		gap: 3rem;
+		gap: 2rem;
 	}
 	.item {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		flex: 1;
+		text-align: center;
 
 		.image {
 			img {
-				height: 56px;
-				width: 56px;
+				height: 48px;
+				width: 48px;
 				object-fit: contain;
 				border-radius: 99px;
 			}

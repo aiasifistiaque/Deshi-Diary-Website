@@ -78,7 +78,6 @@
 }
 @media (min-width: 1008px) {
   .container .left {
-    border: 1px solid rgba(3, 152, 158, 0.15);
     border-radius: 4px;
     padding-bottom: 2rem;
     width: 40%;
@@ -159,6 +158,19 @@
 .container .right .children {
   margin: 1rem 0;
 }
+.container .rightTwo {
+  width: 100%;
+  background-color: white;
+  padding: 0.5rem 0;
+}
+@media (min-width: 1008px) {
+  .container .rightTwo {
+    padding: 0.5rem 0;
+  }
+}
+.container .rightTwo .children {
+  margin: 1rem 0;
+}
 
 .notSelected {
   border-bottom: 2px solid transparent;
@@ -179,4 +191,24 @@
     border-left: 2px solid #03989e;
     border-bottom: none;
   }
+}
+
+.btm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+.btm h6 {
+  color: #c7cdd4;
+}
+.btm .badges {
+  padding: 0rem 0.5rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.bs {
+  box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
 }/*# sourceMappingURL=ProfilePage.module.css.map */

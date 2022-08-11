@@ -17,7 +17,10 @@ const data = [
 const HomeCategories = () => {
 	return (
 		<div className={styles.container}>
-			<h6>Categories</h6>
+			<div className={styles.title}>
+				<h6>Categories</h6>
+			</div>
+
 			<div className={styles.cards}>
 				{data.map((item, i) => (
 					<Link key={i} href={`/search?category=${item.name}`}>

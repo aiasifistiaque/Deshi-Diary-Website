@@ -9,6 +9,12 @@
 		margin-top: 32px;
 	}
 
+	.title {
+		@include desktop {
+			padding: 0 1rem;
+		}
+	}
+
 	.cards {
 		display: flex;
 		gap: 8px;
@@ -22,6 +28,7 @@
 		padding: 16px 32px 32px 32px;
 		margin-right: -32px;
 		margin-left: -32px;
+
 		/* Hide scrollbar for Chrome, Safari and Opera */
 		&::-webkit-scrollbar {
 			display: none;
@@ -35,7 +42,7 @@
 		@include desktop {
 			margin-right: 0;
 			margin-left: 0;
-			padding: 16px 0 32px 0;
+			padding: 16px 16px 32px 16px;
 		}
 		.card {
 			display: flex;

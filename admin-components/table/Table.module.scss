@@ -205,3 +205,27 @@ $item-margin: 32px;
 		font-size: 1rem;
 	}
 }
+
+.userTable {
+	overflow: auto;
+	flex-wrap: nowrap;
+	flex: 1;
+	display: flex;
+	border-radius: 4px;
+	background-color: white;
+	margin-bottom: 1rem;
+	flex-direction: column;
+	width: 100%;
+	padding: 0.5rem 0;
+}
+
+.userRow {
+	display: grid;
+	width: 100%;
+	grid-template-columns: 1fr 3fr 1fr;
+	padding: 1rem 1.5rem;
+
+	@include desktop {
+		padding: 1rem 2.5rem;
+	}
+}

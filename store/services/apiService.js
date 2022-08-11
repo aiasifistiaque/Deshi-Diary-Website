@@ -196,6 +196,15 @@ export const userApi = createApi({
 			providesTags: id => [{ type: 'UserRatings', id: id ? id : '' }],
 		}),
 
+		getLeadboard: builder.query({
+			query: ({ sort = '-createdAt', page = 1, perpage = 10, id } = {}) =>
+				`/users/get/leadboard?&page=${page}`,
+		}),
+
+		getRank: builder.query({
+			query: () => `/users/get/rank`,
+		}),
+
 		getComments: builder.query({
 			query: id => `/comments/${id}`,
 			providesTags: id => [{ type: 'Comments', id: id ? id : '' }],
@@ -254,6 +263,8 @@ export const userApi = createApi({
 });
 
 export const {
+	useGetRankQuery,
+	useGetLeadboardQuery,
 	useUpdateUserMutation,
 	useGetPhotosQuery,
 	useAddPhotoMutation,

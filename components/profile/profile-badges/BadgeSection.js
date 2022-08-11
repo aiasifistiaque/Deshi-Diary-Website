@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './BadgeSection.module.css';
 import * as lib from '../../../lib/constants';
 
-const BadgeSection = ({ data }) => {
+const BadgeSection = ({ data, text }) => {
 	return (
 		<div className={styles.container}>
 			{data &&
@@ -16,9 +16,12 @@ const BadgeSection = ({ data }) => {
 								alt='x'
 							/>
 						</div>
-						<div className={styles.text}>
-							<h6>{item.badge?.name && item.badge.name}</h6>
-						</div>
+
+						{text ? null : (
+							<div className={styles.text}>
+								<h6>{item.badge?.name && item.badge.name}</h6>
+							</div>
+						)}
 					</div>
 				))}
 		</div>

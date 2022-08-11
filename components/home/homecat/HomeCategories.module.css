@@ -60,6 +60,11 @@
     margin-top: 32px;
   }
 }
+@media (min-width: 1008px) {
+  .container .title {
+    padding: 0 1rem;
+  }
+}
 .container .cards {
   display: flex;
   gap: 8px;
@@ -83,7 +88,7 @@
   .container .cards {
     margin-right: 0;
     margin-left: 0;
-    padding: 16px 0 32px 0;
+    padding: 16px 16px 32px 16px;
   }
 }
 .container .cards .card {

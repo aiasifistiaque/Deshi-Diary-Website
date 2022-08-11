@@ -23,7 +23,7 @@ const ProfileBadges = () => {
 	return (
 		<Page>
 			<ProfileContainer select='badges' title='Received Badges'>
-				{data?.doc && <BadgeSection data={data.doc} />}
+				{data?.doc && <BadgeSection data={data.doc} text />}
 			</ProfileContainer>
 		</Page>
 	);

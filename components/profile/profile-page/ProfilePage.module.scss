@@ -30,7 +30,7 @@ $box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
 		width: 100%;
 		@include container-essential();
 		@include desktop {
-			border: 1px solid rgba($color-primary, 0.15);
+			//border: 1px solid rgba($color-primary, 0.15);
 			//	padding: 1rem 2rem;
 			border-radius: 4px;
 			padding-bottom: 2rem;
@@ -98,6 +98,17 @@ $box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
 			margin: 1rem 0;
 		}
 	}
+	.rightTwo {
+		width: 100%;
+		background-color: white;
+		padding: 0.5rem 0;
+		@include desktop {
+			padding: 0.5rem 0;
+		}
+		.children {
+			margin: 1rem 0;
+		}
+	}
 }
 
 .notSelected {
@@ -116,4 +127,25 @@ $box-shadow: 0px 4px 25px rgba(153, 140, 140, 0.1);
 		border-left: 2px solid $color-primary;
 		border-bottom: none;
 	}
+}
+
+.btm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 2rem 0;
+
+	h6 {
+		color: #c7cdd4;
+	}
+	.badges {
+		padding: 0rem 0.5rem;
+		align-items: center;
+		justify-content: center;
+		display: flex;
+	}
+}
+
+.bs {
+	box-shadow: $box-shadow;
 }

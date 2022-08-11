@@ -82,9 +82,11 @@ export const Item = ({
 	w,
 	price,
 	image,
+	mw,
 }) => {
 	const itemStyle = {
 		...(w && { minWidth: w }),
+		...(mw && { maxWidth: mw }),
 	};
 	if (image)
 		return (
@@ -151,5 +153,74 @@ const TablePlaceHolder = () => {
 				<Placeholder.Line />
 			</Placeholder.Paragraph>
 		</Placeholder>
+	);
+};
+
+export const UserTable = ({
+	children,
+	loading,
+	title,
+	isLoading,
+	w,
+	page,
+	totalPages,
+	setPage,
+	header,
+	paginate,
+}) => {
+	return (
+		<div className={styles.userTable} style={{ width: w || '100%' }}>
+			{!isLoading ? (
+				<div>
+					{children}
+					{paginate != 'no' && (
+						<div
+							className={styles.paginate}
+							style={{ border: 'none', marginTop: '2rem' }}>
+							<div className={styles.title}>
+								<p>
+									Page {page} of {totalPages}
+								</p>
+							</div>
+
+							<div className={styles.buttons}>
+								<Button
+									text
+									onClick={() => {
+										page > 0 && setPage(page - 1);
+									}}>
+									Prev
+								</Button>
+								<Mr size={16} />
+								<Button
+									text
+									onClick={() => {
+										page < totalPages && setPage(page + 1);
+									}}>
+									Next
+								</Button>
+							</div>
+						</div>
+					)}
+				</div>
+			) : (
+				<TablePlaceHolder />
+			)}
+		</div>
+	);
+};
+
+export const UserRow = ({ children, href, title, i, key, style }) => {
+	if (title) return <div className={styles.userRow}>{children}</div>;
+	if (href)
+		return (
+			<Link href={href}>
+				<div className={styles.linkItems}>{children}</div>
+			</Link>
+		);
+	return (
+		<div className={styles.userRow} style={style}>
+			{children}
+		</div>
 	);
 };

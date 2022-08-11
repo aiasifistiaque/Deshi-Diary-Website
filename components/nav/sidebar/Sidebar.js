@@ -95,6 +95,16 @@ const Items = () => {
 				}}>
 				Search
 			</Item>
+
+			{!loading && isLoggedIn && (
+				<Item
+					onClick={() => {
+						dispatch(expand());
+						router.push('/leadboard');
+					}}>
+					Leadboard
+				</Item>
+			)}
 			{!loading && isLoggedIn && (
 				<Item
 					onClick={() => {

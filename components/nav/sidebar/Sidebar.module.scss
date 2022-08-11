@@ -50,10 +50,10 @@ $box-shadow: 4px 10px 20px rgba(66, 66, 66, 0.1);
 		width: 100vw;
 		align-items: center;
 		justify-content: center;
-		margin-top: 2rem;
+		margin-top: 1rem;
 
 		.item {
-			padding: 2rem 4rem;
+			padding: 1.5rem 4rem;
 
 			@include desktop {
 				padding: 2rem 10rem;

@@ -76,10 +76,10 @@
   width: 100vw;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .container .items .item {
-  padding: 2rem 4rem;
+  padding: 1.5rem 4rem;
   cursor: pointer;
   z-index: 20;
   display: flex;
