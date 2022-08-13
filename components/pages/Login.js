@@ -35,7 +35,7 @@ const Login = () => {
 				<LoginContainer
 					onSubmit={onSubmit}
 					title='login'
-					subtitle='Lorem ipsum dolor sit amet, consectetur adipiscing elit, ipsum dolor sit amet.'>
+					subtitle='Login to discover nearby places and Rate Businesses'>
 					<Error isError={result.isError}>{result.error && result.error}</Error>
 
 					<Input

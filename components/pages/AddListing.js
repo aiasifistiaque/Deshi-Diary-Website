@@ -89,10 +89,6 @@ const AddListing = () => {
 		}
 	}, [result.isSuccess]);
 
-	// const onKeyDown = () => {
-	// 	onKeyDown = {(e)=>{return e.key != 'Enter'} };
-	// };
-
 	return (
 		<Page>
 			<form

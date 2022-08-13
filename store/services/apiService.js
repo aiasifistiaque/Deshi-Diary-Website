@@ -87,6 +87,10 @@ export const userApi = createApi({
 			query: () => `/categories`,
 			providesTags: ['Categories'],
 		}),
+		categoriesCount: builder.query({
+			query: id => `/categories/count/${id}`,
+			providesTags: ['Categories'],
+		}),
 		getCategoryByName: builder.query({
 			query: name => `/categories/${name}`,
 			providesTags: name => [{ type: 'Cagetory', id: name ? name : '' }],
@@ -263,32 +267,55 @@ export const userApi = createApi({
 });
 
 export const {
+	//count number of listings in a category
+	useCategoriesCountQuery,
+	//get data on self ranking,reviews & points
 	useGetRankQuery,
+	//get leadbaord data
 	useGetLeadboardQuery,
+	//update user information
 	useUpdateUserMutation,
+	//get photos of listings updated by users
 	useGetPhotosQuery,
+	//add photo to a listing
 	useAddPhotoMutation,
+	//login
 	useLoginMutation,
+	//registration
 	useRegisterMutation,
+	//get self data
 	useGetSelfQuery,
+	//get list of categories
 	useGetCategoriesQuery,
 	useGetCategoryByNameQuery,
+	//add a new listing
 	useAddListingMutation,
+	//get list of all listings
 	useGetListingsQuery,
+	//get a single listing by ID
 	useGetListingsByIdQuery,
+	//add a new review
 	useAddRatingMutation,
+	//get all the reviews of a listing
 	useGetRatingsQuery,
+
 	useGetActivitiesQuery,
+	//SEARCH
 	useGetSearchQuery,
 	useGetTopSearchQuery,
 	useGetFilteredSearchQuery,
 	useLazyGetFilteredSearchQuery,
+	//get comments
 	useGetCommentsQuery,
+	//add a new comment
 	useAddCommentMutation,
 	useGetUserDataQuery,
 	useGetUserRatingsQuery,
+	//get notifications
 	useGetNotificationsQuery,
+	//get all reviews posted by an user
 	useGetRatingByIdQuery,
 	useGetAdminCommentsQuery,
+	//get the acquired badges of an user
 	useGetUserBadgesQuery,
 } = userApi;

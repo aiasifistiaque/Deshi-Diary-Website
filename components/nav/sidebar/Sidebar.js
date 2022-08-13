@@ -99,7 +99,11 @@ const Items = () => {
 				</Item>
 			)}
 
-			<Item>{`FAQ's`}</Item>
+			<Item
+				onClick={() => {
+					dispatch(expand());
+					router.push('/about');
+				}}>{`About us`}</Item>
 			{!loading && isLoggedIn && (
 				<Item onClick={() => dispatch(logout())}> Logout</Item>
 			)}

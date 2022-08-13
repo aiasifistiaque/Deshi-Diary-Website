@@ -39,9 +39,8 @@ const Signup = () => {
 					onSubmit={onSubmit}
 					type='signup'
 					title='Sign Up'
-					subtitle='Lorem ipsum dolor sit amet, consectetur adipiscing elit, ipsum dolor sit amet.'>
+					subtitle='Login to discover nearby places and Rate Businesses'>
 					<Error isError={result.isError}>{result.error && result.error}</Error>
-
 					<Input
 						placeholder='Name'
 						value={name}

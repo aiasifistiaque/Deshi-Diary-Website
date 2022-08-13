@@ -13,9 +13,6 @@ import styles from './HeaderSearchBar.module.css';
 const HeaderSearchBar = ({ focus, setFocus }) => {
 	const [str, setStr] = useState('');
 	const inputRef = useRef(null);
-	//const [focus, setFocus] = useState(false);
-
-	//
 
 	const inputClicked = () => {
 		setFocus(true);
@@ -140,7 +137,7 @@ const Item = ({ item, i, border }) => {
 	);
 };
 
-const NotFound = ({ item, i, border }) => {
+const NotFound = () => {
 	return (
 		<div style={{ margin: '.5rem 1rem' }}>
 			<p style={{ fontSize: 14 }}>No Results Found</p>

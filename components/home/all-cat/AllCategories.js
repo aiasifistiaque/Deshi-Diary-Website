@@ -1,18 +1,10 @@
 import Link from 'next/link';
 import React from 'react';
-import { useGetCategoriesQuery } from '../../../store/services/apiService';
+import {
+	useCategoriesCountQuery,
+	useGetCategoriesQuery,
+} from '../../../store/services/apiService';
 import styles from './AllCategories.module.css';
-
-const data = [
-	{ name: 'Hotels', icon: 'hotels' },
-	{ name: 'Home Services', icon: 'homeservices' },
-	{ name: 'Restaurents', icon: 'restaurents' },
-	{ name: 'Beauth & Spa', icon: 'beauty' },
-	{ name: 'Professionals', icon: 'professionals' },
-	{ name: 'Pet Care', icon: 'petcare' },
-	{ name: 'Gym', icon: 'gym' },
-	{ name: 'Coffee & Tea', icon: 'coffee' },
-];
 
 const AllCategories = () => {
 	const { data, isFetching, isError } = useGetCategoriesQuery();
@@ -21,16 +13,25 @@ const AllCategories = () => {
 		<div className={styles.container}>
 			<div className={styles.cards}>
 				{data.doc.map((item, i) => (
-					<Link key={i} href={`/search?category=${item.name}`}>
-						<div className={styles.card}>
-							<img src={item?.image ? item.image : '/icons/beauty.png'} />
-							<p>{item.name}</p>
-						</div>
-					</Link>
+					<Item key={i} item={item} />
 				))}
 			</div>
-			{/* <ViewMore /> */}
 		</div>
+	);
+};
+
+const Item = ({ item }) => {
+	const { data, isFetching, isError } = useCategoriesCountQuery(
+		item?._id && item._id
+	);
+	return (
+		<Link href={`/search?category=${item.name}`}>
+			<div className={styles.card}>
+				<img src={item?.image ? item.image : '/icons/beauty.png'} />
+				<p>{item.name}</p>
+				{data && <span>({data?.count && data.count})</span>}
+			</div>
+		</Link>
 	);
 };
 

@@ -672,7 +672,7 @@ body {
   margin: 0;
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -714,7 +714,7 @@ p {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2rem !important;
   font-weight: 500;
   margin: 0;
   padding: 0;
@@ -724,13 +724,13 @@ h1 {
 }
 @media (min-width: 1008px) {
   h1 {
-    font-size: 4rem;
+    font-size: 4rem !important;
     line-height: 6rem;
   }
 }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 1.75rem !important;
   font-weight: 500;
   margin: 0;
   padding: 0;
@@ -740,7 +740,7 @@ h2 {
 }
 @media (min-width: 1008px) {
   h2 {
-    font-size: 3rem;
+    font-size: 3rem !important;
     line-height: 4.5rem;
   }
 }

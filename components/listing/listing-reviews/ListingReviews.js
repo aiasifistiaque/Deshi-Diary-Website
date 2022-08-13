@@ -3,11 +3,6 @@ import styles from './Review.module.css';
 import * as lib from '../../../lib/constants';
 import moment from 'moment';
 import Rating from '../../rate/rating/Rating';
-import WriteComment from '../write-comment/WriteComment';
-import {
-	useAddCommentMutation,
-	useGetCommentsQuery,
-} from '../../../store/services/apiService';
 import Link from 'next/link';
 import Replies from './Replies';
 
@@ -21,7 +16,7 @@ const ListingReview = ({ review, fill }) => {
 				<div className={styles.image}>
 					<img
 						src={
-							review?.user?.img
+							review?.user?.image
 								? review.user.image
 								: lib.placeholders.profileImage
 						}

@@ -78,7 +78,10 @@ const Navbar = ({ landing, focus, setFocus, auth }) => {
 									<Link href='/profile/a'>
 										<Dropdown.Item text={<p>View Profile</p>} />
 									</Link>
-									<Dropdown.Item text={<p>Settings</p>} />
+									<Link href='/profile/manage-profile'>
+										<Dropdown.Item text={<p>Settings</p>} />
+									</Link>
+
 									<Dropdown.Item
 										text={<p>logout</p>}
 										onClick={() => dispatch(logout())}

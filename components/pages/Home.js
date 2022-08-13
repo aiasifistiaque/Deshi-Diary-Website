@@ -57,9 +57,6 @@ const Home = () => {
 					<AllCategories />
 				</HomeSection>
 			</Container>
-			{/* <Container>
-				<HomeAbout />
-			</Container> */}
 		</Page>
 	);
 };
