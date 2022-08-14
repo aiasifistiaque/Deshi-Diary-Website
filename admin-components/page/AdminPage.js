@@ -21,7 +21,7 @@ const AdminPage = ({
 	return (
 		<div>
 			<Head>
-				<title>IMS</title>
+				<title>Deshi Diary Admin</title>
 				<meta
 					name='viewport'
 					content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'

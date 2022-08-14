@@ -54,7 +54,7 @@ const Sidebar = ({ selected, store }) => {
 				)}
 			</div>
 			<div className={styles.items}>
-				<Link href={`${url}/overview`}>
+				<Link href={`${url}/`}>
 					<Item selected={selected}>Overview</Item>
 				</Link>
 
@@ -74,9 +74,9 @@ const Sidebar = ({ selected, store }) => {
 					<Link href={`${url}/categories`}>
 						<Item selected={selected}>Categories</Item>
 					</Link>
-					<Link href={`${url}/flags`}>
+					{/* <Link href={`${url}/flags`}>
 						<Item selected={selected}>Flags</Item>
-					</Link>
+					</Link> */}
 				</Section>
 
 				<Section title={'Settings'}>

@@ -12,9 +12,8 @@ const Adminlistings = () => {
 		useGetListingsAsAdminQuery({ page });
 	return (
 		<AdminPage selected='Listings'>
-			<ListPage isError={isError} error={error} title='Users'>
+			<ListPage isError={isError} error={error} title='All Listings'>
 				<Table
-					title='All Users'
 					isLoading={isFetching}
 					page={data?.page ? data.page : 1}
 					totalPages={data?.totalPages ? data.totalPages : 1}

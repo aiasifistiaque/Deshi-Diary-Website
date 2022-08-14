@@ -32,10 +32,10 @@ const AdminNavbar = ({ landing }) => {
 							icon={null}
 							text={<ProfileName isLoading={isLoading} data={data && data} />}>
 							<Dropdown.Menu>
-								<Link href='/profile/a'>
-									<Dropdown.Item text={<p>View Profile</p>} />
+								<Link href='/'>
+									<Dropdown.Item text={<p>Back Home</p>} />
 								</Link>
-								<Dropdown.Item text={<p>Settings</p>} />
+
 								<Dropdown.Item
 									text={<p>logout</p>}
 									onClick={() => dispatch(logout())}

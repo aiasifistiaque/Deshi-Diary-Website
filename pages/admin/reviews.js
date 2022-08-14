@@ -13,7 +13,6 @@ const Adminreviews = () => {
 		<AdminPage selected='Reviews'>
 			<ListPage isError={isError} error={error} title='Reviews'>
 				<Table
-					title='All Users'
 					isLoading={isFetching}
 					page={data?.page ? data.page : 1}
 					totalPages={data?.totalPages ? data.totalPages : 1}

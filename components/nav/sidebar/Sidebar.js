@@ -6,6 +6,7 @@ import { expand } from '../../../store/slices/toggledSlice';
 import { useRouter } from 'next/router';
 import useAuth from '../../../hooks/useAuth';
 import { logout } from '../../../store/slices/authSlice';
+import SmallScreen from '../../util/large-screen/SmallScreen';
 
 const Sidebar = () => {
 	const { toggled } = useSelector(state => state.toggle);
@@ -98,6 +99,17 @@ const Items = () => {
 					Add a Listing
 				</Item>
 			)}
+			<SmallScreen>
+				{!loading && isLoggedIn && (
+					<Item
+						onClick={() => {
+							dispatch(expand());
+							router.push('/notifications');
+						}}>
+						Notifications
+					</Item>
+				)}
+			</SmallScreen>
 
 			<Item
 				onClick={() => {

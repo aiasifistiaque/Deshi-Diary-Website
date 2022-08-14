@@ -13,7 +13,7 @@ export const adminApi = createApi({
 			return headers;
 		},
 	}),
-	tagTypes: ['Categories', 'Badges', 'Assign'],
+	tagTypes: ['Categories', 'Badges', 'Assign', 'Kpi'],
 	endpoints: builder => ({
 		// register: builder.mutation({
 		// 	query(body) {
@@ -54,7 +54,17 @@ export const adminApi = createApi({
 					body,
 				};
 			},
-			invalidatesTags: ['Categories'],
+			invalidatesTags: ['Categories', 'Kpi'],
+		}),
+		editCategoryAsAdmin: builder.mutation({
+			query(body) {
+				return {
+					url: `/categories`,
+					method: 'PUT',
+					body,
+				};
+			},
+			invalidatesTags: ['Categories', 'Kpi'],
 		}),
 		getAllBadgesAsAdmin: builder.query({
 			query: ({ sort = '-createdAt', page = 1, perpage = 10 } = {}) =>
@@ -80,6 +90,10 @@ export const adminApi = createApi({
 			query: id => `/assign/${id}`,
 			providesTags: id => [{ type: 'Assign', id: id ? id : '' }],
 		}),
+		getKpi: builder.query({
+			query: () => `/kpi`,
+			providesTags: () => ['Kpi'],
+		}),
 		assignBadgeAsAdmin: builder.mutation({
 			query(body) {
 				return {
@@ -94,6 +108,8 @@ export const adminApi = createApi({
 });
 
 export const {
+	useEditCategoryAsAdminMutation,
+	useGetKpiQuery,
 	useGetUsersAsAdminQuery,
 	useGetListingsAsAdminQuery,
 	useGetAllRatingsAsAdminQuery,

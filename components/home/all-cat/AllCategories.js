@@ -29,7 +29,7 @@ const Item = ({ item }) => {
 			<div className={styles.card}>
 				<img src={item?.image ? item.image : '/icons/beauty.png'} />
 				<p>{item.name}</p>
-				{data && <span>({data?.count && data.count})</span>}
+				{data && <span>{data?.count && data.count} Listings</span>}
 			</div>
 		</Link>
 	);

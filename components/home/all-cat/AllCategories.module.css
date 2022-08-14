@@ -95,11 +95,12 @@
   margin: 0;
   padding: 0;
   line-height: 1.4;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: capitalize;
 }
 .container .cards .card span {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
+  color: #03989e;
 }/*# sourceMappingURL=AllCategories.module.css.map */

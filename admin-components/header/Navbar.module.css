@@ -111,8 +111,9 @@
 .logout img {
   height: 24px;
   width: 24px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 99px;
 }
 .logout p {
   font-size: 12px;

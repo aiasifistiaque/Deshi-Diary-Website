@@ -31,6 +31,7 @@
 		height: 0;
 		object-fit: contain;
 		cursor: pointer;
+
 		@include desktop {
 			height: 44px;
 		}
@@ -55,7 +56,8 @@
 	img {
 		height: 24px;
 		width: 24px;
-		object-fit: contain;
+		object-fit: cover;
+		border-radius: 99px;
 	}
 
 	p {
