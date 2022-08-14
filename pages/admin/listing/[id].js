@@ -1,6 +1,8 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { useState } from 'react';
+import { Button } from 'semantic-ui-react';
 import ListPage from '../../../admin-components/listpage/ListPage';
 import AdminPage from '../../../admin-components/page/AdminPage';
 import {
@@ -8,56 +10,60 @@ import {
 	DetailsTable,
 } from '../../../admin-components/table/Details';
 import { Item, Row, Table } from '../../../admin-components/table/Table';
-import {
-	useGetListingsByIdQuery,
-	useGetRatingsQuery,
-} from '../../../store/services/apiService';
+import { useGetListingsByIdAsAdminQuery } from '../../../store/services/adminService';
+import { useGetRatingsQuery } from '../../../store/services/apiService';
 
 const Adminlisting = () => {
 	const router = useRouter();
 	const { id } = router.query;
 
+	const [edit, setEdit] = useState(false);
 	const { data, isError, error, isFetching, isLoading } =
-		useGetListingsByIdQuery(id);
+		useGetListingsByIdAsAdminQuery(id);
+
+	const fixed = (
+		<>
+			<AdminItem title='id'>{data?._id && data._id}</AdminItem>
+			<AdminItem title='Name'>{data?.name && data.name}</AdminItem>{' '}
+			<AdminItem title='Category'>
+				{data?.category?.name && data.category.name}
+			</AdminItem>
+			<AdminItem title='Description'>
+				{data?.description && data.description}
+			</AdminItem>
+			<AdminItem title='Email'>{data?.email && data.email}</AdminItem>
+			<AdminItem title='Phone'>{data?.phone && data.phone}</AdminItem>
+			<AdminItem title='Website'>{data?.website && data.website}</AdminItem>
+			<AdminItem title='Features'>
+				{data?.features && JSON.stringify(data.features)}
+			</AdminItem>
+			<AdminItem title='Services'>
+				{data?.features && JSON.stringify(data.services)}
+			</AdminItem>
+			<AdminItem title='Tags'>
+				{data?.features && JSON.stringify(data.tags)}
+			</AdminItem>
+			<AdminItem title='Payment Options'>
+				{data?.paymentOptions && JSON.stringify(data.paymentOptions)}
+			</AdminItem>
+			<AdminItem title='Street'>{data?.street && data.street}</AdminItem>
+			<AdminItem title='Street'>{data?.city && data.city}</AdminItem>
+			<AdminItem title='Division'>{data?.division && data.division}</AdminItem>
+			<AdminItem title='Post Code'>{data?.postCode && data.postCode}</AdminItem>
+			<AdminItem title='Date Added' date>
+				{data?.createdAt && data.createdAt}
+			</AdminItem>
+		</>
+	);
+
 	return (
 		<AdminPage selected='Listings'>
 			<ListPage isError={isError} error={error} title='Listing Overview'>
-				<DetailsTable isLoading={isFetching}>
-					<AdminItem title='id'>{data?._id && data._id}</AdminItem>
-					<AdminItem title='Name'>{data?.name && data.name}</AdminItem>{' '}
-					<AdminItem title='Category'>
-						{data?.category?.name && data.category.name}
-					</AdminItem>
-					<AdminItem title='Description'>
-						{data?.description && data.description}
-					</AdminItem>
-					<AdminItem title='Email'>{data?.email && data.email}</AdminItem>
-					<AdminItem title='Phone'>{data?.phone && data.phone}</AdminItem>
-					<AdminItem title='Website'>{data?.website && data.website}</AdminItem>
-					<AdminItem title='Features'>
-						{data?.features && JSON.stringify(data.features)}
-					</AdminItem>
-					<AdminItem title='Services'>
-						{data?.features && JSON.stringify(data.services)}
-					</AdminItem>
-					<AdminItem title='Tags'>
-						{data?.features && JSON.stringify(data.tags)}
-					</AdminItem>
-					<AdminItem title='Payment Options'>
-						{data?.paymentOptions && JSON.stringify(data.paymentOptions)}
-					</AdminItem>
-					<AdminItem title='Street'>{data?.street && data.street}</AdminItem>
-					<AdminItem title='Street'>{data?.city && data.city}</AdminItem>
-					<AdminItem title='Division'>
-						{data?.division && data.division}
-					</AdminItem>
-					<AdminItem title='Post Code'>
-						{data?.postCode && data.postCode}
-					</AdminItem>
-					<AdminItem title='Date Added' date>
-						{data?.createdAt && data.createdAt}
-					</AdminItem>
-				</DetailsTable>
+				<Link href={`/admin/edit-listing/${id}`}>
+					<Button size='mini'>Edit</Button>
+				</Link>
+
+				<DetailsTable isLoading={isFetching}>{fixed}</DetailsTable>
 			</ListPage>
 			{data && <ListingReviews id={data._id} />}
 		</AdminPage>

@@ -53,6 +53,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	margin: 2rem 0;
+	gap: 2rem;
 }
 
 .item {
@@ -62,7 +63,7 @@
 	margin-bottom: 1.5rem;
 	align-items: center;
 	@include desktop {
-		width: 50%;
+		width: 45%;
 	}
 	img {
 		width: 24px;

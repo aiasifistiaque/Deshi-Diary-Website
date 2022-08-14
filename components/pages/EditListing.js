@@ -3,9 +3,8 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import {
 	useAddListingMutation,
-	useGetCategoriesQuery,
+	useGetListingsByIdQuery,
 } from '../../store/services/apiService';
-import Page from '../nav/page/Page';
 import Button from '../util/button/Button';
 import Container from '../util/container/Container';
 import Input from '../util/input/Input';
@@ -17,10 +16,13 @@ import Checkbox from '../util/checkbox/Checkbox';
 import AddImage from '../listing/addimage/AddImage';
 import AddMap from '../map/add-map/AddMap';
 import Label from '../util/label/Label';
+import AdminPage from '../../admin-components/page/AdminPage';
+import { useEditListingMutation } from '../../store/services/adminService';
 
-const AddListing = () => {
-	const { data, isError, isFetching } = useGetCategoriesQuery();
-	const [add, result] = useAddListingMutation();
+const EditListing = ({ id }) => {
+	//const { data, isError, isFetching } = useGetCategoriesQuery();
+	const { data, isError, isFetching } = useGetListingsByIdQuery(id);
+	const [add, result] = useEditListingMutation();
 	const router = useRouter();
 	//
 	const [categoryData, setCategoryData] = useState([]);
@@ -55,6 +57,7 @@ const AddListing = () => {
 		images;
 
 		add({
+			id,
 			name,
 			category,
 			email,
@@ -66,43 +69,59 @@ const AddListing = () => {
 			city,
 			division,
 			street,
-			additionalAddress,
 			services,
 			features,
 			paymentOptions,
 			tags,
-			images,
 			lat,
 			lng,
 		});
 	};
 
-	useEffect(() => {
-		if (!isFetching && data?.doc) {
-			setCategoryData(data.doc);
-		}
-	}, [isFetching]);
+	// useEffect(() => {
+	// 	if (!isFetching && data?.doc) {
+	// 		setCategoryData(data.doc);
+	// 	}
+	// }, [isFetching]);
 
 	useEffect(() => {
 		if (!result.isUninitialized && result.isSuccess) {
-			router.push(`/b/${result.data._id}`);
+			router.back();
 		}
 	}, [result.isSuccess]);
 
+	useEffect(() => {
+		if (!isFetching && data) {
+			setName(data?.name && data.name);
+			setDescription(data?.description && data.description);
+			setCity(data?.city && data.city);
+			setDivision(data?.division && data.division);
+			setStreet(data?.street && data.street);
+			setEmail(data?.email && data.email);
+			setWebsite(data?.website && data.website);
+			setPhone(data?.phone && data.phone);
+			setPostCode(data?.postCode && data.postCode);
+
+			setTags(data?.tags && data.tags);
+
+			setServices(data?.services && data.services);
+
+			setFeatures(data?.features && data.features);
+			setPaymentOptions(data?.paymentOptions && data.paymentOptions);
+			setLat(data?.geoLocation && data.geoLocation.lat);
+			setLng(data?.geoLocation && data.geoLocation.lng);
+		}
+	}, [isFetching]);
+
 	return (
-		<Page>
+		<AdminPage>
 			<form
 				onSubmit={onSubmit}
 				onKeyDown={e => {
 					return e.key != 'Enter';
 				}}>
-				<Section title='Add a place to Deshi Diary' top>
-					<p>
-						Thank you for telling us about a new place to list on Deshi Diary.
-						Your contributions make our traveler community stronger. To get
-						started, tell us a little bit more about the place.
-					</p>
-					<SectionInput>
+				<Section title='Edit Details' top>
+					{/* <SectionInput>
 						<Input
 							onKeyPress={e => {
 								e.key === 'Enter' && e.preventDefault();
@@ -114,14 +133,14 @@ const AddListing = () => {
 							data={categoryData}
 							required
 						/>
-					</SectionInput>
+					</SectionInput> */}
 				</Section>
 
-				<Section
-					subheading='Add Images'
+				{/* <Section
+					subheading='Images'
 					subtitle='Accepted photo formats include .jpg .jpeg .gif and .png File size should be less than 15MB'>
 					<AddImage setImages={e => setImages(e)} images={images} />
-				</Section>
+				</Section> */}
 				<Section subheading={'Name & Description'}>
 					<SectionInput>
 						<Input
@@ -208,7 +227,7 @@ const AddListing = () => {
 							label='Street Address'
 							textArea
 						/>
-						<Input
+						{/* <Input
 							onKeyPress={e => {
 								e.key === 'Enter' && e.preventDefault();
 							}}
@@ -217,7 +236,7 @@ const AddListing = () => {
 							label='Additional Address Information'
 							placeholder='Any additional address information'
 							optional
-						/>
+						/> */}
 						<Input
 							onKeyPress={e => {
 								e.key === 'Enter' && e.preventDefault();
@@ -243,7 +262,7 @@ const AddListing = () => {
 							placeholder='Enter Phone Number'
 							required
 						/>
-						<Input
+						{/* <Input
 							onKeyPress={e => {
 								e.key === 'Enter' && e.preventDefault();
 							}}
@@ -252,7 +271,7 @@ const AddListing = () => {
 							label='Additional Contact Number'
 							placeholder='Any additional contact number'
 							optional
-						/>
+						/> */}
 						<Input
 							onKeyPress={e => {
 								e.key === 'Enter' && e.preventDefault();
@@ -313,14 +332,16 @@ const AddListing = () => {
 					</SectionInput>
 				</Section>
 				<Container style={{ marginTop: 32 }} horizontal>
-					<Button text>{'Go Back'}</Button>
+					<Button text onClick={() => router.back()}>
+						{'Go Back'}
+					</Button>
 					<Button submit loading={result.isLoading}>
 						{'Save & Continue'}
 					</Button>
 				</Container>
 			</form>
-		</Page>
+		</AdminPage>
 	);
 };
 
-export default AddListing;
+export default EditListing;

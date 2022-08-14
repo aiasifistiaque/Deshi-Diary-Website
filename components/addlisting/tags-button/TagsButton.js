@@ -19,7 +19,7 @@ const TagsButton = ({
 
 	const addItem = () => {
 		if (value && value.trim().length > 0) {
-			const arr = values;
+			const arr = [...values];
 			arr.push(value.toLowerCase());
 			setValues(arr);
 			setValue('');

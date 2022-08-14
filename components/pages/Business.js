@@ -83,7 +83,7 @@ const Business = ({ query }) => {
 					<SectionItem title='Category'>{data?.category?.name}</SectionItem>
 				)}
 				{data?.website && (
-					<SectionItem title='Webiste' href='https://thinkcrypt.io'>
+					<SectionItem title='Webiste' href={data.website}>
 						{data.website}
 					</SectionItem>
 				)}

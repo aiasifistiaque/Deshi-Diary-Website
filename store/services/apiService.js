@@ -255,6 +255,7 @@ export const userApi = createApi({
 			query: id => `/users/${id}`,
 			providesTags: id => [{ type: 'User', id: id ? id : '' }],
 		}),
+
 		getUserBadges: builder.query({
 			query: id => `/badges/${id}`,
 			providesTags: id => [{ type: 'Badge', id: id ? id : '' }],

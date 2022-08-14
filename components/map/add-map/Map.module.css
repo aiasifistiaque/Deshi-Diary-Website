@@ -103,6 +103,7 @@
   display: flex;
   flex-wrap: wrap;
   margin: 2rem 0;
+  gap: 2rem;
 }
 
 .item {
@@ -114,7 +115,7 @@
 }
 @media (min-width: 1008px) {
   .item {
-    width: 50%;
+    width: 45%;
   }
 }
 .item img {

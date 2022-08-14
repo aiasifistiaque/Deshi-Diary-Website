@@ -8,7 +8,7 @@ import {
 	useEditCategoryAsAdminMutation,
 	useGetAllCategoriesAsAdminQuery,
 } from '../../store/services/adminService';
-import { Header, Image, Modal } from 'semantic-ui-react';
+import { Modal } from 'semantic-ui-react';
 import AdminModalBody from '../../admin-components/table/AdminModalBody';
 import AddImageSingle from '../../components/listing/addimage/AddImageSingle';
 

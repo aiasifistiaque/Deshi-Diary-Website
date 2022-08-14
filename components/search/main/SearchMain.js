@@ -53,10 +53,13 @@ const SearchMain = ({
 									</div>
 								))}
 							</div>
+
 							<div className={styles.a}>
-								<div className={styles.aButton}>
-									<a>View Reviews</a>
-								</div>
+								<Link href={`/reviews/${item?._id && item._id}`}>
+									<div className={styles.aButton}>
+										<a>View Reviews</a>
+									</div>
+								</Link>
 							</div>
 						</div>
 					</div>

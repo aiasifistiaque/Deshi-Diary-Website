@@ -94,6 +94,14 @@ export const Item = ({
 				<img src={image} alt='/' />
 			</div>
 		);
+	if (email)
+		return (
+			<div
+				className={styles.titleItem}
+				style={{ textTransform: 'lowercase', ...itemStyle }}>
+				<p>{children}</p>
+			</div>
+		);
 	if (title)
 		return (
 			<div className={styles.titleItem} style={itemStyle}>

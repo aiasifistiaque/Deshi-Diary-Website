@@ -20,13 +20,13 @@ const ProfileDashboard = () => {
 						<SectionItem title='Phone'>
 							{data?.phone ? data.phone : <NotSet>set phone</NotSet>}
 						</SectionItem>
-						<SectionItem title='Description'>
+						{/* <SectionItem title='Description'>
 							{data?.description ? (
 								data.description
 							) : (
 								<NotSet>set description</NotSet>
 							)}
-						</SectionItem>
+						</SectionItem> */}
 						<SectionItem title='Reviews'>
 							{data?.reviews ? data.reviews : 0}
 						</SectionItem>

@@ -34,9 +34,11 @@ const ViewMap = ({ lng, lat, data }) => {
 								data?.postCode && data.postCode
 							}`}
 					</Item>
-					<Item image='link-light' link>
-						{data?.website && data.website}
-					</Item>
+					{data?.website && (
+						<Item image='link-light' link>
+							{data?.website && data.website}
+						</Item>
+					)}
 				</div>
 			</div>
 		</div>
