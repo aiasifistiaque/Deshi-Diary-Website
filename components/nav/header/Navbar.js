@@ -76,7 +76,7 @@ const Navbar = ({ landing, focus, setFocus, auth }) => {
 			{!search && (
 				<div className={styles.middle}>
 					<Link href='/'>
-						<img src='/logo.png' alt='Deshi Diary' />
+						<img src='/logo.svg' alt='Deshi Diary' />
 					</Link>
 				</div>
 			)}

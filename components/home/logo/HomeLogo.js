@@ -7,7 +7,7 @@ const duration = 200;
 const HomeLogo = ({ visible }) => {
 	return (
 		<div className={styles.container}>
-			<Image centered size='large' src='/logo.png' className={styles.image} />
+			<Image centered size='large' src='/logo.svg' className={styles.image} />
 		</div>
 	);
 };
