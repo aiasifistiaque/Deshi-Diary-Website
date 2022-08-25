@@ -96,7 +96,7 @@ export const userApi = createApi({
 			providesTags: name => [{ type: 'Cagetory', id: name ? name : '' }],
 		}),
 		getListings: builder.query({
-			query: () => `/listings`,
+			query: ({ sort, perpage }) => `/listings?sort=${sort}&perpage=${perpage}`,
 			providesTags: ['Listings'],
 		}),
 		getListingsById: builder.query({

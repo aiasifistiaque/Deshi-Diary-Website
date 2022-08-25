@@ -1,0 +1,11 @@
+.container h1,
+.container h2,
+.container h3,
+.container h4,
+.container h5 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.container p {
+  margin-bottom: 1rem !important;
+}/*# sourceMappingURL=Privacy.module.css.map */

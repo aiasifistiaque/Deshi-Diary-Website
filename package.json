@@ -9,6 +9,8 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@emotion/react": "^11.10.0",
+		"@emotion/styled": "^11.10.0",
 		"@googlemaps/react-wrapper": "^1.1.35",
 		"@mapbox/search-js-react": "^1.0.0-beta.11",
 		"@reduxjs/toolkit": "^1.8.2",

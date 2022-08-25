@@ -12,7 +12,6 @@ import NavIcon from './nav-icon/NavIcon';
 import LargeScreen from '../../util/large-screen/LargeScreen';
 import SmallScreen from '../../util/large-screen/SmallScreen';
 import Toggle from './toggle/Toggle';
-import useScrolled from '../../../hooks/useScrolled';
 
 const Navbar = ({ landing, focus, setFocus, auth }) => {
 	const { isLoggedIn, loading } = useAuth();
