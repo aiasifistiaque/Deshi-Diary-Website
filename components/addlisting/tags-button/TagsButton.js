@@ -25,6 +25,20 @@ const TagsButton = ({
 			setValue('');
 		}
 	};
+
+	const addedTags =
+		values &&
+		values.map((item, i) => (
+			<div key={i} className={styles.tag}>
+				<p>{item}</p>
+				<div
+					className={styles.cancel}
+					onClick={() => setValues(values.filter(x => x != item))}>
+					<img src='/icons/cancel-white.png' alt='x' />
+				</div>
+			</div>
+		));
+
 	return (
 		<div className={styles.container}>
 			{label && (
@@ -47,19 +61,7 @@ const TagsButton = ({
 					</div>
 				</label>
 			)}
-			<div className={styles.tags}>
-				{values &&
-					values.map((item, i) => (
-						<div key={i} className={styles.tag}>
-							<p>{item}</p>
-							<div
-								className={styles.cancel}
-								onClick={() => setValues(values.filter(x => x != item))}>
-								<img src='/icons/cancel-white.png' alt='x' />
-							</div>
-						</div>
-					))}
-			</div>
+			<div className={styles.tags}>{addedTags}</div>
 		</div>
 	);
 };
