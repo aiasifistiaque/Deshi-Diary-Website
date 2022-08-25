@@ -13,6 +13,20 @@
 	}
 	.title {
 		margin-bottom: 0.5rem;
+		h3 {
+			font-size: 1.5rem !important;
+			font-weight: 700 !important;
+			margin: 0;
+			padding: 0;
+			line-height: 2.25rem;
+			color: $color-text;
+			font-family: $font-family !important;
+
+			@include desktop {
+				font-size: 2rem !important;
+				line-height: 3.75rem;
+			}
+		}
 		p {
 			color: #b1b1b1;
 			font-size: 0.8rem;
@@ -36,6 +50,20 @@
 	}
 	.title {
 		margin-bottom: 0.5rem;
+		h3 {
+			font-size: 1.5rem !important;
+			font-weight: 700 !important;
+			margin: 0;
+			padding: 0;
+			line-height: 2.25rem;
+			color: $color-text;
+			font-family: $font-family !important;
+
+			@include desktop {
+				font-size: 2rem !important;
+				line-height: 3.75rem;
+			}
+		}
 		p {
 			color: #b1b1b1;
 			font-size: 0.8rem;

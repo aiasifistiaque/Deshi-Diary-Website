@@ -41,6 +41,10 @@ const AddListing = () => {
 	const [lat, setLat] = useState();
 	const [lng, setLng] = useState();
 
+	const onCancel = () => {
+		router.back();
+	};
+
 	//tags
 
 	const [services, setServices] = useState([]);
@@ -313,7 +317,9 @@ const AddListing = () => {
 					</SectionInput>
 				</Section>
 				<Container style={{ marginTop: 32 }} horizontal>
-					<Button text>{'Go Back'}</Button>
+					<Button text onClick={onCancel}>
+						{'Go Back'}
+					</Button>
 					<Button submit loading={result.isLoading}>
 						{'Save & Continue'}
 					</Button>

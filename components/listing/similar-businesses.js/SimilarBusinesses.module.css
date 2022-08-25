@@ -109,6 +109,7 @@
   font-size: 0.7rem;
   font-weight: 600;
   color: #b1b1b1;
+  line-height: 1.5 !important;
 }
 .container .item .description p {
   font-size: 0.8rem;

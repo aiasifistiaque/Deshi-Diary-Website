@@ -118,7 +118,10 @@ const Business = ({ query }) => {
 				</Section>
 			)}
 			<Section title='Similar Businesses'>
-				<SimilarBusinesses id={data?.category?._id && data.category._id} />
+				<SimilarBusinesses
+					id={data?.category?._id && data.category._id}
+					listing={query}
+				/>
 			</Section>
 		</Page>
 	);
