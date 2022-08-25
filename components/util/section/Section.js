@@ -32,10 +32,9 @@ export const SectionItem = ({ title, children, arr, href, icon }) => {
 			<div className={styles.value}>
 				{arr ? (
 					children.map((item, i) => (
-						<p key={i}>
-							{item}
-							{i < children.length - 1 && ', '}
-						</p>
+						<p key={i} style={{ padding: 0, margin: 0 }}>{`${item}${
+							i < children.length - 1 ? ', ' : ''
+						}`}</p>
 					))
 				) : href ? (
 					<a href={href}>{children}</a>
