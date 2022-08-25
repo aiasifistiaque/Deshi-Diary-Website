@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import styles from './Navbar.module.css';
 import { Dropdown } from 'semantic-ui-react';
 import Button from '../../util/button/Button';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { logout } from '../../../store/slices/authSlice';
 import useAuth from '../../../hooks/useAuth';
 import { useGetSelfQuery } from '../../../store/services/apiService';
@@ -18,6 +18,39 @@ const Navbar = ({ landing, focus, setFocus, auth }) => {
 	const dispatch = useDispatch();
 	const { data, error, isLoading, isError } = useGetSelfQuery();
 	const [search, setSearch] = useState(false);
+
+	const profileDropDown = loading ? null : isLoggedIn ? (
+		<div className={styles.logout}>
+			<Dropdown
+				multiple
+				floating
+				icon={null}
+				text={<ProfileName isLoading={isLoading} data={data && data} />}>
+				<Dropdown.Menu>
+					<Link href='/profile/a'>
+						<Dropdown.Item text={<p>View Profile</p>} />
+					</Link>
+					<Link href='/profile/manage-profile'>
+						<Dropdown.Item text={<p>Settings</p>} />
+					</Link>
+
+					<Dropdown.Item
+						text={<p>logout</p>}
+						onClick={() => dispatch(logout())}
+					/>
+				</Dropdown.Menu>
+			</Dropdown>
+		</div>
+	) : (
+		<>
+			<Button small round text href='/login'>
+				Login
+			</Button>
+			<Button small round secondary href='/signup'>
+				Sign Up
+			</Button>
+		</>
+	);
 
 	return (
 		<div
@@ -63,42 +96,7 @@ const Navbar = ({ landing, focus, setFocus, auth }) => {
 					<NavIcon icon='notification' href='/notifications' />
 				</LargeScreen>
 
-				<LargeScreen>
-					{loading ? null : isLoggedIn ? (
-						<div className={styles.logout}>
-							<Dropdown
-								multiple
-								floating
-								icon={null}
-								text={
-									<ProfileName isLoading={isLoading} data={data && data} />
-								}>
-								<Dropdown.Menu>
-									<Link href='/profile/a'>
-										<Dropdown.Item text={<p>View Profile</p>} />
-									</Link>
-									<Link href='/profile/manage-profile'>
-										<Dropdown.Item text={<p>Settings</p>} />
-									</Link>
-
-									<Dropdown.Item
-										text={<p>logout</p>}
-										onClick={() => dispatch(logout())}
-									/>
-								</Dropdown.Menu>
-							</Dropdown>
-						</div>
-					) : (
-						<>
-							<Button small round text href='/login'>
-								Login
-							</Button>
-							<Button small round secondary href='/signup'>
-								Sign Up
-							</Button>
-						</>
-					)}
-				</LargeScreen>
+				<LargeScreen>{profileDropDown}</LargeScreen>
 			</div>
 		</div>
 	);

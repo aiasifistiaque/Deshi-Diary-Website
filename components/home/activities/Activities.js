@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React from 'react';
 import { Placeholder } from 'semantic-ui-react';
 import { useGetActivitiesQuery } from '../../../store/services/apiService';
 import BusinessCard from '../../rate/business-card/BusinessCard';
@@ -66,6 +66,7 @@ const Activities = ({ page, setPage }) => {
 							)}
 							<div className={styles.right}>
 								<BusinessCard
+									size={20}
 									home
 									query={item?.listing?._id && item.listing._id}
 								/>

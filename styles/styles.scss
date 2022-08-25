@@ -83,7 +83,7 @@ h2 {
 	font-weight: 500;
 	margin: 0;
 	padding: 0;
-	line-height: 1.75rem * 1.5;
+	line-height: 1.75rem * 1.5 !important;
 	color: $color-text;
 	font-family: $font-family;
 
@@ -123,7 +123,7 @@ h5 {
 	font-weight: 700 !important;
 	margin: 0;
 	padding: 0;
-	line-height: 1.5;
+	line-height: 1.5 !important;
 	color: $color-text;
 	font-family: $font-family !important;
 }

@@ -15,7 +15,7 @@ const Toggle = () => {
 			}}>
 			<img
 				src={
-					toggled ? 'icons/cancel-light.png' : '/icons/toggle-pure-black.png'
+					toggled ? '/icons/cancel-light.png' : '/icons/toggle-pure-black.png'
 				}
 				alt='#'
 			/>
