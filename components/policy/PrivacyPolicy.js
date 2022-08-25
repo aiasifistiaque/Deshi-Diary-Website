@@ -195,7 +195,9 @@ const PrivacyPolicy = () => {
 			<p>
 				If you have any questions about this Privacy Policy, You can contact us:
 			</p>
-			<p>By email: support@deshidiary.com</p>
+			<p>
+				By email: <a>support@deshidiary.com</a>
+			</p>
 		</div>
 	);
 };

@@ -8,4 +8,7 @@
 }
 .container p {
   margin-bottom: 1rem !important;
+}
+.container a {
+  color: teal !important;
 }/*# sourceMappingURL=Privacy.module.css.map */

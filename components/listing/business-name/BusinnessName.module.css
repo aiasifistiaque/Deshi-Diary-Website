@@ -66,6 +66,17 @@
 }
 .container .title h3 {
   line-height: 20px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  color: #424242;
+  font-family: "Montserrat", sans-serif;
+}
+@media (min-width: 1008px) {
+  .container .title h3 {
+    font-size: 2rem;
+  }
 }
 .container .title .location p {
   font-weight: 700;
