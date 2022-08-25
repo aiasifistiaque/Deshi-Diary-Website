@@ -70,6 +70,8 @@
 			font-weight: 600;
 			max-width: 400px;
 			line-height: 1.4;
+			padding: 0;
+			margin: 0;
 		}
 	}
 }
@@ -132,10 +134,7 @@
 	display: flex;
 	align-items: center;
 	width: 50%;
-	p {
-		margin: 0;
-		padding: 0;
-	}
+
 	@include desktop {
 		width: 30%;
 	}
@@ -149,6 +148,8 @@
 
 	p {
 		font-size: 0.9rem;
+		margin: 0;
+		padding: 0;
 
 		@include desktop {
 			font-size: 1rem;

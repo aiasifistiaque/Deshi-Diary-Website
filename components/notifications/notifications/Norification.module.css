@@ -58,6 +58,7 @@
   padding: 1rem 0 2rem 0;
   margin-bottom: 1rem;
   border-bottom: 1px solid #eee;
+  cursor: pointer;
 }
 .container .item h6 {
   margin-bottom: 0.5rem;

@@ -15,9 +15,7 @@ const Login = () => {
 
 	const [email, setEmail] = useState();
 	const [password, setPassword] = useState();
-
 	const [login, result] = useLoginMutation();
-
 	const onSubmit = e => {
 		e.preventDefault();
 		login({ email, password });
