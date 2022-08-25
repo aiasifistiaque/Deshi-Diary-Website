@@ -746,39 +746,39 @@ h2 {
 }
 
 h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
   margin: 0;
   padding: 0;
   line-height: 2.25rem;
   color: #424242;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
 }
 @media (min-width: 1008px) {
   h3 {
-    font-size: 2rem;
+    font-size: 2rem !important;
     line-height: 3.75rem;
   }
 }
 
 h4 {
-  font-size: 2rem;
+  font-size: 2rem !important;
   font-weight: 500;
   margin: 0;
   padding: 0;
   line-height: 3rem;
   color: #424242;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 h5 {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
   margin: 0;
   padding: 0;
   line-height: 1.5;
   color: #424242;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 h6 {

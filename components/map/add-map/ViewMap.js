@@ -28,12 +28,14 @@ const ViewMap = ({ lng, lat, data }) => {
 				<div className={styles.items}>
 					<Item image='phone-light'>{data?.phone && data.phone}</Item>
 					<Item image='mail-light'>{data?.email && data.email}</Item>
-					<Item image='address-light'>
-						{data.street &&
-							`${data.street}, ${data.city ? data.city : data.divistion} , ${
-								data?.postCode && data.postCode
-							}`}
-					</Item>
+					{data.street && (
+						<Item image='address-light'>
+							{data.street &&
+								`${data.street}, ${data.city ? data.city : data.divistion} , ${
+									data?.postCode && data.postCode
+								}`}
+						</Item>
+					)}
 					{data?.website && (
 						<Item image='link-light' link>
 							{data?.website && data.website}

@@ -6,44 +6,55 @@ import styles from './BusinessCard.module.css';
 import * as lib from '../../../lib/constants';
 import { Placeholder } from 'semantic-ui-react';
 
-const BusinessCard = ({ query, home }) => {
+const BusinessCard = ({ query, home, size }) => {
 	const { data, isLoading, isFetching, isError, error } =
 		useGetListingsByIdQuery(query);
 
+	const imagePlaceholer = (
+		<Placeholder
+			style={{
+				height: size || 150,
+				width: size || 150,
+				borderRadius: 99,
+			}}>
+			<Placeholder.Image />
+		</Placeholder>
+	);
+
+	const image = isFetching ? (
+		imagePlaceholer
+	) : (
+		<img
+			src={
+				data?.images?.length > 0 ? data.images[0].src : lib.placeholders.image
+			}
+			alt='..'
+		/>
+	);
+
+	const textPlaceholder = (
+		<Placeholder>
+			<Placeholder.Header>
+				<Placeholder.Line />
+				<Placeholder.Line />
+				<Placeholder.Line />
+			</Placeholder.Header>
+			<Placeholder.Paragraph>
+				<Placeholder.Line />
+				<Placeholder.Line />
+				<Placeholder.Line />
+			</Placeholder.Paragraph>
+		</Placeholder>
+	);
+
 	return (
 		<div className={home ? styles.home : styles.container}>
-			<div className={styles.image}>
-				{isFetching ? (
-					<Placeholder style={{ height: 150, width: 150, borderRadius: 99 }}>
-						<Placeholder.Image />
-					</Placeholder>
-				) : (
-					<img
-						src={
-							data?.images?.length > 0
-								? data.images[0].src
-								: lib.placeholders.image
-						}
-						alt='..'
-					/>
-				)}
-			</div>
+			<div className={styles.image}>{image}</div>
 			<div
 				className={styles.description}
 				style={{ display: isFetching ? 'block' : 'flex' }}>
 				{isFetching || !data ? (
-					<Placeholder>
-						<Placeholder.Header>
-							<Placeholder.Line />
-							<Placeholder.Line />
-							<Placeholder.Line />
-						</Placeholder.Header>
-						<Placeholder.Paragraph>
-							<Placeholder.Line />
-							<Placeholder.Line />
-							<Placeholder.Line />
-						</Placeholder.Paragraph>
-					</Placeholder>
+					textPlaceholder
 				) : (
 					<>
 						<div>
