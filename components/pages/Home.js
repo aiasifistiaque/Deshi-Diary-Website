@@ -43,7 +43,7 @@ const Home = () => {
 
 			<Container>
 				<HomeSection title='Recent Activities'>
-					<ActivitiesCard page={page + 1} />;
+					<ActivitiesCard page={page} />;
 					<ViewMore onClick={() => setPage(page + 1)} />
 				</HomeSection>
 			</Container>

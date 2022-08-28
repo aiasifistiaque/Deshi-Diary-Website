@@ -234,7 +234,7 @@ export const userApi = createApi({
 		 *
 		 */
 		getActivities: builder.query({
-			query: (page = 1) => `/activities?page=${page}&perpage=12`,
+			query: (page = 1) => `/activities?page=${page}&perpage=15`,
 			providesTags: ['Activities'],
 		}),
 		getNotifications: builder.query({

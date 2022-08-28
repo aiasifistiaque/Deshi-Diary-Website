@@ -11,9 +11,9 @@ const ActivitiesCard = ({ page, setPage }) => {
 		useGetActivitiesQuery(page);
 
 	const [visual, setVisual] = useState([]);
+	const modular = 6 % 3;
 
 	useEffect(() => {
-		console.log(page);
 		if (!isFetching && data && data.doc) {
 			if (page == 1) {
 				setVisual(data.doc);
@@ -30,23 +30,32 @@ const ActivitiesCard = ({ page, setPage }) => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.cards}>
+				{/* <h1>{modular}</h1> */}
+
+				<div className={styles.cardOne}>
+					{data &&
+						data.doc.map(
+							(item, i) => (i + 1) % 3 == 1 && <Cards item={item} key={i} />
+						)}
+				</div>
+
 				<div className={styles.cardOne}>
 					{visual &&
 						visual.map(
-							(item, i) => i % 3 == 0 && <Cards item={item} key={i} />
+							(item, i) => (i + 1) % 3 == 1 && <Cards item={item} key={i} />
 						)}
 				</div>
 				<div className={styles.cardTwo}>
 					{visual &&
 						visual.map(
-							(item, i) => (i + 1) % 3 == 0 && <Cards item={item} key={i} />
+							(item, i) => (i + 1) % 3 == 2 && <Cards item={item} key={i} />
 						)}
 				</div>
 				<div className={styles.cardThree}>
 					{visual &&
 						visual.map(
 							(item, i) =>
-								i % 3 != 0 && (i + 1) % 3 != 0 && <Cards item={item} key={i} />
+								i % 3 != 0 && (i + 1) % 3 == 0 && <Cards item={item} key={i} />
 						)}
 				</div>
 			</div>
