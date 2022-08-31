@@ -16,7 +16,7 @@ import { Placeholder } from 'semantic-ui-react';
 
 const RecentListingCards = () => {
 	const { data, isError, error, isFetching } = useGetListingsQuery({
-		sort: '-rating',
+		sort: '-reviews',
 		perpage: 3,
 	});
 
