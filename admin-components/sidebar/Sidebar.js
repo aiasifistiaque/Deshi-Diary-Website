@@ -79,14 +79,14 @@ const Sidebar = ({ selected, store }) => {
 					</Link> */}
 				</Section>
 
-				<Section title={'Settings'}>
+				{/* <Section title={'Settings'}>
 					<Link href={`${url}/settings`}>
 						<Item selected={selected}>Settings</Item>
 					</Link>
 					<Link href={`${url}/featured`}>
 						<Item selected={selected}>Featured</Item>
 					</Link>
-				</Section>
+				</Section> */}
 			</div>
 		</div>
 	);

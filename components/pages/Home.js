@@ -4,7 +4,6 @@ import HomeSearch from '../home/homesearch/HomeSearch';
 import Page from '../nav/page/Page';
 import Container from '../util/container/Container';
 import RecentListingCards from '../home/recentlistings/RecentListingCards';
-import HomeAbout from '../home/about/HomeAbout';
 import HomeLogo from '../home/logo/HomeLogo';
 import ViewMore from '../home/morebutton/ViewMore';
 import HomeSection from '../home/section/HomeSection';

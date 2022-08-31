@@ -11,7 +11,7 @@ const ActivitiesCard = ({ page, setPage }) => {
 		useGetActivitiesQuery(page);
 
 	const [visual, setVisual] = useState([]);
-	const modular = 6 % 3;
+	const modular = 12 % 3;
 
 	useEffect(() => {
 		if (!isFetching && data && data.doc) {
@@ -31,13 +31,6 @@ const ActivitiesCard = ({ page, setPage }) => {
 		<div className={styles.container}>
 			<div className={styles.cards}>
 				{/* <h1>{modular}</h1> */}
-
-				<div className={styles.cardOne}>
-					{data &&
-						data.doc.map(
-							(item, i) => (i + 1) % 3 == 1 && <Cards item={item} key={i} />
-						)}
-				</div>
 
 				<div className={styles.cardOne}>
 					{visual &&
