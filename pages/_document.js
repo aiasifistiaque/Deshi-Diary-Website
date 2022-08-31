@@ -39,7 +39,7 @@ Whether you are looking for a restaurant to dine in, where the nearest pharmacy 
 We are striving to be that platform that people will turn to when they hear about a business in their neighborhood or before trying a new service.'
 						key='ogdesc'
 					/>
-					<meta property='og:image' content='/og.jpg' key='ogimage' />
+					<meta property='og:image' content='/og.svg' key='ogimage' />
 					<meta
 						property='og:site_name'
 						content={'Deshi Diary'}
