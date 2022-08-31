@@ -85,7 +85,7 @@ h2 {
 	padding: 0;
 	line-height: 1.75rem * 1.5 !important;
 	color: $color-text;
-	font-family: $font-family;
+	font-family: $font-family !important;
 
 	@include desktop {
 		font-size: 3rem !important;
