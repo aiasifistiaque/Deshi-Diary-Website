@@ -8,9 +8,10 @@ const AboutHeading = () => {
 		<div className={styles.container}>
 			<div className={styles.heading}>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-					minim veniam, dolore magna aliqua. Utdolore magna aliqua.{' '}
+					DeshiDiary is a local search and rating platform. With the help of
+					everyday netizens as well as dedicated contributors, we are compiling
+					one of the more comprehensive business and service information
+					databases in the country
 				</p>
 			</div>
 
