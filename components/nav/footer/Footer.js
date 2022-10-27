@@ -1,42 +1,48 @@
 import Link from 'next/link';
 import React from 'react';
 import styles from './Footer.module.css';
+import * as lib from '../../../lib/constants';
 
 const Footer = () => {
+	const contactSection = (
+		<>
+			<Item>Deshi Diary</Item>
+			<Item>Phone: </Item>
+			<Item>Email: info@deshidiary.com</Item>
+		</>
+	);
+	const categoriesSection = lib.footerCategories.map((item, i) => (
+		<LinkItem href={`/search?category=${item}`} key={i}>
+			{item}
+		</LinkItem>
+	));
+	const navigationSection = (
+		<>
+			<LinkItem href='/'>Home</LinkItem>
+			<LinkItem href='/search'>Search</LinkItem>
+			<LinkItem href='/privacy-policy'>Privacy Policy</LinkItem>
+			<LinkItem href='/about'>About Us</LinkItem>
+		</>
+	);
+	const socialSection = (
+		<>
+			<LinkItem>Facebook</LinkItem>
+			<LinkItem>Instagram</LinkItem>
+			<LinkItem>Twitter</LinkItem>
+		</>
+	);
 	return (
-		<div className={styles.container}>
-			<div className={styles.address}>
-				<Section title='Contact Us'>
-					<Item>Deshi Diary</Item>
-					<Item>Phone: +88 01799 399555</Item>
-					<Item>Email: info@deshidiary.com</Item>
-				</Section>
+		<div className={styles.footer}>
+			<div className={styles.container}>
+				<div className={styles.address}>{contactSection}</div>
+				<div className={styles.links}>
+					<Section title='Categories'>{categoriesSection}</Section>
+					<Section title='Navigation'>{navigationSection}</Section>
+					<Section title='Social'>{socialSection}</Section>
+				</div>
 			</div>
-			<div className={styles.links}>
-				<Section title='Categories'>
-					<LinkItem href='/search?caregory=Hotels'>Hotels</LinkItem>
-					<LinkItem href='/search?caregory=Restaurants'>Restaurants</LinkItem>
-					<LinkItem href='/search?caregory=Professionals'>
-						Professionals
-					</LinkItem>
-					<LinkItem href='/search?caregory=Pet Care'>Pet Care</LinkItem>
-					<LinkItem href='/search?caregory=Gym'>Gym</LinkItem>
-					<LinkItem href={`/search?caregory=Coffee & Tea`}>
-						{'Coffee & Tea'}
-					</LinkItem>
-				</Section>
-				<Section title='Navigation'>
-					<LinkItem href='/'>Home</LinkItem>
-					<LinkItem href='/search'>Search</LinkItem>
-					<LinkItem href='/privacy-policy'>Privacy Policy</LinkItem>
-					<LinkItem href='/about'>About Us</LinkItem>
-				</Section>
-
-				<Section title='Social'>
-					<LinkItem>Facebook</LinkItem>
-					<LinkItem>Instagram</LinkItem>
-					<LinkItem>Twitter</LinkItem>
-				</Section>
+			<div className={styles.disclaimer}>
+				<p>Copyright 2021, DeshiDiary.com | ALL RIGHTS RESERVED</p>
 			</div>
 		</div>
 	);

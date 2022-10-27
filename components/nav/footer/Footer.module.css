@@ -49,6 +49,33 @@
   justify-content: flex-end;
 }
 
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+}
+
+.disclaimer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.disclaimer p {
+  font-size: 11px;
+  text-align: center;
+  line-height: 16px;
+  letter-spacing: 1px;
+}
+@media (min-width: 1008px) {
+  .disclaimer p {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+}
+
 .container {
   display: flex;
   background-color: whitesmoke;

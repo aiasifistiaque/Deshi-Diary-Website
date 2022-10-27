@@ -736,7 +736,7 @@ h2 {
   padding: 0;
   line-height: 2.625rem !important;
   color: #424242;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
 }
 @media (min-width: 1008px) {
   h2 {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from '../../util/button/Button';
 import Checkbox from '../../util/checkbox/Checkbox';
 import Input from '../../util/input/Input';

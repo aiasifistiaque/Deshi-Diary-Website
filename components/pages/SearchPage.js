@@ -50,10 +50,15 @@ const SearchPage = () => {
 		if (!categoryData.isFetching && categoryData.data) {
 			setFinalCategory(categoryData.data._id);
 		}
+		if (categoryData?.isError) {
+			console.log('error occured');
+			categoryData?.error?.data?.message &&
+				categoryData?.error?.data?.message == 'Category Not Found' &&
+				setFinalCategory('62badfcafbc2dcda94c85b48');
+		}
 	}, [categoryData.isFetching]);
 
 	const onApplyFilters = () => {
-		//trigger();
 		setFinalCategory(category);
 		setFinalLocation(location);
 		setFinalQuery(query);

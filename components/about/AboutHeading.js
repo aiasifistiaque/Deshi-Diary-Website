@@ -8,10 +8,11 @@ const AboutHeading = () => {
 		<div className={styles.container}>
 			<div className={styles.heading}>
 				<p>
-					DeshiDiary is a local search and rating platform. With the help of
-					everyday netizens as well as dedicated contributors, we are compiling
-					one of the more comprehensive business and service information
-					databases in the country
+					{`To help users connect with businesses, services & other places of
+					interest within the country. Whether you are looking for a restaurant
+					to dine in, want to know where the nearest pharmacy is or looking for
+					an electrician in your neighborhood –our goal at Deshidiary.com is to
+					make the platform an indispensable tool in your search.`}
 				</p>
 			</div>
 
