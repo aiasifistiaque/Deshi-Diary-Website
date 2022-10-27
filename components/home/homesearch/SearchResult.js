@@ -13,7 +13,7 @@ const SearchResult = ({ str }) => {
 				<h6>Popular Places</h6>
 			</div>
 			<div className={styles.items}>
-				{!isFetching &&
+				{data &&
 					data?.doc &&
 					data.doc.map(
 						(item, i) =>
@@ -27,8 +27,8 @@ const SearchResult = ({ str }) => {
 												<img src='/icons/location-black.png' alt='loc' />
 											</div>
 											<div className={styles.text}>
-												<h6>{item.name && item.name}</h6>
-												<p>{item.city && item.city}</p>
+												<h6>{item?.name && item.name}</h6>
+												<p>{item?.city && item.city}</p>
 											</div>
 										</div>
 									</div>
