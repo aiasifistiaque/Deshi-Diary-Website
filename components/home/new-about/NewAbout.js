@@ -27,7 +27,7 @@ const NewAbout = () => {
 					icon={<FaSearchLocation size={ICON_SIZE} color={ICON_COLOR} />}
 					title='Search Businesses'>
 					Find a particular business {`you're`} looking for and see what others
-					area saying.
+					are saying.
 				</Card>
 				<Card
 					icon={<FaMapMarkedAlt size={ICON_SIZE} color={ICON_COLOR} />}
