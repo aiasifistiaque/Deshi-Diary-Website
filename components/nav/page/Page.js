@@ -22,7 +22,7 @@ const Page = ({ title, children, landing, auth, onPageClick, blur }) => {
 				setSearchFocus(false);
 			}}>
 			<Head>
-				<title>{title ? title : 'Deshi Diary'}</title>
+				<title>{title ? title : 'DeshiDiary'}</title>
 				<meta
 					name='viewport'
 					content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'

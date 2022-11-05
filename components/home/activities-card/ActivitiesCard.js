@@ -5,6 +5,7 @@ import styles from './ActivitiesCard.module.css';
 import * as lib from '../../../lib/constants';
 import Rating from '../../rate/rating/Rating';
 import BusinessCard from '../../rate/business-card/BusinessCard';
+import { Placeholder } from 'semantic-ui-react';
 
 const ActivitiesCard = ({ page, setPage }) => {
 	const { data, isFetching, isLoading, error, isError } =
@@ -25,24 +26,39 @@ const ActivitiesCard = ({ page, setPage }) => {
 		console.log(visual);
 	}, [page, isFetching]);
 
+	const fetching = isFetching && (
+		<div className={styles.card} style={{ padding: '1.5rem .75rem' }}>
+			<Placeholder>
+				<Placeholder.Header image>
+					<Placeholder.Line />
+					<Placeholder.Line />
+				</Placeholder.Header>
+				<Placeholder.Paragraph>
+					<Placeholder.Line length='medium' />
+					<Placeholder.Line length='short' />
+				</Placeholder.Paragraph>
+			</Placeholder>
+		</div>
+	);
+
 	if (isLoading || isError || !data) return null;
 
 	return (
 		<div className={styles.container}>
 			<div className={styles.cards}>
-				{/* <h1>{modular}</h1> */}
-
 				<div className={styles.cardOne}>
 					{visual &&
 						visual.map(
 							(item, i) => (i + 1) % 3 == 1 && <Cards item={item} key={i} />
 						)}
+					<>{fetching}</>
 				</div>
 				<div className={styles.cardTwo}>
 					{visual &&
 						visual.map(
 							(item, i) => (i + 1) % 3 == 2 && <Cards item={item} key={i} />
 						)}
+					<>{fetching}</>
 				</div>
 				<div className={styles.cardThree}>
 					{visual &&
@@ -50,6 +66,7 @@ const ActivitiesCard = ({ page, setPage }) => {
 							(item, i) =>
 								i % 3 != 0 && (i + 1) % 3 == 0 && <Cards item={item} key={i} />
 						)}
+					<>{fetching}</>
 				</div>
 			</div>
 		</div>

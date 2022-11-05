@@ -3,7 +3,6 @@ import styles from './NewAbout.module.css';
 import { BsGlobe } from 'react-icons/bs';
 import { GiFallingStar } from 'react-icons/gi';
 import { FaSearchLocation, FaMapMarkedAlt } from 'react-icons/fa';
-import { GrMapLocation } from 'react-icons/gr';
 
 const ICON_SIZE = 40;
 const ICON_COLOR = 'teal';

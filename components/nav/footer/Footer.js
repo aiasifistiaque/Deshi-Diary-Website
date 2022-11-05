@@ -4,9 +4,11 @@ import styles from './Footer.module.css';
 import * as lib from '../../../lib/constants';
 
 const Footer = () => {
+	const date = new Date();
+
 	const contactSection = (
 		<>
-			<Item>Deshi Diary</Item>
+			<Item>DeshiDiary</Item>
 			<Item>Phone: </Item>
 			<Item>Email: info@deshidiary.com</Item>
 		</>
@@ -42,7 +44,9 @@ const Footer = () => {
 				</div>
 			</div>
 			<div className={styles.disclaimer}>
-				<p>Copyright 2021, DeshiDiary.com | ALL RIGHTS RESERVED</p>
+				<p>
+					Copyright {date.getFullYear()}, DeshiDiary.com | ALL RIGHTS RESERVED
+				</p>
 			</div>
 		</div>
 	);

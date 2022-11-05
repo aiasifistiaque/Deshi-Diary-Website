@@ -49,7 +49,7 @@ const Sidebar = ({ selected, store }) => {
 				/>
 				{!toggled && (
 					<Link href={`${url}`}>
-						<h6>Deshi Diary</h6>
+						<h6>DeshiDiary</h6>
 					</Link>
 				)}
 			</div>
