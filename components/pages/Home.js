@@ -47,7 +47,7 @@ const Home = () => {
 				</HomeSection>
 			</Container>
 			<Container>
-				<HomeSection title='How can I use Deshi Diary?'>
+				<HomeSection title='How can I use DeshiDiary?'>
 					<NewAbout />
 				</HomeSection>
 			</Container>

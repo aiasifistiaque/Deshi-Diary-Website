@@ -18,7 +18,7 @@ const AboutHeading = () => {
 				<img src='/about-us.png' alt='str' />
 			</div>
 			<div className={styles.story}>
-				<h4>What is Deshi Diary?</h4>
+				<h4>What is DeshiDiary?</h4>
 				<p>DeshiDiary is a local search and rating platform.</p>
 				<p>
 					With the help of everyday netizens as well as dedicated contributors,

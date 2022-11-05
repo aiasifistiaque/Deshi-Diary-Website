@@ -100,7 +100,7 @@ const AddListing = () => {
 				onKeyDown={e => {
 					return e.key != 'Enter';
 				}}>
-				<Section title='Add a place to Deshi Diary' top>
+				<Section title='Add a place to DeshiDiary' top>
 					<p>
 						Thank you for telling us about a new place to list on Deshi Diary.
 						Your contributions make our traveler community stronger. To get

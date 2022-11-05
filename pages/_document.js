@@ -25,7 +25,7 @@ export default class MyDocument extends Document {
           `,
 						}}
 					/>
-					<meta property='title' content='Deshi Diary' />
+					<meta property='title' content='DeshiDiary' />
 					<meta property='og:title' content='Deshi Diary' key='ogtitle' />
 					<link rel='icon' href='/favicon.ico' />
 					<meta
