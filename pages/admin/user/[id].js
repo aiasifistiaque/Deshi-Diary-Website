@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 import { useState } from 'react';
+import { Button } from 'semantic-ui-react';
 import ListBadges from '../../../admin-components/badges/ListBadges';
 import ListPage from '../../../admin-components/listpage/ListPage';
 import AdminPage from '../../../admin-components/page/AdminPage';
@@ -9,7 +10,10 @@ import {
 	DetailsTable,
 } from '../../../admin-components/table/Details';
 import { Item, Row, Table } from '../../../admin-components/table/Table';
-import { useGetUserByIdAsAdminQuery } from '../../../store/services/adminService';
+import {
+	useGetUserByIdAsAdminQuery,
+	useMakeAdminMutation,
+} from '../../../store/services/adminService';
 import { useGetUserRatingsQuery } from '../../../store/services/apiService';
 
 const Adminuser = () => {
@@ -18,6 +22,15 @@ const Adminuser = () => {
 
 	const { data, isError, error, isFetching, isLoading } =
 		useGetUserByIdAsAdminQuery(id);
+	const [makeAdmin, result] = useMakeAdminMutation();
+
+	const makeUserAdmin = () => {
+		makeAdmin({
+			id: data?._id && data._id,
+			role: data?.role && data.role == 'user' ? 'admin' : 'user',
+		});
+	};
+
 	return (
 		<AdminPage selected='Users'>
 			<ListPage isError={isError} error={error} title='User'>
@@ -26,6 +39,16 @@ const Adminuser = () => {
 					<AdminItem title='Name'>{data?.name && data.name}</AdminItem>
 					<AdminItem title='Email'>{data?.email && data.email}</AdminItem>
 					<AdminItem title='Role'>{data?.role && data.role}</AdminItem>
+					<div style={{ margin: '1rem 0' }}>
+						{result.isLoading ? (
+							<Button>processing...</Button>
+						) : (
+							<Button onClick={makeUserAdmin}>
+								Make {data?.role && data.role === 'user' ? 'admin' : 'user'}
+							</Button>
+						)}
+					</div>
+
 					<AdminItem title='Joined' date>
 						{data?.createdAt && data.createdAt}
 					</AdminItem>

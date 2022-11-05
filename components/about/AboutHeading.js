@@ -1,6 +1,4 @@
 import React from 'react';
-import LargeScreen from '../util/large-screen/LargeScreen';
-import SmallScreen from '../util/large-screen/SmallScreen';
 import styles from './Styles.module.css';
 
 const AboutHeading = () => {
@@ -17,12 +15,7 @@ const AboutHeading = () => {
 			</div>
 
 			<div className={styles.pictures}>
-				<LargeScreen>
-					<img src='/test/story-bg.png' alt='str' />
-				</LargeScreen>
-				<SmallScreen>
-					<img src='/test/story-sm.png' alt='str' />
-				</SmallScreen>
+				<img src='/about-us.png' alt='str' />
 			</div>
 			<div className={styles.story}>
 				<h4>What is Deshi Diary?</h4>

@@ -32,7 +32,7 @@ const NewAbout = () => {
 				<Card
 					icon={<FaMapMarkedAlt size={ICON_SIZE} color={ICON_COLOR} />}
 					title='Add a Listing'>
-					Add listings to a growing community of informed netizend!
+					Add listings to a growing community of informed netizens!
 				</Card>
 			</div>
 		</div>

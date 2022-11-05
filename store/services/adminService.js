@@ -13,7 +13,7 @@ export const adminApi = createApi({
 			return headers;
 		},
 	}),
-	tagTypes: ['Categories', 'Badges', 'Assign', 'Kpi', 'Listing'],
+	tagTypes: ['Categories', 'Badges', 'Assign', 'Kpi', 'Listing', 'Users'],
 	endpoints: builder => ({
 		// register: builder.mutation({
 		// 	query(body) {
@@ -36,6 +36,17 @@ export const adminApi = createApi({
 		}),
 		getUserByIdAsAdmin: builder.query({
 			query: id => `/users/${id}`,
+			providesTags: ['Users'],
+		}),
+		makeAdmin: builder.mutation({
+			query(body) {
+				return {
+					url: `/users/edit/makeadmin`,
+					method: 'POST',
+					body,
+				};
+			},
+			invalidatesTags: ['Users'],
 		}),
 		getListingsAsAdmin: builder.query({
 			query: ({ sort = '-createdAt', page = 1, perpage = 10 } = {}) =>
@@ -146,4 +157,5 @@ export const {
 	useGetCommentsAsAdminQuery,
 	useGetAssignedBadgesAsAdminQuery,
 	useAssignBadgeAsAdminMutation,
+	useMakeAdminMutation,
 } = adminApi;
