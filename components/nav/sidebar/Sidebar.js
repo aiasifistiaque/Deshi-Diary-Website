@@ -60,7 +60,7 @@ const Items = () => {
 							dispatch(expand());
 							router.push('/signup');
 						}}>
-						Singup
+						Register
 					</Item>
 				</>
 			)}
